@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register a Business - BPA Documentation v4.0 | Lesotho</title>
+<style>
+/* ===== DESIGN SYSTEM ===== */
+:root {
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --text: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border: #e5e7eb;
+  --border-light: #f3f4f6;
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --transition: all 0.2s ease;
+  /* Registration colors */
+  --bp: #3b82f6;
+  --bp-light: #dbeafe;
+  --bid: #10b981;
+  --bid-light: #d1fae5;
+  --tl: #f59e0b;
+  --tl-light: #fef3c7;
+  --il: #8b5cf6;
+  --il-light: #ede9fe;
+  --ci: #ef4444;
+  --ci-light: #fee2e2;
+  /* Role colors */
+  --bot: #3b82f6;
+  --bot-light: #dbeafe;
+  --user: #10b981;
+  --user-light: #d1fae5;
+  --assistance: #f59e0b;
+  --assistance-light: #fef3c7;
+  --connection: #94a3b8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+  color: white;
+  padding: 48px 40px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: 20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+.header p {
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 24px;
+  max-width: 600px;
+}
+.header-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: var(--transition);
+}
+.stat-pill:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-1px);
+}
+.stat-pill .stat-value {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* ===== TAB NAVIGATION ===== */
+.tab-nav {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+.tab-nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tab-nav-inner::-webkit-scrollbar { display: none; }
+.tab-btn {
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+  position: relative;
+}
+.tab-btn:hover {
+  color: var(--primary);
+  background: var(--border-light);
+}
+.tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 600;
+}
+.tab-btn .tab-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* ===== TAB CONTENT ===== */
+.tab-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+.tab-panel.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SECTION HEADERS ===== */
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== BADGES ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.badge-bp { background: var(--bp-light); color: #1e40af; }
+.badge-bid { background: var(--bid-light); color: #065f46; }
+.badge-tl { background: var(--tl-light); color: #92400e; }
+.badge-il { background: var(--il-light); color: #5b21b6; }
+.badge-ci { background: var(--ci-light); color: #991b1b; }
+.badge-bot { background: var(--bot-light); color: #1e40af; }
+.badge-user { background: var(--user-light); color: #065f46; }
+.badge-assistance { background: var(--assistance-light); color: #92400e; }
+.badge-gray { background: #f3f4f6; color: #374151; }
+.badge-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+/* ===== SVG DIAGRAM CONTAINERS ===== */
+.diagram-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+}
+.diagram-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.diagram-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+/* ===== SVG STYLES ===== */
+svg text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.svg-node {
+  cursor: pointer;
+  transition: var(--transition);
+}
+.svg-node:hover {
+  filter: brightness(0.95);
+}
+.svg-node:hover rect, .svg-node:hover circle {
+  stroke-width: 2.5;
+}
+
+/* Animated dash for connection lines */
+@keyframes dashMove {
+  to { stroke-dashoffset: -20; }
+}
+.animated-line {
+  stroke-dasharray: 6, 4;
+  animation: dashMove 1.5s linear infinite;
+}
+.connection-line {
+  stroke: var(--connection);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* ===== REGISTRATION CARDS (Tab 2) ===== */
+.reg-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+.reg-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+.reg-card-header {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+.reg-card-header.bp { border-left: 4px solid var(--bp); }
+.reg-card-header.bid { border-left: 4px solid var(--bid); }
+.reg-card-header.tl { border-left: 4px solid var(--tl); }
+.reg-card-header.il { border-left: 4px solid var(--il); }
+.reg-card-header.ci { border-left: 4px solid var(--ci); }
+.reg-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.reg-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.reg-card-body {
+  padding: 24px;
+}
+.reg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.reg-info-box {
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  border: 1px solid var(--border);
+}
+.reg-info-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.reg-info-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+.reg-info-value ul {
+  list-style: none;
+  padding: 0;
+}
+.reg-info-value li {
+  padding: 3px 0;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.reg-info-value li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+}
+
+/* ===== PIPELINE (Mini workflow in reg cards) ===== */
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  padding: 16px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.pipeline-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+.pipeline-step:hover { transform: scale(1.05); }
+.pipeline-step.bot {
+  background: var(--bot-light);
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+.pipeline-step.human {
+  background: var(--user-light);
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+.pipeline-arrow {
+  color: var(--text-muted);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* ===== CONDITION CARDS ===== */
+.condition-card {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 12px;
+}
+.condition-if, .condition-then {
+  padding: 14px 18px;
+  font-size: 13px;
+  min-width: 200px;
+  flex: 1;
+}
+.condition-if {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+.condition-then {
+  background: #d1fae5;
+  border: 1px solid #6ee7b7;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.condition-arrow-box {
+  background: var(--bg);
+  padding: 8px 10px;
+  font-size: 18px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+.condition-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.condition-value {
+  font-weight: 600;
+}
+
+/* ===== DOCUMENTS (Tab 5) ===== */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+.doc-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.doc-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.doc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+.doc-card.bp::before { background: var(--bp); }
+.doc-card.bid::before { background: var(--bid); }
+.doc-card.tl::before { background: var(--tl); }
+.doc-card.il::before { background: var(--il); }
+.doc-card.ci::before { background: var(--ci); }
+.doc-card.payment::before { background: #6b7280; }
+.doc-icon {
+  width: 64px;
+  height: 80px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--text-muted);
+  position: relative;
+}
+.doc-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, var(--bg) 50%, var(--border) 50%);
+  border-bottom-left-radius: 4px;
+}
+.doc-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.doc-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: left;
+  line-height: 1.8;
+}
+
+/* ===== Field mini-blocks ===== */
+.field-block {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  transition: var(--transition);
+}
+.field-block:hover {
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+.field-block-name {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.field-block-type {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+/* Summary stat card */
+.summary-stat {
+  text-align: center;
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.summary-stat-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.summary-stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  max-width: 1280px;
+  margin: 48px auto 0;
+}
+footer p { margin-bottom: 4px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .header h1 { font-size: 28px; }
+  .header { padding: 32px 20px; }
+  .tab-content { padding: 24px 16px; }
+  .diagram-container { padding: 16px; overflow-x: auto; }
+  .condition-card { flex-direction: column; }
+  .condition-if { border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+  .condition-then { border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+  .condition-arrow-box { justify-content: center; }
+}
+
+/* ===== PRINT ===== */
+@media print {
+  .tab-nav { position: relative; }
+  .tab-panel { display: block !important; page-break-inside: avoid; margin-bottom: 32px; }
+  .tab-panel::before {
+    content: attr(data-tab-name);
+    font-size: 24px;
+    font-weight: 700;
+    display: block;
+    margin: 24px 0 16px;
+    padding-top: 16px;
+    border-top: 2px solid var(--text);
+  }
+  .card:hover, .reg-card:hover, .doc-card:hover {
+    box-shadow: none;
+    transform: none;
+  }
+  .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-content">
+    <div class="header-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      BPA Lesotho &mdash; Active Service
+    </div>
+    <h1>Register a Business</h1>
+    <p>Complete BPA service documentation showing all registrations, form structure, workflow pipeline, and document outputs.</p>
+    <div class="header-stats">
+      <div class="stat-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <span class="stat-value">5</span> Registrations
+      </div>
+      <div class="stat-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <span class="stat-value">722</span> Components
+      </div>
+      <div class="stat-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <span class="stat-value">1,635</span> Fields
+      </div>
+      <div class="stat-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        <span class="stat-value">50</span> Roles
+      </div>
+      <div class="stat-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <span class="stat-value">149</span> Determinants
+      </div>
+      <div class="stat-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span class="stat-value">78</span> Bots
+      </div>
+      <div class="stat-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span class="stat-value">6</span> Documents
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== TAB NAVIGATION ===== -->
+<nav class="tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" onclick="switchTab('overview')" id="tab-overview">
+      <span class="tab-icon">&#9678;</span>Overview
+    </button>
+    <button class="tab-btn" onclick="switchTab('registrations')" id="tab-registrations">
+      <span class="tab-icon">&#9635;</span>Registrations
+    </button>
+    <button class="tab-btn" onclick="switchTab('form')" id="tab-form">
+      <span class="tab-icon">&#9776;</span>Applicant Form
+    </button>
+    <button class="tab-btn" onclick="switchTab('workflow')" id="tab-workflow">
+      <span class="tab-icon">&#9654;</span>Workflow
+    </button>
+    <button class="tab-btn" onclick="switchTab('documents')" id="tab-documents">
+      <span class="tab-icon">&#128196;</span>Documents
+    </button>
+  </div>
+</nav>
+
+<!-- ===== TAB CONTENT ===== -->
+<div class="tab-content">
+
+<!-- ============================================================ -->
+<!-- TAB 1: OVERVIEW -->
+<!-- ============================================================ -->
+<div class="tab-panel active" id="panel-overview" data-tab-name="Overview">
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap:16px; margin-bottom:32px;">
+    <div class="summary-stat"><div class="summary-stat-value">5</div><div class="summary-stat-label">Registrations</div></div>
+    <div class="summary-stat"><div class="summary-stat-value">722</div><div class="summary-stat-label">Form Components</div></div>
+    <div class="summary-stat"><div class="summary-stat-value">1,635</div><div class="summary-stat-label">Fields</div></div>
+    <div class="summary-stat"><div class="summary-stat-value">149</div><div class="summary-stat-label">Determinants</div></div>
+    <div class="summary-stat"><div class="summary-stat-value">50</div><div class="summary-stat-label">Workflow Roles</div></div>
+    <div class="summary-stat"><div class="summary-stat-value">78</div><div class="summary-stat-label">Bots</div></div>
+    <div class="summary-stat"><div class="summary-stat-value">6</div><div class="summary-stat-label">Print Documents</div></div>
+    <div class="summary-stat"><div class="summary-stat-value" style="color:#10b981">Active</div><div class="summary-stat-label">Status</div></div>
+  </div>
+
+  <!-- DIAGRAM 1: Service Architecture Map -->
+  <div class="diagram-container">
+    <div class="diagram-title">Service Architecture Map</div>
+    <div class="diagram-subtitle">How all major entities connect in "Register a Business" -- click nodes to navigate</div>
+    <svg viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:1100px;margin:0 auto;display:block">
+      <defs>
+        <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#94a3b8"/>
+        </marker>
+        <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="116%">
+          <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+        </filter>
+        <linearGradient id="gradService" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#3b82f6"/>
+        </linearGradient>
+      </defs>
+
+      <!-- SERVICE NODE (top center) -->
+      <g class="svg-node" onclick="switchTab('overview')">
+        <rect x="390" y="20" width="320" height="80" rx="16" fill="url(#gradService)" filter="url(#cardShadow)"/>
+        <text x="550" y="50" text-anchor="middle" fill="white" font-size="11" font-weight="600" letter-spacing="1">SERVICE</text>
+        <text x="550" y="72" text-anchor="middle" fill="white" font-size="17" font-weight="700">Register a Business</text>
+      </g>
+
+      <!-- Connection lines from Service -->
+      <line x1="460" y1="100" x2="180" y2="180" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <line x1="550" y1="100" x2="550" y2="180" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <line x1="640" y1="100" x2="920" y2="180" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+
+      <!-- APPLICANT FORM (left) -->
+      <g class="svg-node" onclick="switchTab('form')">
+        <rect x="60" y="180" width="240" height="90" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#cardShadow)"/>
+        <rect x="60" y="180" width="240" height="6" rx="3" fill="#6366f1"/>
+        <text x="84" y="212" fill="#6366f1" font-size="22">&#9776;</text>
+        <text x="108" y="214" fill="#111827" font-size="14" font-weight="700">Applicant Form</text>
+        <text x="84" y="234" fill="#6b7280" font-size="12">6 tabs | 722 components</text>
+        <text x="84" y="252" fill="#6b7280" font-size="12">1,635 fields | 149 determinants</text>
+      </g>
+
+      <!-- REGISTRATIONS (center) -->
+      <g class="svg-node" onclick="switchTab('registrations')">
+        <rect x="400" y="180" width="300" height="90" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#cardShadow)"/>
+        <rect x="400" y="180" width="300" height="6" rx="3" fill="#10b981"/>
+        <text x="424" y="212" fill="#10b981" font-size="22">&#9635;</text>
+        <text x="448" y="214" fill="#111827" font-size="14" font-weight="700">5 Registrations</text>
+        <text x="424" y="234" fill="#6b7280" font-size="12">3 institutions | 5 doc sets</text>
+        <text x="424" y="252" fill="#6b7280" font-size="12">BP | BID | TL | IL | CI</text>
+      </g>
+
+      <!-- WORKFLOW (right) -->
+      <g class="svg-node" onclick="switchTab('workflow')">
+        <rect x="790" y="180" width="260" height="90" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#cardShadow)"/>
+        <rect x="790" y="180" width="260" height="6" rx="3" fill="#f59e0b"/>
+        <text x="814" y="212" fill="#f59e0b" font-size="22">&#9654;</text>
+        <text x="838" y="214" fill="#111827" font-size="14" font-weight="700">Workflow Pipeline</text>
+        <text x="814" y="234" fill="#6b7280" font-size="12">50 roles total</text>
+        <text x="814" y="252" fill="#6b7280" font-size="12">18 Bot | 32 User</text>
+      </g>
+
+      <!-- Lines from Form to sub-items -->
+      <line x1="120" y1="270" x2="120" y2="320" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <line x1="180" y1="270" x2="180" y2="320" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <line x1="240" y1="270" x2="240" y2="320" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+
+      <!-- Form Tab Boxes -->
+      <g class="svg-node">
+        <rect x="60" y="320" width="100" height="130" rx="8" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1"/>
+        <text x="110" y="344" text-anchor="middle" fill="#5b21b6" font-size="11" font-weight="700">GUIDE</text>
+        <text x="110" y="360" text-anchor="middle" fill="#6b7280" font-size="10">Business type</text>
+        <text x="110" y="374" text-anchor="middle" fill="#6b7280" font-size="10">Owner origin</text>
+        <text x="110" y="388" text-anchor="middle" fill="#6b7280" font-size="10">Application for</text>
+        <rect x="70" y="400" width="80" height="16" rx="4" fill="#ede9fe"/>
+        <text x="110" y="412" text-anchor="middle" fill="#7c3aed" font-size="9" font-weight="600">Sole / Company</text>
+        <rect x="70" y="420" width="80" height="16" rx="4" fill="#ede9fe"/>
+        <text x="110" y="432" text-anchor="middle" fill="#7c3aed" font-size="9" font-weight="600">Lesotho / Other</text>
+      </g>
+      <g class="svg-node">
+        <rect x="170" y="320" width="100" height="130" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+        <text x="220" y="344" text-anchor="middle" fill="#1e40af" font-size="11" font-weight="700">BUSINESS</text>
+        <text x="220" y="360" text-anchor="middle" fill="#6b7280" font-size="10">Owner details</text>
+        <text x="220" y="374" text-anchor="middle" fill="#6b7280" font-size="10">Business info</text>
+        <text x="220" y="388" text-anchor="middle" fill="#6b7280" font-size="10">Activities list</text>
+        <text x="220" y="402" text-anchor="middle" fill="#6b7280" font-size="10">Shareholders</text>
+        <text x="220" y="416" text-anchor="middle" fill="#6b7280" font-size="10">Executives</text>
+        <text x="220" y="430" text-anchor="middle" fill="#6b7280" font-size="10">Beneficial own.</text>
+      </g>
+      <g class="svg-node">
+        <rect x="280" y="320" width="90" height="130" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+        <text x="325" y="344" text-anchor="middle" fill="#065f46" font-size="11" font-weight="700">DOCS+SEND</text>
+        <text x="325" y="360" text-anchor="middle" fill="#6b7280" font-size="10">Upload IDs</text>
+        <text x="325" y="374" text-anchor="middle" fill="#6b7280" font-size="10">Banking stmt</text>
+        <text x="325" y="388" text-anchor="middle" fill="#6b7280" font-size="10">Insurance</text>
+        <text x="325" y="402" text-anchor="middle" fill="#6b7280" font-size="10">Bus. plan</text>
+        <text x="325" y="416" text-anchor="middle" fill="#6b7280" font-size="10">Declaration</text>
+        <text x="325" y="430" text-anchor="middle" fill="#6b7280" font-size="10">Payment</text>
+      </g>
+
+      <!-- Lines from Registrations to sub-boxes -->
+      <line x1="440" y1="270" x2="420" y2="320" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <line x1="490" y1="270" x2="490" y2="320" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <line x1="540" y1="270" x2="560" y2="320" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <line x1="590" y1="270" x2="630" y2="320" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <line x1="640" y1="270" x2="700" y2="320" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+
+      <!-- 5 Registration boxes -->
+      <g class="svg-node"><rect x="395" y="320" width="60" height="70" rx="8" fill="var(--bp-light)" stroke="var(--bp)" stroke-width="1.5"/><text x="425" y="352" text-anchor="middle" fill="var(--bp)" font-size="18" font-weight="700">BP</text><text x="425" y="378" text-anchor="middle" fill="#1e40af" font-size="8" font-weight="600">MTICM</text></g>
+      <g class="svg-node"><rect x="465" y="320" width="60" height="70" rx="8" fill="var(--bid-light)" stroke="var(--bid)" stroke-width="1.5"/><text x="495" y="352" text-anchor="middle" fill="var(--bid)" font-size="18" font-weight="700">BID</text><text x="495" y="378" text-anchor="middle" fill="#065f46" font-size="8" font-weight="600">OBFC</text></g>
+      <g class="svg-node"><rect x="535" y="320" width="60" height="70" rx="8" fill="var(--tl-light)" stroke="var(--tl)" stroke-width="1.5"/><text x="565" y="352" text-anchor="middle" fill="var(--tl)" font-size="18" font-weight="700">TL</text><text x="565" y="378" text-anchor="middle" fill="#92400e" font-size="8" font-weight="600">MTICM</text></g>
+      <g class="svg-node"><rect x="605" y="320" width="60" height="70" rx="8" fill="var(--il-light)" stroke="var(--il)" stroke-width="1.5"/><text x="635" y="352" text-anchor="middle" fill="var(--il)" font-size="18" font-weight="700">IL</text><text x="635" y="378" text-anchor="middle" fill="#5b21b6" font-size="8" font-weight="600">MTICM</text></g>
+      <g class="svg-node"><rect x="675" y="320" width="60" height="70" rx="8" fill="var(--ci-light)" stroke="var(--ci)" stroke-width="1.5"/><text x="705" y="352" text-anchor="middle" fill="var(--ci)" font-size="18" font-weight="700">CI</text><text x="705" y="378" text-anchor="middle" fill="#991b1b" font-size="8" font-weight="600">LAA</text></g>
+
+      <!-- Lines from Workflow to role type boxes -->
+      <line x1="870" y1="270" x2="840" y2="320" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <line x1="920" y1="270" x2="920" y2="320" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <line x1="970" y1="270" x2="1000" y2="320" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+
+      <!-- Role type boxes -->
+      <g class="svg-node"><rect x="790" y="320" width="100" height="60" rx="8" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/><text x="840" y="346" text-anchor="middle" fill="#1e40af" font-size="16">&#129302;</text><text x="840" y="366" text-anchor="middle" fill="#1e40af" font-size="12" font-weight="700">18 BotRoles</text></g>
+      <g class="svg-node"><rect x="900" y="320" width="100" height="60" rx="8" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/><text x="950" y="346" text-anchor="middle" fill="#065f46" font-size="16">&#128100;</text><text x="950" y="366" text-anchor="middle" fill="#065f46" font-size="12" font-weight="700">32 UserRoles</text></g>
+
+      <!-- Assistance box -->
+      <line x1="840" y1="380" x2="840" y2="392" class="connection-line" marker-end="url(#arrowGray)"/>
+      <line x1="950" y1="380" x2="950" y2="392" class="connection-line" marker-end="url(#arrowGray)"/>
+      <g class="svg-node"><rect x="790" y="392" width="210" height="40" rx="8" fill="var(--assistance-light)" stroke="var(--assistance)" stroke-width="1"/><text x="895" y="418" text-anchor="middle" fill="#92400e" font-size="12" font-weight="600">incl. Applicant + 17 Assistance</text></g>
+
+      <!-- Print Documents -->
+      <line x1="550" y1="390" x2="550" y2="480" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <g class="svg-node" onclick="switchTab('documents')">
+        <rect x="390" y="480" width="320" height="80" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#cardShadow)"/>
+        <rect x="390" y="480" width="320" height="6" rx="3" fill="#ef4444"/>
+        <text x="414" y="514" fill="#ef4444" font-size="20">&#128196;</text>
+        <text x="440" y="516" fill="#111827" font-size="14" font-weight="700">6 Print Documents</text>
+        <text x="414" y="540" fill="#6b7280" font-size="12">Memorandum | Payment Slip | Business ID</text>
+        <text x="414" y="555" fill="#6b7280" font-size="12">Business Permit | Trading Licence | Industrial Licence</text>
+      </g>
+
+      <!-- Bots -->
+      <line x1="920" y1="432" x2="920" y2="480" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <g class="svg-node">
+        <rect x="810" y="480" width="220" height="60" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#cardShadow)"/>
+        <rect x="810" y="480" width="220" height="6" rx="3" fill="#3b82f6"/>
+        <text x="834" y="516" fill="#3b82f6" font-size="18">&#129302;</text>
+        <text x="858" y="518" fill="#111827" font-size="14" font-weight="700">78 Bots</text>
+        <text x="834" y="534" fill="#6b7280" font-size="11">data, document, internal, message</text>
+      </g>
+
+      <!-- Determinants -->
+      <line x1="180" y1="450" x2="180" y2="480" class="connection-line animated-line" marker-end="url(#arrowGray)"/>
+      <g class="svg-node">
+        <rect x="60" y="480" width="240" height="70" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#cardShadow)"/>
+        <rect x="60" y="480" width="240" height="6" rx="3" fill="#f59e0b"/>
+        <text x="84" y="514" fill="#f59e0b" font-size="18">&#128268;</text>
+        <text x="110" y="516" fill="#111827" font-size="14" font-weight="700">149 Determinants</text>
+        <text x="84" y="536" fill="#6b7280" font-size="11">Conditional logic | Visibility rules</text>
+      </g>
+
+      <!-- Legend -->
+      <g transform="translate(60,580)">
+        <text x="0" y="12" fill="#9ca3af" font-size="11" font-weight="600">LEGEND:</text>
+        <rect x="80" y="2" width="12" height="12" rx="3" fill="var(--bp)"/><text x="96" y="12" fill="#6b7280" font-size="11">Bot Role</text>
+        <rect x="160" y="2" width="12" height="12" rx="3" fill="var(--user)"/><text x="176" y="12" fill="#6b7280" font-size="11">User Role</text>
+        <line x1="250" y1="8" x2="280" y2="8" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,4"/><text x="286" y="12" fill="#6b7280" font-size="11">Connection</text>
+        <rect x="370" y="2" width="12" height="12" rx="3" fill="#f59e0b"/><text x="386" y="12" fill="#6b7280" font-size="11">Conditional</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- DIAGRAM 2: Registration Pipeline Swimlanes -->
+  <div class="diagram-container">
+    <div class="diagram-title">Registration Processing Pipelines</div>
+    <div class="diagram-subtitle">Each registration flows through its own sequence of review, validation, creation, and certification steps</div>
+    <svg viewBox="0 0 1060 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:1060px;margin:0 auto;display:block">
+      <defs>
+        <marker id="arrSm" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+          <polygon points="0 0, 6 2.5, 0 5" fill="#94a3b8"/>
+        </marker>
+      </defs>
+
+      <!-- Column headers -->
+      <text x="30" y="26" fill="#9ca3af" font-size="11" font-weight="700">REGISTRATION</text>
+      <text x="260" y="26" fill="#9ca3af" font-size="11" font-weight="700">PROCESSING PIPELINE</text>
+      <text x="920" y="26" fill="#9ca3af" font-size="11" font-weight="700">OUTPUT</text>
+      <line x1="20" y1="36" x2="1040" y2="36" stroke="#e5e7eb" stroke-width="1"/>
+
+      <!-- Row 1: BP -->
+      <rect x="20" y="48" width="200" height="50" rx="8" fill="var(--bp-light)" stroke="var(--bp)" stroke-width="1.5"/>
+      <circle cx="44" cy="73" r="12" fill="var(--bp)"/><text x="44" y="77" text-anchor="middle" fill="white" font-size="9" font-weight="700">BP</text>
+      <text x="64" y="68" fill="#1e40af" font-size="13" font-weight="700">Business Permit</text>
+      <text x="64" y="84" fill="#1e40af" font-size="10">MTICM</text>
+
+      <rect x="240" y="52" width="100" height="40" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="290" y="70" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">&#128100; Review BP</text>
+      <text x="290" y="84" text-anchor="middle" fill="#6b7280" font-size="9">sort 299</text>
+      <line x1="340" y1="72" x2="360" y2="72" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="365" y="52" width="110" height="40" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="420" y="70" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">&#128100; Validate BP</text>
+      <text x="420" y="84" text-anchor="middle" fill="#6b7280" font-size="9">sort 1</text>
+      <line x1="475" y1="72" x2="495" y2="72" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="500" y="52" width="100" height="40" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="550" y="70" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">&#129302; Create BP</text>
+      <text x="550" y="84" text-anchor="middle" fill="#6b7280" font-size="9">sort 2</text>
+      <line x1="600" y1="72" x2="620" y2="72" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="625" y="52" width="100" height="40" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="675" y="70" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">&#129302; Cert BP</text>
+      <text x="675" y="84" text-anchor="middle" fill="#6b7280" font-size="9">sort 299</text>
+      <line x1="725" y1="72" x2="900" y2="72" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="905" y="52" width="130" height="40" rx="6" fill="var(--bp-light)" stroke="var(--bp)" stroke-width="1"/>
+      <text x="970" y="76" text-anchor="middle" fill="#1e40af" font-size="11" font-weight="600">&#128196; Business Permit</text>
+
+      <!-- Row 2: BID -->
+      <line x1="20" y1="108" x2="1040" y2="108" stroke="#f3f4f6" stroke-width="1"/>
+      <rect x="20" y="118" width="200" height="50" rx="8" fill="var(--bid-light)" stroke="var(--bid)" stroke-width="1.5"/>
+      <circle cx="44" cy="143" r="12" fill="var(--bid)"/><text x="44" y="147" text-anchor="middle" fill="white" font-size="8" font-weight="700">BID</text>
+      <text x="64" y="138" fill="#065f46" font-size="13" font-weight="700">Business ID</text>
+      <text x="64" y="154" fill="#065f46" font-size="10">OBFC</text>
+
+      <rect x="240" y="122" width="95" height="40" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="287" y="140" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">&#128100; Review</text>
+      <text x="287" y="154" text-anchor="middle" fill="#6b7280" font-size="9">sort 3</text>
+      <line x1="335" y1="142" x2="345" y2="142" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="350" y="122" width="95" height="40" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="397" y="140" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">&#128100; Validate</text>
+      <text x="397" y="154" text-anchor="middle" fill="#6b7280" font-size="9">sort 4</text>
+      <line x1="445" y1="142" x2="455" y2="142" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="460" y="122" width="85" height="40" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="502" y="140" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">&#129302; Person</text>
+      <text x="502" y="154" text-anchor="middle" fill="#6b7280" font-size="9">sort 5</text>
+      <line x1="545" y1="142" x2="555" y2="142" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="560" y="122" width="85" height="40" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="602" y="140" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">&#129302; BID</text>
+      <text x="602" y="154" text-anchor="middle" fill="#6b7280" font-size="9">sort 6</text>
+      <line x1="645" y1="142" x2="655" y2="142" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="660" y="122" width="85" height="40" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="702" y="140" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">&#129302; Cert</text>
+      <text x="702" y="154" text-anchor="middle" fill="#6b7280" font-size="9">sort 14</text>
+      <line x1="745" y1="142" x2="900" y2="142" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="905" y="122" width="130" height="40" rx="6" fill="var(--bid-light)" stroke="var(--bid)" stroke-width="1"/>
+      <text x="970" y="146" text-anchor="middle" fill="#065f46" font-size="11" font-weight="600">&#128196; Business ID</text>
+
+      <!-- Row 3: TL -->
+      <line x1="20" y1="178" x2="1040" y2="178" stroke="#f3f4f6" stroke-width="1"/>
+      <rect x="20" y="188" width="200" height="50" rx="8" fill="var(--tl-light)" stroke="var(--tl)" stroke-width="1.5"/>
+      <circle cx="44" cy="213" r="12" fill="var(--tl)"/><text x="44" y="217" text-anchor="middle" fill="white" font-size="9" font-weight="700">TL</text>
+      <text x="64" y="208" fill="#92400e" font-size="13" font-weight="700">Trading Licence</text>
+      <text x="64" y="224" fill="#92400e" font-size="10">MTICM</text>
+
+      <rect x="240" y="192" width="100" height="40" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="290" y="210" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">&#128100; Review TL</text>
+      <text x="290" y="224" text-anchor="middle" fill="#6b7280" font-size="9">sort 8</text>
+      <line x1="340" y1="212" x2="360" y2="212" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="365" y="192" width="110" height="40" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="420" y="210" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">&#128100; Validate TL</text>
+      <text x="420" y="224" text-anchor="middle" fill="#6b7280" font-size="9">sort 9</text>
+      <line x1="475" y1="212" x2="495" y2="212" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="500" y="192" width="110" height="40" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="555" y="210" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">&#129302; Create TL</text>
+      <text x="555" y="224" text-anchor="middle" fill="#6b7280" font-size="9">sort 299</text>
+      <line x1="610" y1="212" x2="625" y2="212" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="630" y="192" width="100" height="40" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="680" y="210" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">&#129302; Cert TL</text>
+      <text x="680" y="224" text-anchor="middle" fill="#6b7280" font-size="9">sort 299</text>
+      <line x1="730" y1="212" x2="900" y2="212" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="905" y="192" width="130" height="40" rx="6" fill="var(--tl-light)" stroke="var(--tl)" stroke-width="1"/>
+      <text x="970" y="216" text-anchor="middle" fill="#92400e" font-size="11" font-weight="600">&#128196; Trading Licence</text>
+
+      <!-- Row 4: IL -->
+      <line x1="20" y1="248" x2="1040" y2="248" stroke="#f3f4f6" stroke-width="1"/>
+      <rect x="20" y="258" width="200" height="50" rx="8" fill="var(--il-light)" stroke="var(--il)" stroke-width="1.5"/>
+      <circle cx="44" cy="283" r="12" fill="var(--il)"/><text x="44" y="287" text-anchor="middle" fill="white" font-size="9" font-weight="700">IL</text>
+      <text x="64" y="278" fill="#5b21b6" font-size="13" font-weight="700">Industrial Licence</text>
+      <text x="64" y="294" fill="#5b21b6" font-size="10">MTICM</text>
+
+      <rect x="240" y="262" width="100" height="40" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="290" y="280" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">&#128100; Review IL</text>
+      <text x="290" y="294" text-anchor="middle" fill="#6b7280" font-size="9">sort 8</text>
+      <line x1="340" y1="282" x2="360" y2="282" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="365" y="262" width="110" height="40" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="420" y="280" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">&#128100; Validate IL</text>
+      <text x="420" y="294" text-anchor="middle" fill="#6b7280" font-size="9">sort 9</text>
+      <line x1="475" y1="282" x2="495" y2="282" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="500" y="262" width="110" height="40" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="555" y="280" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">&#129302; Activities</text>
+      <text x="555" y="294" text-anchor="middle" fill="#6b7280" font-size="9">sort 10</text>
+      <line x1="610" y1="282" x2="625" y2="282" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="630" y="262" width="100" height="40" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="680" y="280" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">&#129302; Cert IL</text>
+      <text x="680" y="294" text-anchor="middle" fill="#6b7280" font-size="9">sort 299</text>
+      <line x1="730" y1="282" x2="900" y2="282" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="905" y="262" width="130" height="40" rx="6" fill="var(--il-light)" stroke="var(--il)" stroke-width="1"/>
+      <text x="970" y="286" text-anchor="middle" fill="#5b21b6" font-size="11" font-weight="600">&#128196; Industrial Lic.</text>
+
+      <!-- Parallel indicator -->
+      <rect x="232" y="186" width="8" height="120" rx="4" fill="#c4b5fd" opacity="0.5"/>
+      <text x="228" y="250" fill="#8b5cf6" font-size="9" font-weight="700" writing-mode="tb" text-anchor="middle">PARALLEL</text>
+
+      <!-- Row 5: CI -->
+      <line x1="20" y1="318" x2="1040" y2="318" stroke="#f3f4f6" stroke-width="1"/>
+      <rect x="20" y="328" width="200" height="50" rx="8" fill="var(--ci-light)" stroke="var(--ci)" stroke-width="1.5"/>
+      <circle cx="44" cy="353" r="12" fill="var(--ci)"/><text x="44" y="357" text-anchor="middle" fill="white" font-size="9" font-weight="700">CI</text>
+      <text x="64" y="348" fill="#991b1b" font-size="13" font-weight="700">Company Incorporation</text>
+      <text x="64" y="364" fill="#991b1b" font-size="10">LAA</text>
+
+      <rect x="240" y="332" width="100" height="40" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="290" y="350" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">&#128100; CI Review</text>
+      <text x="290" y="364" text-anchor="middle" fill="#6b7280" font-size="9">sort 299</text>
+      <line x1="340" y1="352" x2="360" y2="352" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="365" y="332" width="110" height="40" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="420" y="350" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">&#128100; CI Approval</text>
+      <text x="420" y="364" text-anchor="middle" fill="#6b7280" font-size="9">sort 299</text>
+      <line x1="475" y1="352" x2="495" y2="352" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="500" y="332" width="100" height="40" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="550" y="350" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">&#129302; CI Create</text>
+      <text x="550" y="364" text-anchor="middle" fill="#6b7280" font-size="9">sort 299</text>
+      <line x1="600" y1="352" x2="620" y2="352" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="625" y="332" width="100" height="40" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="675" y="350" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">&#129302; CI Cert</text>
+      <text x="675" y="364" text-anchor="middle" fill="#6b7280" font-size="9">sort 299</text>
+      <line x1="725" y1="352" x2="900" y2="352" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrSm)"/>
+
+      <rect x="905" y="332" width="130" height="40" rx="6" fill="var(--ci-light)" stroke="var(--ci)" stroke-width="1"/>
+      <text x="970" y="356" text-anchor="middle" fill="#991b1b" font-size="11" font-weight="600">&#128196; Memorandum</text>
+    </svg>
+  </div>
+
+  <!-- Determinants breakdown -->
+  <div class="diagram-container">
+    <div class="diagram-title">Determinant Types Breakdown</div>
+    <div class="diagram-subtitle">149 conditional rules controlling form visibility, validation, and workflow behavior</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;">
+      <div class="summary-stat" style="border-left:3px solid #7c3aed"><div class="summary-stat-value" style="color:#7c3aed;font-size:24px">47</div><div class="summary-stat-label">Grid rules</div></div>
+      <div class="summary-stat" style="border-left:3px solid #2563eb"><div class="summary-stat-value" style="color:#2563eb;font-size:24px">30</div><div class="summary-stat-label">Radio conditions</div></div>
+      <div class="summary-stat" style="border-left:3px solid #0891b2"><div class="summary-stat-value" style="color:#0891b2;font-size:24px">28</div><div class="summary-stat-label">Numeric checks</div></div>
+      <div class="summary-stat" style="border-left:3px solid #d97706"><div class="summary-stat-value" style="color:#d97706;font-size:24px">18</div><div class="summary-stat-label">Text comparisons</div></div>
+      <div class="summary-stat" style="border-left:3px solid #059669"><div class="summary-stat-value" style="color:#059669;font-size:24px">7</div><div class="summary-stat-label">Boolean flags</div></div>
+      <div class="summary-stat" style="border-left:3px solid #dc2626"><div class="summary-stat-value" style="color:#dc2626;font-size:24px">6</div><div class="summary-stat-label">Classification</div></div>
+      <div class="summary-stat" style="border-left:3px solid #64748b"><div class="summary-stat-value" style="color:#64748b;font-size:24px">1</div><div class="summary-stat-label">File upload</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 2: REGISTRATIONS -->
+<!-- ============================================================ -->
+<div class="tab-panel" id="panel-registrations" data-tab-name="Registrations">
+  <h2 class="section-title">5 Registrations</h2>
+  <p class="section-subtitle">Each registration connects to an institution, requires specific documents, and produces official outputs.</p>
+
+  <!-- 1. Business Permit -->
+  <div class="reg-card">
+    <div class="reg-card-header bp"><div class="reg-card-title"><span class="reg-dot" style="background:var(--bp)"></span>1. Business Permit</div><div><span class="badge badge-bp">BP</span> <span class="badge badge-gray">MTICM</span></div></div>
+    <div class="reg-card-body">
+      <div class="reg-grid">
+        <div class="reg-info-box"><div class="reg-info-label">Required Documents</div><div class="reg-info-value"><ul><li>Banking statement</li><li>Insurance certificate</li><li>Business plan</li></ul></div></div>
+        <div class="reg-info-box"><div class="reg-info-label">Output</div><div class="reg-info-value"><ul><li>Business Permit (PDF)</li></ul></div></div>
+        <div class="reg-info-box"><div class="reg-info-label">Institution</div><div class="reg-info-value">Ministry of Trade, Industry, Cooperatives and Marketing (MTICM)</div></div>
+      </div>
+      <div class="reg-info-label" style="margin-bottom:8px">Processing Pipeline</div>
+      <div class="pipeline">
+        <div class="pipeline-step human">&#128100; Review BP</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step human">&#128100; Validate BP</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; Create Permit</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; Cert BP</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step" style="background:#dbeafe;color:#1e40af;border:1px solid #93c5fd">&#128196; Business Permit</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Business ID -->
+  <div class="reg-card">
+    <div class="reg-card-header bid"><div class="reg-card-title"><span class="reg-dot" style="background:var(--bid)"></span>2. Business ID</div><div><span class="badge badge-bid">BID</span> <span class="badge badge-gray">OBFC</span></div></div>
+    <div class="reg-card-body">
+      <div class="reg-grid">
+        <div class="reg-info-box"><div class="reg-info-label">Required Documents</div><div class="reg-info-value"><ul><li>Lease / Property title</li><li>Owner's national ID</li><li>Applicant passport copy</li><li>Local representative ID</li><li>Incorporation document</li></ul></div></div>
+        <div class="reg-info-box"><div class="reg-info-label">Output</div><div class="reg-info-value"><ul><li>Business ID Card (PDF)</li></ul></div></div>
+        <div class="reg-info-box"><div class="reg-info-label">Institution</div><div class="reg-info-value">One-stop Business Facilitation Centre (OBFC)</div></div>
+      </div>
+      <div class="reg-info-label" style="margin-bottom:8px">Processing Pipeline</div>
+      <div class="pipeline">
+        <div class="pipeline-step human">&#128100; Review BID</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step human">&#128100; Validate BID</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; Create Person</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; Create BID</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; Relations</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; Cert BID</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step" style="background:#d1fae5;color:#065f46;border:1px solid #6ee7b7">&#128196; Business ID</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Trading Licence -->
+  <div class="reg-card">
+    <div class="reg-card-header tl"><div class="reg-card-title"><span class="reg-dot" style="background:var(--tl)"></span>3. Trading Licence</div><div><span class="badge badge-tl">TL</span> <span class="badge badge-gray">MTICM</span></div></div>
+    <div class="reg-card-body">
+      <div class="reg-grid">
+        <div class="reg-info-box"><div class="reg-info-label">Required Documents</div><div class="reg-info-value" style="color:var(--text-muted)">No additional documents required</div></div>
+        <div class="reg-info-box"><div class="reg-info-label">Output</div><div class="reg-info-value"><ul><li>Trading Licence (PDF)</li></ul></div></div>
+        <div class="reg-info-box"><div class="reg-info-label">Institution</div><div class="reg-info-value">Ministry of Trade, Industry, Cooperatives and Marketing (MTICM)</div></div>
+      </div>
+      <div class="reg-info-label" style="margin-bottom:8px">Processing Pipeline</div>
+      <div class="pipeline">
+        <div class="pipeline-step human">&#128100; Review TL</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step human">&#128100; Validate TL</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; Create Trading</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; Cert TL</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step" style="background:#fef3c7;color:#92400e;border:1px solid #fcd34d">&#128196; Trading Licence</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Industrial Licence -->
+  <div class="reg-card">
+    <div class="reg-card-header il"><div class="reg-card-title"><span class="reg-dot" style="background:var(--il)"></span>4. Industrial Licence</div><div><span class="badge badge-il">IL</span> <span class="badge badge-gray">MTICM</span></div></div>
+    <div class="reg-card-body">
+      <div class="reg-grid">
+        <div class="reg-info-box"><div class="reg-info-label">Required Documents</div><div class="reg-info-value" style="color:var(--text-muted)">No additional documents required</div></div>
+        <div class="reg-info-box"><div class="reg-info-label">Output</div><div class="reg-info-value"><ul><li>Industrial Licence (PDF)</li></ul></div></div>
+        <div class="reg-info-box"><div class="reg-info-label">Institution</div><div class="reg-info-value">Ministry of Trade, Industry, Cooperatives and Marketing (MTICM)</div></div>
+      </div>
+      <div class="reg-info-label" style="margin-bottom:8px">Processing Pipeline</div>
+      <div class="pipeline">
+        <div class="pipeline-step human">&#128100; Review IL</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step human">&#128100; Validate IL</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; Create Activities</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; Create Fees</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; Cert IL</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step" style="background:#ede9fe;color:#5b21b6;border:1px solid #c4b5fd">&#128196; Industrial Licence</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Company Incorporation -->
+  <div class="reg-card">
+    <div class="reg-card-header ci"><div class="reg-card-title"><span class="reg-dot" style="background:var(--ci)"></span>5. Company Incorporation</div><div><span class="badge badge-ci">CI</span> <span class="badge badge-gray">LAA</span></div></div>
+    <div class="reg-card-body">
+      <div class="reg-grid">
+        <div class="reg-info-box"><div class="reg-info-label">Required Documents</div><div class="reg-info-value"><ul><li>Manager's ID document</li><li>Shareholder ID document</li><li>Consent as director</li></ul></div></div>
+        <div class="reg-info-box"><div class="reg-info-label">Output</div><div class="reg-info-value"><ul><li>Memorandum of Association (PDF)</li></ul></div></div>
+        <div class="reg-info-box"><div class="reg-info-label">Institution</div><div class="reg-info-value">Law and Administration Authority (LAA)</div></div>
+      </div>
+      <div class="reg-info-label" style="margin-bottom:8px">Processing Pipeline</div>
+      <div class="pipeline">
+        <div class="pipeline-step human">&#128100; CI Review</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step human">&#128100; CI Approval</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; CI Create</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step bot">&#129302; CI Certificate</div><span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step" style="background:#fee2e2;color:#991b1b;border:1px solid #fca5a5">&#128196; Memorandum</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 3: APPLICANT FORM -->
+<!-- ============================================================ -->
+<div class="tab-panel" id="panel-form" data-tab-name="Applicant Form">
+  <h2 class="section-title">Applicant Form</h2>
+  <p class="section-subtitle">722 components across 6 tabs, with 149 determinants controlling visibility and behavior.</p>
+
+  <!-- DIAGRAM 3: Form Tab Flow -->
+  <div class="diagram-container">
+    <div class="diagram-title">Form Tab Structure</div>
+    <div class="diagram-subtitle">The applicant navigates through these tabs sequentially</div>
+    <svg viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:1000px;margin:0 auto;display:block">
+      <defs><marker id="arrTab" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0, 6 2.5, 0 5" fill="#94a3b8"/></marker></defs>
+
+      <rect x="10" y="30" width="140" height="140" rx="10" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5"/>
+      <rect x="10" y="30" width="140" height="5" rx="2" fill="#8b5cf6"/>
+      <text x="80" y="58" text-anchor="middle" fill="#5b21b6" font-size="13" font-weight="700">1. Guide</text>
+      <text x="80" y="78" text-anchor="middle" fill="#6b7280" font-size="10">Business type</text>
+      <text x="80" y="94" text-anchor="middle" fill="#6b7280" font-size="10">Owner origin</text>
+      <text x="80" y="110" text-anchor="middle" fill="#6b7280" font-size="10">Self / Other</text>
+      <rect x="30" y="122" width="100" height="18" rx="4" fill="#ede9fe"/><text x="80" y="135" text-anchor="middle" fill="#7c3aed" font-size="9" font-weight="600">Key decisions</text>
+      <rect x="30" y="144" width="100" height="18" rx="4" fill="#ede9fe"/><text x="80" y="157" text-anchor="middle" fill="#7c3aed" font-size="9" font-weight="600">Sets all paths</text>
+      <line x1="150" y1="100" x2="170" y2="100" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrTab)"/>
+
+      <rect x="175" y="30" width="140" height="140" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+      <rect x="175" y="30" width="140" height="5" rx="2" fill="#3b82f6"/>
+      <text x="245" y="58" text-anchor="middle" fill="#1e40af" font-size="13" font-weight="700">2. Business Owner</text>
+      <text x="245" y="78" text-anchor="middle" fill="#6b7280" font-size="10">Personal details</text>
+      <text x="245" y="94" text-anchor="middle" fill="#6b7280" font-size="10">Address info</text>
+      <text x="245" y="110" text-anchor="middle" fill="#6b7280" font-size="10">Business address</text>
+      <text x="245" y="126" text-anchor="middle" fill="#6b7280" font-size="10">Activities list</text>
+      <text x="245" y="142" text-anchor="middle" fill="#6b7280" font-size="10">Company details</text>
+      <text x="245" y="158" text-anchor="middle" fill="#6b7280" font-size="10">Turnover + staff</text>
+      <line x1="315" y1="100" x2="335" y2="100" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrTab)"/>
+
+      <rect x="340" y="30" width="140" height="140" rx="10" fill="#fef3c7" stroke="#fcd34d" stroke-width="1.5"/>
+      <rect x="340" y="30" width="140" height="5" rx="2" fill="#f59e0b"/>
+      <text x="410" y="58" text-anchor="middle" fill="#92400e" font-size="13" font-weight="700">3. Shareholders</text>
+      <text x="410" y="78" text-anchor="middle" fill="#6b7280" font-size="10">Individual SH</text>
+      <text x="410" y="94" text-anchor="middle" fill="#6b7280" font-size="10">Company SH</text>
+      <text x="410" y="110" text-anchor="middle" fill="#6b7280" font-size="10">Share allocation</text>
+      <text x="410" y="126" text-anchor="middle" fill="#6b7280" font-size="10">Capital info</text>
+      <rect x="360" y="138" width="100" height="18" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.5"/><text x="410" y="151" text-anchor="middle" fill="#92400e" font-size="9" font-weight="600">Company only</text>
+      <line x1="480" y1="100" x2="500" y2="100" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrTab)"/>
+
+      <rect x="505" y="30" width="140" height="140" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+      <rect x="505" y="30" width="140" height="5" rx="2" fill="#10b981"/>
+      <text x="575" y="58" text-anchor="middle" fill="#065f46" font-size="13" font-weight="700">4. Beneficial Own.</text>
+      <text x="575" y="78" text-anchor="middle" fill="#6b7280" font-size="10">10%+ shareholders</text>
+      <text x="575" y="94" text-anchor="middle" fill="#6b7280" font-size="10">Control persons</text>
+      <text x="575" y="110" text-anchor="middle" fill="#6b7280" font-size="10">Government BO</text>
+      <rect x="525" y="122" width="100" height="18" rx="4" fill="#d1fae5" stroke="#6ee7b7" stroke-width="0.5"/><text x="575" y="135" text-anchor="middle" fill="#065f46" font-size="9" font-weight="600">Company only</text>
+      <line x1="645" y1="100" x2="665" y2="100" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrTab)"/>
+
+      <rect x="670" y="30" width="140" height="140" rx="10" fill="#fff1f2" stroke="#fecdd3" stroke-width="1.5"/>
+      <rect x="670" y="30" width="140" height="5" rx="2" fill="#ef4444"/>
+      <text x="740" y="58" text-anchor="middle" fill="#991b1b" font-size="13" font-weight="700">5. Documents</text>
+      <text x="740" y="78" text-anchor="middle" fill="#6b7280" font-size="10">Upload IDs</text>
+      <text x="740" y="94" text-anchor="middle" fill="#6b7280" font-size="10">Banking docs</text>
+      <text x="740" y="110" text-anchor="middle" fill="#6b7280" font-size="10">Insurance</text>
+      <text x="740" y="126" text-anchor="middle" fill="#6b7280" font-size="10">Incorporation</text>
+      <text x="740" y="142" text-anchor="middle" fill="#6b7280" font-size="10">Consent forms</text>
+      <line x1="810" y1="100" x2="830" y2="100" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrTab)"/>
+
+      <rect x="835" y="30" width="140" height="140" rx="10" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+      <rect x="835" y="30" width="140" height="5" rx="2" fill="#0284c7"/>
+      <text x="905" y="58" text-anchor="middle" fill="#0369a1" font-size="13" font-weight="700">6. Send / Submit</text>
+      <text x="905" y="78" text-anchor="middle" fill="#6b7280" font-size="10">Declaration</text>
+      <text x="905" y="94" text-anchor="middle" fill="#6b7280" font-size="10">User rights</text>
+      <text x="905" y="110" text-anchor="middle" fill="#6b7280" font-size="10">Payment method</text>
+      <text x="905" y="126" text-anchor="middle" fill="#6b7280" font-size="10">Summary review</text>
+      <rect x="855" y="138" width="100" height="18" rx="4" fill="#e0f2fe" stroke="#bae6fd" stroke-width="0.5"/><text x="905" y="151" text-anchor="middle" fill="#0369a1" font-size="9" font-weight="600">Submit button</text>
+    </svg>
+  </div>
+
+  <!-- Field Types Breakdown -->
+  <div class="card">
+    <div class="card-header"><div class="card-title">Field Types Distribution</div><span class="badge badge-outline">1,635 total fields</span></div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap:8px;">
+      <div style="padding:10px;background:#eff6ff;border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#2563eb">748</div><div style="font-size:11px;color:#6b7280">Text fields</div></div>
+      <div style="padding:10px;background:#f0fdf4;border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#10b981">230</div><div style="font-size:11px;color:#6b7280">Numbers</div></div>
+      <div style="padding:10px;background:#fef3c7;border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#f59e0b">166</div><div style="font-size:11px;color:#6b7280">Select/Drop</div></div>
+      <div style="padding:10px;background:#f5f3ff;border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#8b5cf6">130</div><div style="font-size:11px;color:#6b7280">Panels</div></div>
+      <div style="padding:10px;background:#fff1f2;border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#ef4444">79</div><div style="font-size:11px;color:#6b7280">Buttons</div></div>
+      <div style="padding:10px;background:#f0f9ff;border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#0284c7">53</div><div style="font-size:11px;color:#6b7280">Datetime</div></div>
+      <div style="padding:10px;background:#ecfdf5;border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#059669">50</div><div style="font-size:11px;color:#6b7280">Radio</div></div>
+      <div style="padding:10px;background:#faf5ff;border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#7c3aed">47</div><div style="font-size:11px;color:#6b7280">Grids/Data</div></div>
+      <div style="padding:10px;background:#f8fafc;border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#64748b">31</div><div style="font-size:11px;color:#6b7280">File upload</div></div>
+      <div style="padding:10px;background:#f8fafc;border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#64748b">101</div><div style="font-size:11px;color:#6b7280">Other</div></div>
+    </div>
+  </div>
+
+  <!-- DIAGRAM 5: Key Conditional Logic -->
+  <div class="diagram-container">
+    <div class="diagram-title">Key Conditional Logic (Determinants)</div>
+    <div class="diagram-subtitle">These rules control which panels and fields the applicant sees based on their choices</div>
+
+    <div class="condition-card">
+      <div class="condition-if"><div class="condition-label" style="color:#92400e">IF</div><div class="condition-value">Type of Business = "Sole Proprietor"</div><div style="font-size:11px;color:#92400e;margin-top:4px">guideTypeOfBusiness2 = soleProprietor</div></div>
+      <div class="condition-arrow-box">&rarr;</div>
+      <div class="condition-then"><div class="condition-label" style="color:#065f46">THEN</div><div class="condition-value">Show owner details, hide shareholders</div><div style="font-size:11px;color:#065f46;margin-top:4px">Solo owner path, simplified form</div></div>
+    </div>
+
+    <div class="condition-card">
+      <div class="condition-if"><div class="condition-label" style="color:#92400e">IF</div><div class="condition-value">Type of Business = "Company"</div><div style="font-size:11px;color:#92400e;margin-top:4px">guideTypeOfBusiness2 = company</div></div>
+      <div class="condition-arrow-box">&rarr;</div>
+      <div class="condition-then"><div class="condition-label" style="color:#065f46">THEN</div><div class="condition-value">Show shareholders, executives, incorporation, articles</div><div style="font-size:11px;color:#065f46;margin-top:4px">Full company registration path</div></div>
+    </div>
+
+    <div class="condition-card">
+      <div class="condition-if"><div class="condition-label" style="color:#92400e">IF</div><div class="condition-value">Residential address NOT in Lesotho</div><div style="font-size:11px;color:#92400e;margin-top:4px">applicantIsTheResidentialAddressInLesotho = no</div></div>
+      <div class="condition-arrow-box">&rarr;</div>
+      <div class="condition-then"><div class="condition-label" style="color:#065f46">THEN</div><div class="condition-value">Show foreign resident fields, local rep required</div><div style="font-size:11px;color:#065f46;margin-top:4px">Additional ID and local representative info</div></div>
+    </div>
+
+    <div class="condition-card">
+      <div class="condition-if"><div class="condition-label" style="color:#92400e">IF</div><div class="condition-value">Owner from "Other Country"</div><div style="font-size:11px;color:#92400e;margin-top:4px">guideIsTheBusinessOwnerFromLesothoOrOtherCountry = otheCountry</div></div>
+      <div class="condition-arrow-box">&rarr;</div>
+      <div class="condition-then"><div class="condition-label" style="color:#065f46">THEN</div><div class="condition-value">Show foreign owner fields, passport upload</div><div style="font-size:11px;color:#065f46;margin-top:4px">Foreign investment additional requirements</div></div>
+    </div>
+
+    <div class="condition-card">
+      <div class="condition-if"><div class="condition-label" style="color:#92400e">IF</div><div class="condition-value">30%+ shareholders are foreign</div><div style="font-size:11px;color:#92400e;margin-top:4px">applicantPrecentageOfSharesOwnedByForeignShareholders >= 30</div></div>
+      <div class="condition-arrow-box">&rarr;</div>
+      <div class="condition-then"><div class="condition-label" style="color:#065f46">THEN</div><div class="condition-value">Trigger foreign investment review path</div><div style="font-size:11px;color:#065f46;margin-top:4px">Special approval requirements</div></div>
+    </div>
+
+    <div class="condition-card">
+      <div class="condition-if"><div class="condition-label" style="color:#92400e">IF</div><div class="condition-value">Applying for 1+ Industrial Licence</div><div style="font-size:11px;color:#92400e;margin-top:4px">applicantNumberOfIndustrialLicenses > 0</div></div>
+      <div class="condition-arrow-box">&rarr;</div>
+      <div class="condition-then"><div class="condition-label" style="color:#065f46">THEN</div><div class="condition-value">Activate Industrial Licence pipeline</div><div style="font-size:11px;color:#065f46;margin-top:4px">Adds IL Review + Validate + Cert roles</div></div>
+    </div>
+
+    <div class="condition-card">
+      <div class="condition-if"><div class="condition-label" style="color:#92400e">IF</div><div class="condition-value">Applying for 1+ Trading Licence</div><div style="font-size:11px;color:#92400e;margin-top:4px">applicantNumberOfTradeLicense > 0</div></div>
+      <div class="condition-arrow-box">&rarr;</div>
+      <div class="condition-then"><div class="condition-label" style="color:#065f46">THEN</div><div class="condition-value">Activate Trading Licence pipeline</div><div style="font-size:11px;color:#065f46;margin-top:4px">Adds TL Review + Validate + Cert roles</div></div>
+    </div>
+
+    <div class="condition-card">
+      <div class="condition-if"><div class="condition-label" style="color:#92400e">IF</div><div class="condition-value">Electronic signature selected</div><div style="font-size:11px;color:#92400e;margin-top:4px">applicantElectronicOrManualSignature = electronically</div></div>
+      <div class="condition-arrow-box">&rarr;</div>
+      <div class="condition-then"><div class="condition-label" style="color:#065f46">THEN</div><div class="condition-value">Show verification code flow, e-signature panel</div><div style="font-size:11px;color:#065f46;margin-top:4px">Bot sends codes to shareholders for signing</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 4: WORKFLOW -->
+<!-- ============================================================ -->
+<div class="tab-panel" id="panel-workflow" data-tab-name="Workflow">
+  <h2 class="section-title">Workflow Pipeline</h2>
+  <p class="section-subtitle">50 roles (18 BotRoles + 32 UserRoles) process each application through a defined sequence.</p>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:16px; margin-bottom:32px;">
+    <div class="card" style="border-left:4px solid var(--bot)"><div style="font-size:28px;font-weight:800;color:var(--bot)">18</div><div style="font-size:14px;font-weight:600;margin-bottom:4px">Bot Roles</div><div style="font-size:12px;color:var(--text-secondary)">Automated: data creation, certification, document generation, relations</div></div>
+    <div class="card" style="border-left:4px solid var(--user)"><div style="font-size:28px;font-weight:800;color:var(--user)">32</div><div style="font-size:14px;font-weight:600;margin-bottom:4px">User Roles</div><div style="font-size:12px;color:var(--text-secondary)">Human: review, validate, approve, cashier, applicant + 17 assistance</div></div>
+    <div class="card" style="border-left:4px solid var(--assistance)"><div style="font-size:28px;font-weight:800;color:var(--assistance)">4</div><div style="font-size:14px;font-weight:600;margin-bottom:4px">Status Actions</div><div style="font-size:12px;color:var(--text-secondary)">Each human role: SEND BACK / VALIDATED / PENDING / REJECT</div></div>
+  </div>
+
+  <!-- DIAGRAM 4: Workflow SVG -->
+  <div class="diagram-container">
+    <div class="diagram-title">Main Processing Sequence</div>
+    <div class="diagram-subtitle">Steps in sort-order (0 to 299). Parallel steps share the same sort number.</div>
+
+    <svg viewBox="0 0 1060 680" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:1060px;margin:0 auto;display:block">
+      <text x="30" y="20" fill="#9ca3af" font-size="10" font-weight="700" letter-spacing="1">SORT</text>
+      <text x="90" y="20" fill="#9ca3af" font-size="10" font-weight="700" letter-spacing="1">ROLE NAME</text>
+      <text x="500" y="20" fill="#9ca3af" font-size="10" font-weight="700" letter-spacing="1">TYPE</text>
+      <text x="600" y="20" fill="#9ca3af" font-size="10" font-weight="700" letter-spacing="1">REG</text>
+      <text x="780" y="20" fill="#9ca3af" font-size="10" font-weight="700" letter-spacing="1">DETAILS</text>
+      <line x1="20" y1="28" x2="1040" y2="28" stroke="#e5e7eb" stroke-width="1"/>
+
+      <!-- Sort 0 -->
+      <circle cx="44" cy="52" r="14" fill="#1d4ed8"/><text x="44" y="56" text-anchor="middle" fill="white" font-size="10" font-weight="700">0</text>
+      <rect x="90" y="38" width="370" height="30" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="100" y="58" fill="#1e40af" font-size="12" font-weight="600">&#129302; Reserve activity names  (START)</text>
+      <rect x="500" y="40" width="60" height="24" rx="12" fill="var(--bot-light)"/><text x="530" y="56" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">Bot</text>
+      <text x="600" y="56" fill="#6b7280" font-size="11">All</text>
+      <text x="780" y="56" fill="#6b7280" font-size="11">BUSINESS NAMES reserve in GDB</text>
+      <line x1="44" y1="66" x2="44" y2="82" stroke="#e5e7eb" stroke-width="2"/>
+
+      <!-- Sort 1 -->
+      <circle cx="44" cy="96" r="14" fill="#10b981"/><text x="44" y="100" text-anchor="middle" fill="white" font-size="10" font-weight="700">1</text>
+      <rect x="90" y="82" width="370" height="30" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="100" y="102" fill="#065f46" font-size="12" font-weight="600">&#128100; Validate Business Permit</text>
+      <rect x="500" y="84" width="70" height="24" rx="12" fill="var(--user-light)"/><text x="535" y="100" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">Human</text>
+      <rect x="600" y="84" width="30" height="24" rx="6" fill="var(--bp-light)" stroke="var(--bp)" stroke-width="1"/><text x="615" y="100" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="700">BP</text>
+      <text x="780" y="100" fill="#6b7280" font-size="11">Officer validates permit application</text>
+      <line x1="44" y1="110" x2="44" y2="126" stroke="#e5e7eb" stroke-width="2"/>
+
+      <!-- Sort 2 -->
+      <circle cx="44" cy="140" r="14" fill="#3b82f6"/><text x="44" y="144" text-anchor="middle" fill="white" font-size="10" font-weight="700">2</text>
+      <rect x="90" y="126" width="370" height="30" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="100" y="146" fill="#1e40af" font-size="12" font-weight="600">&#129302; Create Business Permit</text>
+      <rect x="500" y="128" width="60" height="24" rx="12" fill="var(--bot-light)"/><text x="530" y="144" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">Bot</text>
+      <rect x="600" y="128" width="30" height="24" rx="6" fill="var(--bp-light)" stroke="var(--bp)" stroke-width="1"/><text x="615" y="144" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="700">BP</text>
+      <text x="780" y="144" fill="#6b7280" font-size="11">PERMITS update-or-create in GDB</text>
+      <line x1="44" y1="154" x2="44" y2="170" stroke="#e5e7eb" stroke-width="2"/>
+
+      <!-- Sort 3 -->
+      <circle cx="44" cy="184" r="14" fill="#10b981"/><text x="44" y="188" text-anchor="middle" fill="white" font-size="10" font-weight="700">3</text>
+      <rect x="90" y="170" width="370" height="30" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="100" y="190" fill="#065f46" font-size="12" font-weight="600">&#128100; Review Business ID</text>
+      <rect x="500" y="172" width="70" height="24" rx="12" fill="var(--user-light)"/><text x="535" y="188" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">Human</text>
+      <rect x="600" y="172" width="36" height="24" rx="6" fill="var(--bid-light)" stroke="var(--bid)" stroke-width="1"/><text x="618" y="188" text-anchor="middle" fill="#065f46" font-size="10" font-weight="700">BID</text>
+      <text x="780" y="188" fill="#6b7280" font-size="11">Name check + business details review</text>
+      <line x1="44" y1="198" x2="44" y2="214" stroke="#e5e7eb" stroke-width="2"/>
+
+      <!-- Sort 4 -->
+      <circle cx="44" cy="228" r="14" fill="#10b981"/><text x="44" y="232" text-anchor="middle" fill="white" font-size="10" font-weight="700">4</text>
+      <rect x="90" y="214" width="370" height="30" rx="6" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="100" y="234" fill="#065f46" font-size="12" font-weight="600">&#128100; Validate Business ID</text>
+      <rect x="500" y="216" width="70" height="24" rx="12" fill="var(--user-light)"/><text x="535" y="232" text-anchor="middle" fill="#065f46" font-size="10" font-weight="600">Human</text>
+      <rect x="600" y="216" width="36" height="24" rx="6" fill="var(--bid-light)" stroke="var(--bid)" stroke-width="1"/><text x="618" y="232" text-anchor="middle" fill="#065f46" font-size="10" font-weight="700">BID</text>
+      <text x="780" y="232" fill="#6b7280" font-size="11">Final validation before creation</text>
+      <line x1="44" y1="242" x2="44" y2="258" stroke="#e5e7eb" stroke-width="2"/>
+
+      <!-- Sort 5-7 -->
+      <circle cx="44" cy="272" r="14" fill="#3b82f6"/><text x="44" y="276" text-anchor="middle" fill="white" font-size="10" font-weight="700">5</text>
+      <rect x="90" y="258" width="370" height="30" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="100" y="278" fill="#1e40af" font-size="12" font-weight="600">&#129302; Create Person</text>
+      <rect x="500" y="260" width="60" height="24" rx="12" fill="var(--bot-light)"/><text x="530" y="276" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">Bot</text>
+      <text x="780" y="276" fill="#6b7280" font-size="11">NATURAL PERSONS create in GDB</text>
+      <line x1="44" y1="286" x2="44" y2="296" stroke="#e5e7eb" stroke-width="2"/>
+
+      <circle cx="44" cy="310" r="14" fill="#3b82f6"/><text x="44" y="314" text-anchor="middle" fill="white" font-size="10" font-weight="700">6</text>
+      <rect x="90" y="296" width="370" height="30" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="100" y="316" fill="#1e40af" font-size="12" font-weight="600">&#129302; Create Business ID</text>
+      <rect x="500" y="298" width="60" height="24" rx="12" fill="var(--bot-light)"/><text x="530" y="314" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">Bot</text>
+      <text x="780" y="314" fill="#6b7280" font-size="11">BUSINESS update-or-create in GDB</text>
+      <line x1="44" y1="324" x2="44" y2="334" stroke="#e5e7eb" stroke-width="2"/>
+
+      <circle cx="44" cy="348" r="14" fill="#3b82f6"/><text x="44" y="352" text-anchor="middle" fill="white" font-size="10" font-weight="700">7</text>
+      <rect x="90" y="334" width="370" height="30" rx="6" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="100" y="354" fill="#1e40af" font-size="12" font-weight="600">&#129302; Relations</text>
+      <rect x="500" y="336" width="60" height="24" rx="12" fill="var(--bot-light)"/><text x="530" y="352" text-anchor="middle" fill="#1e40af" font-size="10" font-weight="600">Bot</text>
+      <text x="780" y="352" fill="#6b7280" font-size="11">RELATIONS create in GDB</text>
+      <line x1="44" y1="362" x2="44" y2="376" stroke="#e5e7eb" stroke-width="2"/>
+
+      <!-- Sort 8-9 PARALLEL -->
+      <rect x="80" y="376" width="660" height="84" rx="10" fill="#faf5ff" stroke="#c4b5fd" stroke-width="2" stroke-dasharray="6,3"/>
+      <rect x="112" y="370" width="80" height="18" rx="9" fill="#8b5cf6"/><text x="152" y="382" text-anchor="middle" fill="white" font-size="10" font-weight="700">PARALLEL</text>
+      <circle cx="44" cy="406" r="14" fill="#10b981"/><text x="44" y="410" text-anchor="middle" fill="white" font-size="8" font-weight="700">8-9</text>
+      <rect x="90" y="388" width="300" height="26" rx="5" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="100" y="406" fill="#065f46" font-size="11" font-weight="600">&#128100; Review Trading &rarr; Validate Trading</text>
+      <rect x="400" y="388" width="30" height="24" rx="6" fill="var(--tl-light)" stroke="var(--tl)" stroke-width="1"/><text x="415" y="404" text-anchor="middle" fill="#92400e" font-size="9" font-weight="700">TL</text>
+      <rect x="90" y="422" width="300" height="26" rx="5" fill="var(--user-light)" stroke="var(--user)" stroke-width="1"/>
+      <text x="100" y="440" fill="#065f46" font-size="11" font-weight="600">&#128100; Review Industrial &rarr; Validate Industrial</text>
+      <rect x="400" y="422" width="30" height="24" rx="6" fill="var(--il-light)" stroke="var(--il)" stroke-width="1"/><text x="415" y="438" text-anchor="middle" fill="#5b21b6" font-size="9" font-weight="700">IL</text>
+      <text x="460" y="418" fill="#8b5cf6" font-size="10" font-weight="500">sort 8 &amp; 9 run in parallel</text>
+      <line x1="44" y1="420" x2="44" y2="476" stroke="#e5e7eb" stroke-width="2"/>
+
+      <!-- Sort 10-14 -->
+      <circle cx="44" cy="490" r="14" fill="#3b82f6"/><text x="44" y="494" text-anchor="middle" fill="white" font-size="9" font-weight="700">10</text>
+      <rect x="90" y="476" width="370" height="26" rx="5" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="100" y="494" fill="#1e40af" font-size="11" font-weight="600">&#129302; Create Activities</text>
+      <text x="780" y="494" fill="#6b7280" font-size="11">APB create entries in GDB</text>
+      <line x1="44" y1="504" x2="44" y2="512" stroke="#e5e7eb" stroke-width="2"/>
+
+      <circle cx="44" cy="524" r="14" fill="#3b82f6"/><text x="44" y="528" text-anchor="middle" fill="white" font-size="9" font-weight="700">11</text>
+      <rect x="90" y="510" width="370" height="26" rx="5" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="100" y="528" fill="#1e40af" font-size="11" font-weight="600">&#129302; Create Fees</text>
+      <text x="780" y="528" fill="#6b7280" font-size="11">FEES create in GDB (BP, TL, IL, CI)</text>
+      <line x1="44" y1="538" x2="44" y2="546" stroke="#e5e7eb" stroke-width="2"/>
+
+      <circle cx="44" cy="558" r="14" fill="#3b82f6"/><text x="44" y="562" text-anchor="middle" fill="white" font-size="9" font-weight="700">12</text>
+      <rect x="90" y="544" width="370" height="26" rx="5" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="100" y="562" fill="#1e40af" font-size="11" font-weight="600">&#129302; Relations for licences</text>
+      <text x="780" y="562" fill="#6b7280" font-size="11">Link licences to business relations</text>
+      <line x1="44" y1="572" x2="44" y2="580" stroke="#e5e7eb" stroke-width="2"/>
+
+      <circle cx="44" cy="592" r="14" fill="#3b82f6"/><text x="44" y="596" text-anchor="middle" fill="white" font-size="9" font-weight="700">13</text>
+      <rect x="90" y="578" width="370" height="26" rx="5" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="100" y="596" fill="#1e40af" font-size="11" font-weight="600">&#129302; Update activity names</text>
+      <text x="780" y="596" fill="#6b7280" font-size="11">Approve names in GDB after review</text>
+      <line x1="44" y1="606" x2="44" y2="614" stroke="#e5e7eb" stroke-width="2"/>
+
+      <circle cx="44" cy="626" r="14" fill="#3b82f6"/><text x="44" y="630" text-anchor="middle" fill="white" font-size="9" font-weight="700">14</text>
+      <rect x="90" y="612" width="370" height="26" rx="5" fill="var(--bot-light)" stroke="var(--bot)" stroke-width="1"/>
+      <text x="100" y="630" fill="#1e40af" font-size="11" font-weight="600">&#129302; Cert Business ID</text>
+      <rect x="600" y="614" width="36" height="24" rx="6" fill="var(--bid-light)" stroke="var(--bid)" stroke-width="1"/><text x="618" y="630" text-anchor="middle" fill="#065f46" font-size="9" font-weight="700">BID</text>
+      <text x="780" y="630" fill="#6b7280" font-size="11">Generate Business ID PDF</text>
+      <line x1="44" y1="640" x2="44" y2="648" stroke="#e5e7eb" stroke-width="2"/>
+
+      <rect x="30" y="648" width="680" height="26" rx="6" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="370" y="666" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="500">Sort 130-299: Applicant + 17 Assistance + Cashier + CI Review/Approval + Cert BP/TL/IL + CI Create/Cert + NAMES create</text>
+    </svg>
+  </div>
+
+  <!-- Remaining roles grid -->
+  <div class="card">
+    <div class="card-header"><div class="card-title">Sort 130-299: Remaining Roles</div><span class="badge badge-gray">33 roles</span></div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap:8px;">
+      <div class="field-block" style="border-left:3px solid var(--user)"><div class="field-block-name">Applicant</div><div class="field-block-type">UserRole - sort 130 - applicant</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance Reserve activity names</div><div class="field-block-type">UserRole - sort 130</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance BR upload</div><div class="field-block-type">UserRole - sort 130</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance BR create</div><div class="field-block-type">UserRole - sort 130</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance BP create</div><div class="field-block-type">UserRole - sort 130</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance Proprietors create</div><div class="field-block-type">UserRole - sort 130</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance IL create</div><div class="field-block-type">UserRole - sort 130</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance relations2</div><div class="field-block-type">UserRole - sort 130</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance Relations industrial</div><div class="field-block-type">UserRole - sort 130</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance Update activity names</div><div class="field-block-type">UserRole - sort 130</div></div>
+      <div class="field-block" style="border-left:3px solid var(--user)"><div class="field-block-name">Review Business Permit</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--user)"><div class="field-block-name">CI Review</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--user)"><div class="field-block-name">CI Approval</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--user)"><div class="field-block-name">Cashier</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--user)"><div class="field-block-name">Review activity names</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--bot)"><div class="field-block-name">Cert Business Permit</div><div class="field-block-type">BotRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--bot)"><div class="field-block-name">Cert Trading</div><div class="field-block-type">BotRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--bot)"><div class="field-block-name">Cert Industrial</div><div class="field-block-type">BotRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--bot)"><div class="field-block-name">Create Trading</div><div class="field-block-type">BotRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--bot)"><div class="field-block-name">CI Create</div><div class="field-block-type">BotRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--bot)"><div class="field-block-name">CI Certificate</div><div class="field-block-type">BotRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--bot)"><div class="field-block-name">NAMES create</div><div class="field-block-type">BotRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--bot)"><div class="field-block-name">Relations Trading</div><div class="field-block-type">BotRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--bot)"><div class="field-block-name">Permits create</div><div class="field-block-type">BotRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance CI create</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance Names create</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance TL upload</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance BP upload</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance CI upload</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance IL upload</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance TL create</div><div class="field-block-type">UserRole - sort 299</div></div>
+      <div class="field-block" style="border-left:3px solid var(--assistance)"><div class="field-block-name">Assistance Relations trading</div><div class="field-block-type">UserRole - sort 299</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 5: DOCUMENTS -->
+<!-- ============================================================ -->
+<div class="tab-panel" id="panel-documents" data-tab-name="Documents">
+  <h2 class="section-title">Print Documents</h2>
+  <p class="section-subtitle">6 official documents generated as PDFs during the registration workflow.</p>
+
+  <div class="doc-grid">
+    <div class="doc-card ci">
+      <div class="doc-icon">&#128220;</div>
+      <div class="doc-name">Memorandum of Association</div>
+      <div class="doc-meta"><span class="badge badge-ci" style="margin-bottom:6px">Company Incorporation</span><br>Sort Order: 0<br>Generated by: <strong>CI Certificate</strong> (BotRole)<br>Uploaded by: Company incorporation upload bot</div>
+    </div>
+    <div class="doc-card payment">
+      <div class="doc-icon">&#128179;</div>
+      <div class="doc-name">Payment Slip</div>
+      <div class="doc-meta"><span class="badge badge-gray" style="margin-bottom:6px">All Registrations</span><br>Sort Order: 2<br>Generated after: <strong>Cashier</strong> confirms payment<br>Tracks fee payments for all registrations</div>
+    </div>
+    <div class="doc-card bid">
+      <div class="doc-icon">&#127380;</div>
+      <div class="doc-name">Business ID</div>
+      <div class="doc-meta"><span class="badge badge-bid" style="margin-bottom:6px">Business ID</span><br>Sort Order: 3<br>Generated by: <strong>Cert Business ID</strong> (BotRole, sort 14)<br>Uploaded by: BUSINESS ID upload bot</div>
+    </div>
+    <div class="doc-card bp">
+      <div class="doc-icon">&#128203;</div>
+      <div class="doc-name">Business Permit</div>
+      <div class="doc-meta"><span class="badge badge-bp" style="margin-bottom:6px">Business Permit</span><br>Sort Order: 4<br>Generated by: <strong>Cert Business Permit</strong> (BotRole, sort 299)<br>Uploaded by: Business permit upload bot</div>
+    </div>
+    <div class="doc-card tl">
+      <div class="doc-icon">&#128209;</div>
+      <div class="doc-name">Trading Licence</div>
+      <div class="doc-meta"><span class="badge badge-tl" style="margin-bottom:6px">Trading Licence</span><br>Sort Order: 5<br>Generated by: <strong>Cert Trading</strong> (BotRole, sort 299)<br>Uploaded by: Trade license upload bot</div>
+    </div>
+    <div class="doc-card il">
+      <div class="doc-icon">&#127981;</div>
+      <div class="doc-name">Industrial Licence</div>
+      <div class="doc-meta"><span class="badge badge-il" style="margin-bottom:6px">Industrial Licence</span><br>Sort Order: 6<br>Generated by: <strong>Cert Industrial</strong> (BotRole, sort 299)<br>Uploaded by: Industrial license upload bot</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:24px">
+    <div class="card-header"><div class="card-title">Bot Categories (78 total)</div></div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap:8px;">
+      <div style="padding:12px;background:#eff6ff;border-radius:8px;text-align:center;border:1px solid #bfdbfe"><div style="font-size:22px;font-weight:800;color:#2563eb">28</div><div style="font-size:11px;color:#6b7280;font-weight:500">Data bots</div><div style="font-size:10px;color:#9ca3af">create, update, read, list, exist</div></div>
+      <div style="padding:12px;background:#fef3c7;border-radius:8px;text-align:center;border:1px solid #fcd34d"><div style="font-size:22px;font-weight:800;color:#d97706">14</div><div style="font-size:11px;color:#6b7280;font-weight:500">Document bots</div><div style="font-size:10px;color:#9ca3af">generate, display, upload</div></div>
+      <div style="padding:12px;background:#f5f3ff;border-radius:8px;text-align:center;border:1px solid #c4b5fd"><div style="font-size:22px;font-weight:800;color:#7c3aed">13</div><div style="font-size:11px;color:#6b7280;font-weight:500">Internal bots</div><div style="font-size:10px;color:#9ca3af">copy, transform, route</div></div>
+      <div style="padding:12px;background:#d1fae5;border-radius:8px;text-align:center;border:1px solid #6ee7b7"><div style="font-size:22px;font-weight:800;color:#059669">2</div><div style="font-size:11px;color:#6b7280;font-weight:500">Message bots</div><div style="font-size:10px;color:#9ca3af">notifications, reminders</div></div>
+      <div style="padding:12px;background:#f8fafc;border-radius:8px;text-align:center;border:1px solid #e2e8f0"><div style="font-size:22px;font-weight:800;color:#64748b">21</div><div style="font-size:11px;color:#6b7280;font-weight:500">Exist / List bots</div><div style="font-size:10px;color:#9ca3af">name validation checks</div></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /tab-content -->
+
+<footer>
+  <p>BPA Documentation v4.0 &mdash; Generated 2026-02-19 &mdash; Register a Business (Lesotho)</p>
+  <p>Source: BPA-lesotho2/2c92808792372fda0192430feea30000</p>
+</footer>
+
+<script>
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-btn').forEach(function(btn) { btn.classList.remove('active'); });
+  document.querySelectorAll('.tab-panel').forEach(function(panel) { panel.classList.remove('active'); });
+  document.getElementById('tab-' + tabId).classList.add('active');
+  document.getElementById('panel-' + tabId).classList.add('active');
+  document.getElementById('tab-' + tabId).scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+}
+// Entrance animation on scroll
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.card, .reg-card, .doc-card, .diagram-container, .summary-stat').forEach(function(el) {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(12px)';
+  el.style.transition = 'opacity 0.4s ease, transform 0.4s ease, box-shadow 0.2s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

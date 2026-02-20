@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BPA Technical Documentation v3 - Register a Business (Lesotho)</title>
+<style>
+  /* === RESET & BASE === */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 15px; }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f8f9fa; color: #2d3748; line-height: 1.65;
+    display: flex; min-height: 100vh;
+  }
+
+  /* === SIDEBAR === */
+  .sidebar {
+    position: fixed; top: 0; left: 0; bottom: 0; width: 280px;
+    background: #1a1f2e; color: #c8ccd4; overflow-y: auto;
+    z-index: 100; padding: 0; transition: transform 0.3s;
+  }
+  .sidebar-header {
+    padding: 24px 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .sidebar-header h1 {
+    font-size: 1.05rem; color: #fff; font-weight: 700; margin-bottom: 4px; letter-spacing: 0.02em;
+  }
+  .sidebar-header .subtitle { font-size: 0.72rem; color: #8b94a6; letter-spacing: 0.04em; text-transform: uppercase; }
+  .sidebar-header .version-badge {
+    display: inline-block; background: #3b82f6; color: #fff; font-size: 0.65rem;
+    padding: 2px 8px; border-radius: 10px; margin-top: 8px; font-weight: 600;
+  }
+
+  .sidebar-search {
+    padding: 12px 16px;
+  }
+  .sidebar-search input {
+    width: 100%; padding: 8px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.06); color: #e2e8f0; font-size: 0.82rem;
+    outline: none; transition: border 0.2s;
+  }
+  .sidebar-search input:focus { border-color: #3b82f6; }
+  .sidebar-search input::placeholder { color: #6b7280; }
+
+  .sidebar nav { padding: 8px 0 80px; }
+  .sidebar nav a {
+    display: block; padding: 7px 20px 7px 24px; color: #9ca3af; font-size: 0.82rem;
+    text-decoration: none; transition: all 0.15s; border-left: 3px solid transparent;
+  }
+  .sidebar nav a:hover { color: #e2e8f0; background: rgba(255,255,255,0.04); }
+  .sidebar nav a.active { color: #60a5fa; border-left-color: #3b82f6; background: rgba(59,130,246,0.08); font-weight: 600; }
+  .sidebar nav .nav-section {
+    padding: 14px 20px 6px; font-size: 0.68rem; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #6b7280; font-weight: 700;
+  }
+  .sidebar nav a.indent { padding-left: 40px; font-size: 0.78rem; }
+  .sidebar nav a.indent2 { padding-left: 54px; font-size: 0.75rem; }
+
+  /* === MAIN CONTENT === */
+  .main { margin-left: 280px; flex: 1; padding: 0; min-width: 0; }
+  .content { max-width: 1100px; margin: 0 auto; padding: 32px 40px 80px; }
+
+  /* === HERO === */
+  .hero {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1a4a70 100%);
+    color: #fff; padding: 48px 40px; margin: -32px -40px 40px;
+    border-radius: 0 0 12px 12px; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ''; position: absolute; top: -50%; right: -20%; width: 60%; height: 200%;
+    background: radial-gradient(ellipse, rgba(59,130,246,0.12) 0%, transparent 70%);
+  }
+  .hero h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; position: relative; z-index: 1; }
+  .hero .hero-sub { font-size: 0.95rem; opacity: 0.85; margin-bottom: 20px; position: relative; z-index: 1; }
+  .hero-stats {
+    display: flex; gap: 24px; flex-wrap: wrap; position: relative; z-index: 1;
+  }
+  .hero-stat {
+    background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 20px;
+    backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12);
+  }
+  .hero-stat .val { font-size: 1.4rem; font-weight: 800; }
+  .hero-stat .lbl { font-size: 0.72rem; opacity: 0.75; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* === TYPOGRAPHY === */
+  h2 {
+    font-size: 1.55rem; font-weight: 800; color: #1e293b; margin: 48px 0 20px;
+    padding-bottom: 10px; border-bottom: 2px solid #e2e8f0;
+  }
+  h3 { font-size: 1.2rem; font-weight: 700; color: #334155; margin: 32px 0 14px; }
+  h4 { font-size: 1rem; font-weight: 700; color: #475569; margin: 24px 0 10px; }
+  h5 { font-size: 0.9rem; font-weight: 700; color: #64748b; margin: 16px 0 8px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 0 0 12px 24px; }
+  li { margin-bottom: 4px; }
+
+  /* === CARDS === */
+  .card {
+    background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 20px;
+    border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .card-icon {
+    width: 40px; height: 40px; border-radius: 8px; display: flex;
+    align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+  }
+  .card-icon.blue { background: #e3f2fd; color: #1565c0; }
+  .card-icon.green { background: #e8f5e9; color: #2e7d32; }
+  .card-icon.orange { background: #fff3e0; color: #ef6c00; }
+  .card-icon.purple { background: #f3e5f5; color: #7b1fa2; }
+  .card-icon.red { background: #ffebee; color: #c62828; }
+  .card-icon.teal { background: #e0f2f1; color: #00695c; }
+
+  /* === BADGES === */
+  .badge {
+    display: inline-block; padding: 2px 10px; border-radius: 12px;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em; vertical-align: middle;
+  }
+  .badge-bot { background: #e3f2fd; color: #1565c0; }
+  .badge-user { background: #e8f5e9; color: #2e7d32; }
+  .badge-assist { background: #fff3e0; color: #ef6c00; }
+  .badge-issue { background: #ffebee; color: #c62828; }
+  .badge-active { background: #e8f5e9; color: #2e7d32; }
+  .badge-info { background: #e3f2fd; color: #1565c0; }
+  .badge-warn { background: #fff8e1; color: #f57f17; }
+  .badge-count { background: #f1f5f9; color: #475569; }
+  .badge-reg { background: #ede9fe; color: #6d28d9; }
+
+  /* === TABLES === */
+  table {
+    width: 100%; border-collapse: collapse; margin: 12px 0 20px;
+    font-size: 0.85rem; background: #fff; border-radius: 8px; overflow: hidden;
+    border: 1px solid #e5e7eb;
+  }
+  th {
+    background: #f8fafc; color: #475569; font-weight: 700; text-align: left;
+    padding: 10px 14px; border-bottom: 2px solid #e2e8f0; font-size: 0.78rem;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  td { padding: 10px 14px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #fafbfc; }
+
+  /* === DETAILS/SUMMARY === */
+  details {
+    background: #fff; border: 1px solid #e5e7eb; border-radius: 8px;
+    margin: 10px 0; overflow: hidden;
+  }
+  details summary {
+    padding: 14px 18px; cursor: pointer; font-weight: 600; font-size: 0.88rem;
+    color: #334155; user-select: none; list-style: none; display: flex;
+    align-items: center; gap: 8px; transition: background 0.15s;
+  }
+  details summary:hover { background: #f8fafc; }
+  details summary::before {
+    content: '\25B6'; font-size: 0.65rem; color: #94a3b8; transition: transform 0.2s;
+    display: inline-block; width: 16px;
+  }
+  details[open] summary::before { transform: rotate(90deg); }
+  details summary::-webkit-details-marker { display: none; }
+  details .details-body { padding: 0 18px 18px; }
+
+  /* === PIPELINE STEPS === */
+  .pipeline-step {
+    background: #fff; border-radius: 10px; padding: 20px 24px; margin: 12px 0;
+    border-left: 4px solid #94a3b8; border-right: 1px solid #e5e7eb;
+    border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;
+  }
+  .pipeline-step.bot { border-left-color: #1565c0; }
+  .pipeline-step.user { border-left-color: #2e7d32; }
+  .pipeline-step.assist { border-left-color: #ef6c00; }
+  .pipeline-step .step-header {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap;
+  }
+  .pipeline-step .step-sort {
+    background: #f1f5f9; color: #475569; font-size: 0.72rem; font-weight: 800;
+    padding: 3px 8px; border-radius: 6px; min-width: 28px; text-align: center;
+  }
+  .pipeline-step .step-name { font-weight: 700; font-size: 0.95rem; color: #1e293b; }
+  .pipeline-step .step-desc { font-size: 0.85rem; color: #64748b; line-height: 1.6; }
+
+  /* === SVG DIAGRAMS === */
+  .diagram-container {
+    background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+    padding: 24px; margin: 20px 0; overflow-x: auto;
+  }
+  .diagram-container svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+  .diagram-title {
+    font-size: 0.82rem; font-weight: 700; color: #64748b; text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 16px; text-align: center;
+  }
+
+  /* === FIELD LIST === */
+  .field-list {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 8px; margin: 10px 0;
+  }
+  .field-item {
+    background: #f8fafc; padding: 8px 12px; border-radius: 6px;
+    font-size: 0.82rem; border: 1px solid #f1f5f9; display: flex; gap: 8px; align-items: baseline;
+  }
+  .field-item .fname { font-weight: 600; color: #334155; }
+  .field-item .ftype { color: #94a3b8; font-size: 0.72rem; }
+  .field-item .freq { color: #ef4444; font-size: 0.68rem; font-weight: 700; }
+
+  /* === DETERMINANT INLINE === */
+  .det-inline {
+    background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px;
+    padding: 12px 16px; margin: 10px 0; font-size: 0.83rem;
+  }
+  .det-inline .det-label {
+    font-weight: 700; color: #92400e; font-size: 0.78rem;
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px;
+  }
+  .det-inline code {
+    background: #fef3c7; padding: 1px 6px; border-radius: 4px;
+    font-size: 0.78rem; color: #92400e;
+  }
+
+  /* === BOT INLINE === */
+  .bot-inline {
+    background: #eff6ff; border: 1px solid #dbeafe; border-radius: 8px;
+    padding: 12px 16px; margin: 10px 0; font-size: 0.83rem;
+  }
+  .bot-inline .bot-label {
+    font-weight: 700; color: #1e40af; font-size: 0.78rem;
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px;
+  }
+  .bot-inline code {
+    background: #dbeafe; padding: 1px 6px; border-radius: 4px;
+    font-size: 0.78rem; color: #1e40af;
+  }
+
+  /* === ISSUE CALLOUT === */
+  .issue-callout {
+    background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px;
+    padding: 14px 18px; margin: 12px 0;
+  }
+  .issue-callout .issue-title { font-weight: 700; color: #991b1b; font-size: 0.85rem; margin-bottom: 4px; }
+  .issue-callout .issue-desc { font-size: 0.82rem; color: #7f1d1d; }
+  .issue-sev { font-size: 0.68rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; }
+  .issue-sev.high { background: #fecaca; color: #991b1b; }
+  .issue-sev.medium { background: #fed7aa; color: #9a3412; }
+  .issue-sev.low { background: #fef3c7; color: #92400e; }
+
+  /* === REGISTRATION CARD === */
+  .reg-card {
+    background: #fff; border-radius: 12px; padding: 28px; margin: 20px 0;
+    border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .reg-card-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+    padding-bottom: 16px; border-bottom: 1px solid #f1f5f9;
+  }
+  .reg-num {
+    width: 44px; height: 44px; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; font-size: 1.1rem;
+    font-weight: 800; color: #fff; flex-shrink: 0;
+  }
+  .reg-num.r1 { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+  .reg-num.r2 { background: linear-gradient(135deg, #059669, #10b981); }
+  .reg-num.r3 { background: linear-gradient(135deg, #d97706, #f59e0b); }
+  .reg-num.r4 { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
+  .reg-num.r5 { background: linear-gradient(135deg, #dc2626, #ef4444); }
+
+  .reg-meta { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+  .reg-meta-item { background: #f8fafc; padding: 12px; border-radius: 8px; }
+  .reg-meta-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8; font-weight: 700; }
+  .reg-meta-value { font-size: 0.88rem; font-weight: 600; color: #334155; margin-top: 2px; }
+
+  /* === FOOTER === */
+  footer.manual-version {
+    background: #1a1f2e; color: #8b94a6; padding: 24px 40px;
+    margin: 60px -40px -80px; font-size: 0.78rem; text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  footer.manual-version p { margin-bottom: 4px; }
+
+  /* === UTILITY === */
+  .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; font-size: 0.82em; }
+  .text-muted { color: #94a3b8; }
+  .text-sm { font-size: 0.82rem; }
+  .mt-0 { margin-top: 0; }
+  .mb-0 { margin-bottom: 0; }
+  code {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.82em; background: #f1f5f9; padding: 1px 5px; border-radius: 3px;
+  }
+
+  /* === PRINT === */
+  @media print {
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .hero { break-after: page; }
+    details { break-inside: avoid; }
+    details[open] summary ~ * { display: block; }
+    .no-print { display: none; }
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 900px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.open { transform: translateX(0); }
+    .main { margin-left: 0; }
+    .content { padding: 20px; }
+    .hero { margin: -20px -20px 24px; padding: 32px 20px; }
+    .hero-stats { gap: 12px; }
+    .field-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- SIDEBAR NAVIGATION                                            -->
+<!-- ============================================================ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h1>Register a Business</h1>
+    <div class="subtitle">BPA Lesotho - Technical Docs</div>
+    <span class="version-badge">v3.0</span>
+  </div>
+  <div class="sidebar-search">
+    <input type="text" id="searchInput" placeholder="Search sections..." aria-label="Search sections">
+  </div>
+  <nav id="sidebarNav">
+    <div class="nav-section">1. Registrations</div>
+    <a href="#registrations">Overview</a>
+    <a href="#reg-bp" class="indent">Business Permit</a>
+    <a href="#reg-bid" class="indent">Business ID</a>
+    <a href="#reg-tl" class="indent">Trading Licence</a>
+    <a href="#reg-il" class="indent">Industrial Licence</a>
+    <a href="#reg-ci" class="indent">Company Incorporation</a>
+
+    <div class="nav-section">2. Applicant File</div>
+    <a href="#applicant-file">Overview</a>
+    <a href="#guide-section" class="indent">Guide (Wizard)</a>
+    <a href="#tab-owner" class="indent">Tab: Business Owner</a>
+    <a href="#tab-business" class="indent">Tab: Type of Business</a>
+    <a href="#tab-shareholders" class="indent">Tab: Shareholders</a>
+    <a href="#tab-bo" class="indent">Tab: Beneficial Owners</a>
+    <a href="#tab-executives" class="indent">Tab: Executives</a>
+    <a href="#tab-articles" class="indent">Tab: Articles of Assoc.</a>
+    <a href="#tab-incdocs" class="indent">Tab: Incorporation Docs</a>
+    <a href="#tab-permit" class="indent">Tab: Business Permit</a>
+    <a href="#documents-tab" class="indent">Documents Tab</a>
+    <a href="#send-page" class="indent">Send Page</a>
+
+    <div class="nav-section">3. Processing Workflow</div>
+    <a href="#processing">Overview</a>
+    <a href="#workflow-diagram" class="indent">Pipeline Diagram</a>
+    <a href="#step-by-step" class="indent">Step-by-Step</a>
+    <a href="#parallel-processing" class="indent">Parallel Processing</a>
+    <a href="#assistance-roles" class="indent">Assistance Roles</a>
+
+    <div class="nav-section">4. Documents &amp; Templates</div>
+    <a href="#documents">Print Documents</a>
+
+    <div class="nav-section">5. Appendix</div>
+    <a href="#appendix">Reference</a>
+    <a href="#known-issues" class="indent">Known Issues</a>
+    <a href="#determinant-catalog" class="indent">Determinant Catalog</a>
+    <a href="#bot-catalog" class="indent">Bot Catalog</a>
+    <a href="#tech-reference" class="indent">Technical Stats</a>
+  </nav>
+</aside>
+
+<!-- ============================================================ -->
+<!-- MAIN CONTENT                                                  -->
+<!-- ============================================================ -->
+<div class="main">
+  <div class="content">
+
+    <!-- HERO -->
+    <div class="hero" id="top">
+      <h1>Register a Business</h1>
+      <div class="hero-sub">BPA Lesotho -- Technical Documentation v3.0 -- Service ID: 2c92808792372fda0192430feea30000</div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="val">5</div><div class="lbl">Registrations</div></div>
+        <div class="hero-stat"><div class="val">722</div><div class="lbl">Form Components</div></div>
+        <div class="hero-stat"><div class="val">1,635</div><div class="lbl">Fields</div></div>
+        <div class="hero-stat"><div class="val">149</div><div class="lbl">Determinants</div></div>
+        <div class="hero-stat"><div class="val">78</div><div class="lbl">Bots</div></div>
+        <div class="hero-stat"><div class="val">50</div><div class="lbl">Roles</div></div>
+        <div class="hero-stat"><div class="val">6</div><div class="lbl">Print Documents</div></div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1: REGISTRATIONS                                      -->
+    <!-- ============================================================ -->
+    <h2 id="registrations">1. Registrations</h2>
+    <p>The "Register a Business" service bundles <strong>5 registrations</strong> that together provide everything needed to formally establish and operate a business in Lesotho. Each registration is handled by a specific institution and produces its own output document. All 5 registrations share a common processing pattern: <strong>Review (human) &rarr; Validate (human) &rarr; Create (bot) &rarr; Certificate (bot)</strong>.</p>
+
+    <!-- Registration Overview SVG -->
+    <div class="diagram-container">
+      <div class="diagram-title">Registration Overview -- 5 Registrations Connected to Central Service</div>
+      <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" style="max-width:900px">
+        <defs>
+          <filter id="shadow1" x="-5%" y="-5%" width="110%" height="115%">
+            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+          </filter>
+          <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#3b82f6"/>
+          </marker>
+        </defs>
+        <!-- Central service node -->
+        <rect x="330" y="170" width="240" height="80" rx="12" fill="#1e3a5f" filter="url(#shadow1)"/>
+        <text x="450" y="200" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">Register a Business</text>
+        <text x="450" y="220" text-anchor="middle" fill="#93c5fd" font-size="10">5 Registrations | HIGH Complexity</text>
+        <text x="450" y="238" text-anchor="middle" fill="#64748b" font-size="9">Status: ACTIVE</text>
+
+        <!-- Registration 1: Business Permit -->
+        <rect x="30" y="20" width="180" height="75" rx="8" fill="#2563eb" filter="url(#shadow1)"/>
+        <text x="120" y="44" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">1. Business Permit</text>
+        <text x="120" y="60" text-anchor="middle" fill="#bfdbfe" font-size="9">MTICM / Local Authority</text>
+        <text x="120" y="76" text-anchor="middle" fill="#93c5fd" font-size="8">3 doc requirements | BP cert</text>
+        <line x1="210" y1="70" x2="330" y2="195" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+        <!-- Registration 2: Business ID -->
+        <rect x="690" y="20" width="180" height="75" rx="8" fill="#059669" filter="url(#shadow1)"/>
+        <text x="780" y="44" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">2. Business ID</text>
+        <text x="780" y="60" text-anchor="middle" fill="#a7f3d0" font-size="9">OBFC / Registrar General</text>
+        <text x="780" y="76" text-anchor="middle" fill="#6ee7b7" font-size="8">5 doc requirements | BID card</text>
+        <line x1="690" y1="70" x2="570" y2="195" stroke="#059669" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+        <!-- Registration 3: Trading Licence -->
+        <rect x="30" y="325" width="180" height="75" rx="8" fill="#d97706" filter="url(#shadow1)"/>
+        <text x="120" y="349" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">3. Trading Licence</text>
+        <text x="120" y="365" text-anchor="middle" fill="#fde68a" font-size="9">MTICM / Local Authority</text>
+        <text x="120" y="381" text-anchor="middle" fill="#fcd34d" font-size="8">0 doc requirements | TL cert</text>
+        <line x1="210" y1="345" x2="330" y2="235" stroke="#d97706" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+        <!-- Registration 4: Industrial Licence -->
+        <rect x="690" y="325" width="180" height="75" rx="8" fill="#7c3aed" filter="url(#shadow1)"/>
+        <text x="780" y="349" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">4. Industrial Licence</text>
+        <text x="780" y="365" text-anchor="middle" fill="#ddd6fe" font-size="9">MTICM / Local Authority</text>
+        <text x="780" y="381" text-anchor="middle" fill="#c4b5fd" font-size="8">0 doc requirements | IL cert</text>
+        <line x1="690" y1="345" x2="570" y2="235" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+        <!-- Registration 5: Company Incorporation -->
+        <rect x="360" y="340" width="180" height="75" rx="8" fill="#dc2626" filter="url(#shadow1)"/>
+        <text x="450" y="364" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">5. Company Incorporation</text>
+        <text x="450" y="380" text-anchor="middle" fill="#fecaca" font-size="9">LAA / Registrar of Companies</text>
+        <text x="450" y="396" text-anchor="middle" fill="#fca5a5" font-size="8">3 doc requirements | MoA</text>
+        <line x1="450" y1="340" x2="450" y2="250" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowBlue)"/>
+      </svg>
+    </div>
+
+    <!-- ====== REGISTRATION 1: Business Permit ====== -->
+    <div class="reg-card" id="reg-bp">
+      <div class="reg-card-header">
+        <div class="reg-num r1">1</div>
+        <div>
+          <h3 class="mt-0 mb-0">Business Permit</h3>
+          <div class="text-sm text-muted">Registration ID: <span class="mono">2c92808792372fda01924313dd6f000f</span></div>
+        </div>
+      </div>
+
+      <div class="reg-meta">
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Institution</div>
+          <div class="reg-meta-value">MTICM / Local Authority</div>
+          <div class="text-sm mono text-muted">301c8ef4-b98a-4b28-9d18-820e0f828e82</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Output Document</div>
+          <div class="reg-meta-value">Business Permit Certificate</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Doc Requirements</div>
+          <div class="reg-meta-value">3 documents</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Processing Pattern</div>
+          <div class="reg-meta-value">Review &rarr; Validate &rarr; Create &rarr; Cert</div>
+        </div>
+      </div>
+
+      <h4>Document Requirements</h4>
+      <table>
+        <thead><tr><th>#</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><strong>Banking statement</strong></td><td>Proof of financial standing and active banking relationship</td></tr>
+          <tr><td>2</td><td><strong>Insurance certificate for employees</strong></td><td>Workers' compensation / liability insurance coverage</td></tr>
+          <tr><td>3</td><td><strong>Business plan</strong></td><td>Describes the business operations, market, and projected finances</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Processing Roles</h4>
+      <table>
+        <thead><tr><th>Sort</th><th>Role</th><th>Type</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td>299</td><td>Review Business Permit</td><td><span class="badge badge-user">UserRole</span></td><td>SEND BACK / VALIDATED / PENDING / REJECT</td></tr>
+          <tr><td>1</td><td>Validate Business Permit</td><td><span class="badge badge-user">UserRole</span></td><td>SEND BACK / VALIDATED / PENDING / REJECT</td></tr>
+          <tr><td>2</td><td>Create Business Permit</td><td><span class="badge badge-bot">BotRole</span></td><td>Calls PERMITS update-or-create GDB service; generates BP data in GDB</td></tr>
+          <tr><td>299</td><td>Cert Business Permit</td><td><span class="badge badge-bot">BotRole</span></td><td>Generates Business Permit PDF via <code>generic-pdf-generator</code>, uploads to file</td></tr>
+          <tr><td>299</td><td>Cashier</td><td><span class="badge badge-user">UserRole</span></td><td>Verifies payment; declares fees paid</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Associated Costs</h4>
+      <p>Fees are created by the <strong>FEES create BR</strong> bot (<code>GDB.GDB-FEES(1.6)-create</code>) at sort order 11. The fee amount varies by annual turnover and activity type:</p>
+      <ul>
+        <li>Annual turnover &le; M5,000,000: standard fee tier</li>
+        <li>Annual turnover &gt; M5,000,000: elevated fee tier</li>
+        <li>Special fee categories: M500/M4,000 and M5,000/M15,000 for specific activity groups</li>
+      </ul>
+
+      <div class="bot-inline">
+        <div class="bot-label">Key Bots for this Registration</div>
+        <ul>
+          <li><strong>Business permit upload</strong> (<code>generic-pdf-generator</code>) -- generates the certificate PDF</li>
+          <li><strong>TEST BUSINESS PERMIT 2/3</strong> (<code>generic-pdf-display</code>) -- displays the generated permit for review</li>
+          <li><strong>PERMITS update create</strong> (<code>GDB.GDB-PERMITS(2.9)-update-or-create</code>) -- writes permit record to GDB</li>
+          <li><strong>FEES create BR</strong> (<code>GDB.GDB-FEES(1.6)-create</code>) -- creates fee records in GDB</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ====== REGISTRATION 2: Business ID ====== -->
+    <div class="reg-card" id="reg-bid">
+      <div class="reg-card-header">
+        <div class="reg-num r2">2</div>
+        <div>
+          <h3 class="mt-0 mb-0">Business ID</h3>
+          <div class="text-sm text-muted">Registration ID: <span class="mono">2c92808792372fda019243142d8d0014</span></div>
+        </div>
+      </div>
+
+      <div class="reg-meta">
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Institution</div>
+          <div class="reg-meta-value">OBFC / Registrar General</div>
+          <div class="text-sm mono text-muted">9bb1decc-b028-4cd6-aa84-dd84a291460d</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Output Document</div>
+          <div class="reg-meta-value">Business ID Card</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Doc Requirements</div>
+          <div class="reg-meta-value">5 documents</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Processing Pattern</div>
+          <div class="reg-meta-value">Review &rarr; Validate &rarr; Create &rarr; Cert</div>
+        </div>
+      </div>
+
+      <h4>Document Requirements</h4>
+      <table>
+        <thead><tr><th>#</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><strong>Lease or Property title</strong></td><td>Proof of business premises</td></tr>
+          <tr><td>2</td><td><strong>Business owner's national ID</strong></td><td>Identity verification of the owner</td></tr>
+          <tr><td>3</td><td><strong>Applicant passport</strong></td><td>Identity document for foreign applicants</td></tr>
+          <tr><td>4</td><td><strong>Local representative ID</strong></td><td>Required when owner is foreign; local agent identification</td></tr>
+          <tr><td>5</td><td><strong>Incorporation document</strong></td><td>Certificate of incorporation (for companies)</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Processing Roles</h4>
+      <table>
+        <thead><tr><th>Sort</th><th>Role</th><th>Type</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td>3</td><td>Review Business ID</td><td><span class="badge badge-user">UserRole</span></td><td>SEND BACK / VALIDATED / PENDING / REJECT. Includes name-exists check bots.</td></tr>
+          <tr><td>4</td><td>Validate Business ID</td><td><span class="badge badge-user">UserRole</span></td><td>SEND BACK / VALIDATED / PENDING / REJECT. Final name verification.</td></tr>
+          <tr><td>5</td><td>Create Person</td><td><span class="badge badge-bot">BotRole</span></td><td>Creates/updates NATURAL PERSONS and LEGAL PERSONS records in GDB</td></tr>
+          <tr><td>6</td><td>Create Business ID</td><td><span class="badge badge-bot">BotRole</span></td><td>Creates BUSINESS record in GDB via <code>GDB.GDB-BUSINESS(10.2)-update-or-create</code></td></tr>
+          <tr><td>7</td><td>Relations</td><td><span class="badge badge-bot">BotRole</span></td><td>Creates RELATIONS records linking persons to businesses</td></tr>
+          <tr><td>14</td><td>Cert Business ID</td><td><span class="badge badge-bot">BotRole</span></td><td>Generates Business ID card PDF and uploads it</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Name Verification Process</h4>
+      <p>The Business ID registration includes an elaborate <strong>business name verification</strong> chain. Both the Review and Validate roles trigger bots that:</p>
+      <ol>
+        <li>Check if the proposed business name exists in the BUSINESS registry (<code>GDB.GDB-BUSINESS(10.2)-exists</code>)</li>
+        <li>Check if the proposed name exists in the BUSINESS NAMES registry (<code>GDB.GDB-BUSINESS NAMES(3.2)-exists</code>)</li>
+        <li>List similar registered names (<code>GDB.GDB-BUSINESS(10.2)-list</code>) for comparison</li>
+        <li>Show the reviewer whether the name is available, with similar-names count displayed in the UI</li>
+      </ol>
+
+      <div class="bot-inline">
+        <div class="bot-label">Key Bots for this Registration</div>
+        <ul>
+          <li><strong>BUSINESS update or create</strong> (<code>GDB.GDB-BUSINESS(10.2)-update-or-create</code>) -- creates the core business record</li>
+          <li><strong>BUSINESS ID upload</strong> (<code>generic-pdf-generator</code>) -- generates the Business ID card PDF</li>
+          <li><strong>BUSINESS ID display</strong> (<code>generic-pdf-display</code>) -- shows the generated ID card</li>
+          <li><strong>NATURAL PERSONS applicant is owner</strong> (<code>GDB.GDB-NATURAL PERSONS(4.4)-update-or-create</code>) -- creates person record</li>
+          <li><strong>RELATIONS create for business (sole prop)</strong> (<code>GDB.GDB-RELATIONS(3.3)-create</code>) -- links owner to business</li>
+          <li><strong>BUSINESS - check if Name exists</strong> (Review / Verify roles) -- name deduplication bots</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ====== REGISTRATION 3: Trading Licence ====== -->
+    <div class="reg-card" id="reg-tl">
+      <div class="reg-card-header">
+        <div class="reg-num r3">3</div>
+        <div>
+          <h3 class="mt-0 mb-0">Trading Licence</h3>
+          <div class="text-sm text-muted">Registration ID: <span class="mono">2c92808792372fda01924314a8320019</span></div>
+        </div>
+      </div>
+
+      <div class="reg-meta">
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Institution</div>
+          <div class="reg-meta-value">MTICM / Local Authority</div>
+          <div class="text-sm mono text-muted">301c8ef4-b98a-4b28-9d18-820e0f828e82</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Output Document</div>
+          <div class="reg-meta-value">Trading Licence Certificate</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Doc Requirements</div>
+          <div class="reg-meta-value">0 (none)</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Processing Pattern</div>
+          <div class="reg-meta-value">Review &rarr; Validate &rarr; Create &rarr; Cert</div>
+        </div>
+      </div>
+
+      <p>The Trading Licence registration has <strong>no separate document requirements</strong>. All necessary data flows from the Business ID and Business Permit processes. This registration is <strong>conditionally activated</strong> -- it only applies when the applicant's selected activities require a trading licence.</p>
+
+      <div class="det-inline">
+        <div class="det-label">Conditional Activation</div>
+        <p>Determinant: <code>Applying for at least 1 trade license</code> (numeric, <code>applicantNumberOfTradeLicense &gt; 0</code>). This determinant gates the entire Trading Licence pipeline, including the Review Trading and Validate Trading roles.</p>
+        <p>The <code>Needs a trading licence</code> grid determinant checks each activity row in the activities list for the Trading Licence flag.</p>
+      </div>
+
+      <h4>Processing Roles</h4>
+      <table>
+        <thead><tr><th>Sort</th><th>Role</th><th>Type</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td>8</td><td>Review Trading</td><td><span class="badge badge-user">UserRole</span></td><td>SEND BACK / VALIDATED / PENDING / REJECT. Runs in parallel with Review Industrial.</td></tr>
+          <tr><td>9</td><td>Validate Trading</td><td><span class="badge badge-user">UserRole</span></td><td>SEND BACK / VALIDATED / PENDING / REJECT. Runs in parallel with Validate Industrial.</td></tr>
+          <tr><td>299</td><td>Create Trading</td><td><span class="badge badge-bot">BotRole</span></td><td>Creates LICENCES entries for trading via <code>GDB.GDB-LICENCES(4.6)-create-entries</code></td></tr>
+          <tr><td>299</td><td>Cert Trading</td><td><span class="badge badge-bot">BotRole</span></td><td>Generates Trading Licence PDF certificate</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Fee Structure</h4>
+      <p>Trading licence fees are created by <strong>FEES create TL fees</strong> (<code>GDB.GDB-FEES(1.6)-create-entries</code>). Fee tiers include:</p>
+      <ul>
+        <li>Standard trading fee: M500/M3,000 (determined by <code>Trading licence fee 500/3000</code> grid determinant)</li>
+        <li>Special fee M500/M4,000 and M5,000/M15,000 for specific activity categories</li>
+        <li>Prorated based on date: if &le; 30 June of current year, full-year rate; if &gt; 30 June, half-year rate</li>
+      </ul>
+
+      <div class="bot-inline">
+        <div class="bot-label">Key Bots</div>
+        <ul>
+          <li><strong>LICENCES create entries Trading Licence</strong> (<code>GDB.GDB-LICENCES(4.6)-create-entries</code>)</li>
+          <li><strong>Trade license upload</strong> (<code>generic-pdf-generator</code>)</li>
+          <li><strong>Trade license display</strong> (<code>generic-pdf-display</code>)</li>
+          <li><strong>FEES create TL fees</strong> (<code>GDB.GDB-FEES(1.6)-create-entries</code>)</li>
+          <li><strong>RELATIONS create entries for Trading</strong> (<code>GDB.GDB-RELATIONS(3.3)-create-entries</code>)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ====== REGISTRATION 4: Industrial Licence ====== -->
+    <div class="reg-card" id="reg-il">
+      <div class="reg-card-header">
+        <div class="reg-num r4">4</div>
+        <div>
+          <h3 class="mt-0 mb-0">Industrial Licence</h3>
+          <div class="text-sm text-muted">Registration ID: <span class="mono">2c92808792372fda01924314fff6001e</span></div>
+        </div>
+      </div>
+
+      <div class="reg-meta">
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Institution</div>
+          <div class="reg-meta-value">MTICM / Local Authority</div>
+          <div class="text-sm mono text-muted">301c8ef4-b98a-4b28-9d18-820e0f828e82</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Output Document</div>
+          <div class="reg-meta-value">Industrial Licence Certificate</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Doc Requirements</div>
+          <div class="reg-meta-value">0 (none)</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Processing Pattern</div>
+          <div class="reg-meta-value">Review &rarr; Validate &rarr; Create &rarr; Cert</div>
+        </div>
+      </div>
+
+      <p>Like the Trading Licence, the Industrial Licence has <strong>no separate document requirements</strong> and is <strong>conditionally activated</strong> based on the applicant's activity selections.</p>
+
+      <div class="det-inline">
+        <div class="det-label">Conditional Activation</div>
+        <p>Determinant: <code>Applying for at least 1 industrial license</code> (numeric, <code>applicantNumberOfIndustrialLicenses &gt; 0</code>). The <code>Needs an industrial licence</code> and <code>Industrial licence active in activities list</code> grid determinants check each activity row.</p>
+      </div>
+
+      <h4>Processing Roles</h4>
+      <table>
+        <thead><tr><th>Sort</th><th>Role</th><th>Type</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td>8</td><td>Review Industrial</td><td><span class="badge badge-user">UserRole</span></td><td>SEND BACK / VALIDATED / PENDING / REJECT. Runs in parallel with Review Trading.</td></tr>
+          <tr><td>9</td><td>Validate Industrial</td><td><span class="badge badge-user">UserRole</span></td><td>SEND BACK / VALIDATED / PENDING / REJECT. Runs in parallel with Validate Trading.</td></tr>
+          <tr><td>299</td><td>Create Industrial (via bot chain)</td><td><span class="badge badge-bot">BotRole</span></td><td>Creates LICENCES entries for industrial activities</td></tr>
+          <tr><td>299</td><td>Cert Industrial</td><td><span class="badge badge-bot">BotRole</span></td><td>Generates Industrial Licence PDF certificate</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Fee Structure</h4>
+      <p>Industrial licence fees are created by <strong>FEES create IL fees</strong> (<code>GDB.GDB-FEES(1.6)-create-entries</code>). Similar fee tier logic to Trading Licence, with date-based proration.</p>
+
+      <div class="bot-inline">
+        <div class="bot-label">Key Bots</div>
+        <ul>
+          <li><strong>LICENCES create entries Industrial Licence</strong> (<code>GDB.GDB-LICENCES(4.6)-create-entries</code>)</li>
+          <li><strong>Industrial license upload</strong> (<code>generic-pdf-generator</code>)</li>
+          <li><strong>Industrial license display</strong> (<code>generic-pdf-display</code>)</li>
+          <li><strong>FEES create IL fees</strong> (<code>GDB.GDB-FEES(1.6)-create-entries</code>)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ====== REGISTRATION 5: Company Incorporation ====== -->
+    <div class="reg-card" id="reg-ci">
+      <div class="reg-card-header">
+        <div class="reg-num r5">5</div>
+        <div>
+          <h3 class="mt-0 mb-0">Company Incorporation</h3>
+          <div class="text-sm text-muted">Registration ID: <span class="mono">2c9280859173da120191754eadcb0ab0</span></div>
+        </div>
+      </div>
+
+      <div class="reg-meta">
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Institution</div>
+          <div class="reg-meta-value">LAA / Registrar of Companies</div>
+          <div class="text-sm mono text-muted">f0a89b81-87fc-48e7-86a7-be635342e705</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Output Document</div>
+          <div class="reg-meta-value">Memorandum of Association</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Doc Requirements</div>
+          <div class="reg-meta-value">3 documents</div>
+        </div>
+        <div class="reg-meta-item">
+          <div class="reg-meta-label">Processing Pattern</div>
+          <div class="reg-meta-value">CI Review &rarr; CI Approval &rarr; CI Create &rarr; CI Certificate</div>
+        </div>
+      </div>
+
+      <p>Company Incorporation is <strong>conditionally activated only for "company" type businesses</strong> (not sole proprietors). It involves a Memorandum of Association with shareholder signatures and digital verification codes.</p>
+
+      <div class="det-inline">
+        <div class="det-label">Conditional Activation</div>
+        <p>Determinant: <code>Business is company</code> (radio, <code>guideTypeOfBusiness2 = "company"</code>). When the guide wizard selects "Company," the full incorporation flow activates, including shareholders, executives, beneficial owners, and articles of association tabs.</p>
+      </div>
+
+      <h4>Document Requirements</h4>
+      <table>
+        <thead><tr><th>#</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><strong>Managers ID</strong></td><td>Identity document for each company director/manager</td></tr>
+          <tr><td>2</td><td><strong>Shareholder ID</strong></td><td>Identity document for each shareholder</td></tr>
+          <tr><td>3</td><td><strong>Consent as a director</strong></td><td>Written consent from each person appointed as director</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Processing Roles</h4>
+      <table>
+        <thead><tr><th>Sort</th><th>Role</th><th>Type</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td>299</td><td>CI Review</td><td><span class="badge badge-user">UserRole</span></td><td>SEND BACK / VALIDATED / PENDING / REJECT</td></tr>
+          <tr><td>299</td><td>CI Approval</td><td><span class="badge badge-user">UserRole</span></td><td>SEND BACK / VALIDATED / PENDING / REJECT</td></tr>
+          <tr><td>299</td><td>CI Create</td><td><span class="badge badge-bot">BotRole</span></td><td>Creates company (LEGAL PERSONS), shareholders, managers in GDB</td></tr>
+          <tr><td>299</td><td>CI Certificate</td><td><span class="badge badge-bot">BotRole</span></td><td>Generates Memorandum of Association PDF</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Signature Workflow</h4>
+      <p>Company Incorporation includes a unique <strong>digital signature flow</strong> for the Memorandum of Association:</p>
+      <ol>
+        <li><strong>SIGNATURE create get verif code</strong> bot creates verification code entries in GDB (<code>GDB.GDB-SIGNATURES(1.2)-create-entries</code>)</li>
+        <li><strong>MESSAGE sign the constitutional document (owner)</strong> sends notification to each shareholder/member to sign</li>
+        <li>Each member enters their verification code in the <code>applicantMembersToSignMoA</code> grid</li>
+        <li><strong>Update Signatures with status signed</strong> bot marks signatures as complete (<code>GDB.GDB-SIGNATURES(1.2)-update-entries</code>)</li>
+        <li>Determinant <code>All shareholders had signed</code> gates progression to incorporation completion</li>
+      </ol>
+
+      <div class="bot-inline">
+        <div class="bot-label">Key Bots</div>
+        <ul>
+          <li><strong>LEGAL PERSONS create or update</strong> (<code>GDB.GDB-LEGAL PERSONS(5.6)-update-or-create</code>) -- creates the company entity</li>
+          <li><strong>LEGAL PERSONS update or create entries from Shareholders</strong> (<code>GDB.GDB-LEGAL PERSONS(5.6)-update-or-create-entries</code>)</li>
+          <li><strong>SHAREHOLDERS update or create entries</strong> (<code>GDB.GDB-SHAREHOLDERS(3.0)-update-or-create-entries</code>)</li>
+          <li><strong>MANAGERS update or create entries</strong> (<code>GDB.GDB-MANAGERS(2.1)-update-or-create-entries</code>)</li>
+          <li><strong>Company incorporation upload</strong> (<code>generic-pdf-generator</code>) -- MoA PDF generation</li>
+          <li><strong>Memorandum display</strong> (<code>generic-pdf-display</code>) -- displays MoA for review</li>
+          <li><strong>SIGNATURE create get verif code</strong> -- digital signature codes</li>
+          <li><strong>FEES create CI</strong> (<code>GDB.GDB-FEES(1.6)-create</code>) -- incorporation fees</li>
+          <li><strong>INTERNAL bring data to memorandum of association</strong> -- copies shareholder data to MoA template</li>
+          <li><strong>INTERNAL copy directors from shareholders to managers</strong> -- auto-populates manager list</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2: APPLICANT FILE                                     -->
+    <!-- ============================================================ -->
+    <h2 id="applicant-file">2. Applicant File</h2>
+    <p>The applicant file is what the citizen or business owner sees and fills out. It begins with a <strong>Guide wizard</strong> that determines the form path, then presents a <strong>multi-tab form</strong> with conditional sections. The form has 722 components across 10 major tabs, with 139 required fields and 149 determinants controlling visibility.</p>
+
+    <!-- Form Flow SVG -->
+    <div class="diagram-container">
+      <div class="diagram-title">Applicant Form Flow -- Guide to Submission</div>
+      <svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" style="max-width:920px">
+        <defs>
+          <marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+          </marker>
+        </defs>
+        <!-- Guide -->
+        <rect x="10" y="50" width="80" height="100" rx="8" fill="#1e3a5f"/>
+        <text x="50" y="85" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">Guide</text>
+        <text x="50" y="100" text-anchor="middle" fill="#93c5fd" font-size="8">3 questions</text>
+        <text x="50" y="115" text-anchor="middle" fill="#93c5fd" font-size="8">11 comps</text>
+        <line x1="90" y1="100" x2="110" y2="100" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Tab 1: Business Owner -->
+        <rect x="115" y="50" width="80" height="100" rx="8" fill="#2563eb"/>
+        <text x="155" y="80" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Business</text>
+        <text x="155" y="93" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Owner</text>
+        <text x="155" y="115" text-anchor="middle" fill="#bfdbfe" font-size="8">59 comps</text>
+        <text x="155" y="130" text-anchor="middle" fill="#bfdbfe" font-size="7">identity, address</text>
+        <line x1="195" y1="100" x2="215" y2="100" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Tab 2: Type of Business -->
+        <rect x="220" y="50" width="80" height="100" rx="8" fill="#059669"/>
+        <text x="260" y="80" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Type of</text>
+        <text x="260" y="93" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Business</text>
+        <text x="260" y="115" text-anchor="middle" fill="#a7f3d0" font-size="8">96 comps</text>
+        <text x="260" y="130" text-anchor="middle" fill="#a7f3d0" font-size="7">activities, staff</text>
+        <line x1="300" y1="100" x2="320" y2="100" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Tab 3: Shareholders -->
+        <rect x="325" y="50" width="80" height="100" rx="8" fill="#7c3aed"/>
+        <text x="365" y="85" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Shareholders</text>
+        <text x="365" y="115" text-anchor="middle" fill="#ddd6fe" font-size="8">128 comps</text>
+        <text x="365" y="130" text-anchor="middle" fill="#ddd6fe" font-size="7">shares, directors</text>
+        <line x1="405" y1="100" x2="425" y2="100" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Tab 4: BO -->
+        <rect x="430" y="50" width="80" height="100" rx="8" fill="#d97706"/>
+        <text x="470" y="80" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Beneficial</text>
+        <text x="470" y="93" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Owners</text>
+        <text x="470" y="115" text-anchor="middle" fill="#fde68a" font-size="8">84 comps</text>
+        <text x="470" y="130" text-anchor="middle" fill="#fde68a" font-size="7">UBO disclosure</text>
+        <line x1="510" y1="100" x2="530" y2="100" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Tab 5: Executives -->
+        <rect x="535" y="50" width="80" height="100" rx="8" fill="#dc2626"/>
+        <text x="575" y="85" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Executives</text>
+        <text x="575" y="115" text-anchor="middle" fill="#fecaca" font-size="8">61 comps</text>
+        <text x="575" y="130" text-anchor="middle" fill="#fecaca" font-size="7">managers, dirs</text>
+        <line x1="615" y1="100" x2="635" y2="100" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Tab 6: More tabs -->
+        <rect x="640" y="50" width="80" height="100" rx="8" fill="#0891b2"/>
+        <text x="680" y="80" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Articles &amp;</text>
+        <text x="680" y="93" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Inc. Docs</text>
+        <text x="680" y="115" text-anchor="middle" fill="#a5f3fc" font-size="8">110 comps</text>
+        <text x="680" y="130" text-anchor="middle" fill="#a5f3fc" font-size="7">MoA, permit</text>
+        <line x1="720" y1="100" x2="740" y2="100" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Tab 7: BP + Docs + Send -->
+        <rect x="745" y="50" width="80" height="100" rx="8" fill="#475569"/>
+        <text x="785" y="80" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">Documents</text>
+        <text x="785" y="93" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">&amp; Submit</text>
+        <text x="785" y="115" text-anchor="middle" fill="#cbd5e1" font-size="8">BP + Send</text>
+        <text x="785" y="130" text-anchor="middle" fill="#cbd5e1" font-size="7">declaration</text>
+        <line x1="825" y1="100" x2="845" y2="100" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Submit -->
+        <rect x="850" y="65" width="60" height="70" rx="8" fill="#16a34a"/>
+        <text x="880" y="96" text-anchor="middle" fill="#fff" font-size="10" font-weight="800">SEND</text>
+        <text x="880" y="112" text-anchor="middle" fill="#bbf7d0" font-size="7">submit</text>
+
+        <!-- Conditional note -->
+        <text x="460" y="25" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Tabs 3-6 appear only when Business type = "Company"</text>
+        <line x1="325" y1="35" x2="615" y2="35" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="325" y1="35" x2="325" y2="48" stroke="#94a3b8" stroke-width="1"/>
+        <line x1="615" y1="35" x2="615" y2="48" stroke="#94a3b8" stroke-width="1"/>
+
+        <!-- Legend -->
+        <text x="10" y="185" fill="#94a3b8" font-size="8">722 total form components | 139 required fields | 149 determinants | Tabs 3-6 conditional on "company" type</text>
+      </svg>
+    </div>
+
+    <!-- GUIDE SECTION -->
+    <h3 id="guide-section">2.1 Guide (Wizard)</h3>
+    <p>The Guide is the entry point of the application. It presents <strong>3 radio-button questions</strong> that determine which sections of the form will be shown and which registrations apply. The guide form has 11 components total.</p>
+
+    <div class="card">
+      <h4 class="mt-0">Question 1: Business Type</h4>
+      <p>Field: <code>guideTypeOfBusiness2</code> (radio, required) -- "Business is"</p>
+      <ul>
+        <li><strong>Sole Proprietor</strong> -- activates basic business registration flow; hides company-specific tabs (Shareholders, Executives, Beneficial Owners, Articles of Association, Incorporation Documents)</li>
+        <li><strong>Company</strong> -- activates full company incorporation flow with all tabs</li>
+      </ul>
+      <div class="det-inline">
+        <div class="det-label">Determinant Chain</div>
+        <p><code>Business is sole proprietor</code>: <code>guideTypeOfBusiness2 = "soleProprietor"</code> &rarr; shows <code>guideBlock3</code> (sole proprietor path)</p>
+        <p><code>Business is company</code>: <code>guideTypeOfBusiness2 = "company"</code> &rarr; shows company registration sections, Shareholders tab, Executives tab, etc.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 class="mt-0">Question 2: Application Purpose</h4>
+      <p>Field: <code>guideApplicationFor</code> (radio) -- "Application for"</p>
+      <ul>
+        <li><strong>"Yes, I will be the owner"</strong> -- applicant data auto-populates business owner fields</li>
+        <li><strong>"No, I am creating this business for another person"</strong> -- additional owner information sections appear</li>
+      </ul>
+      <div class="det-inline">
+        <div class="det-label">Determinant Chain</div>
+        <p><code>Application for myself</code>: <code>guideApplicationFor = "yesIWillBeTheOwner"</code></p>
+        <p><code>Application for someone else</code>: <code>guideApplicationFor = "noIAmCreatingThisBusinessForAnotherPerson"</code></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 class="mt-0">Question 3: Owner Origin</h4>
+      <p>Field: <code>guideIsTheBusinessOwnerFromLesothoOrOtherCountry</code> (radio)</p>
+      <ul>
+        <li><strong>Lesotho</strong> -- standard local registration path</li>
+        <li><strong>Other country</strong> -- triggers additional foreign-owner requirements, local representative sections, and foreign-specific document uploads</li>
+      </ul>
+      <div class="det-inline">
+        <div class="det-label">Determinant Chain</div>
+        <p><code>Business owner (guide) is from Lesotho</code>: <code>guideIsTheBusinessOwnerFromLesothoOrOtherCountry = "lesotho"</code></p>
+        <p><code>Business owner (guide) is from other country</code>: <code>guideIsTheBusinessOwnerFromLesothoOrOtherCountry = "otheCountry"</code> &rarr; activates foreign-specific sections and document requirements (Local representative ID, etc.)</p>
+      </div>
+    </div>
+
+    <p>After answering all 3 questions, the applicant clicks <strong>"Start application"</strong> (<code>guideNext</code> button with component action <code>1dab6f19-cd79-c177-7dbd-ab82f982fcda</code>) to proceed to the main form.</p>
+
+    <!-- TAB: Business Owner -->
+    <h3 id="tab-owner">2.2 Tab: Business Owner</h3>
+    <p><strong>59 components</strong> | Path: <code>applicantTabs &rarr; applicantTabsbusinessOwner</code></p>
+    <p>This tab collects the personal information of the business owner (or applicant acting on behalf of the owner). It is always visible regardless of business type.</p>
+
+    <details>
+      <summary>Key Fields (all registrations)</summary>
+      <div class="details-body">
+        <div class="field-list">
+          <div class="field-item"><span class="fname">First name</span><span class="ftype">textfield</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Surname</span><span class="ftype">textfield</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Gender</span><span class="ftype">select</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Date of birth</span><span class="ftype">datetime</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Nationality</span><span class="ftype">select</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">National ID number</span><span class="ftype">textfield</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Upload passport copy</span><span class="ftype">file</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Address</span><span class="ftype">textfield</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Country</span><span class="ftype">select</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Village</span><span class="ftype">textfield</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">District</span><span class="ftype">select</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Town</span><span class="ftype">select</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Phone number</span><span class="ftype">textfield</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Email</span><span class="ftype">email</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Marital status</span><span class="ftype">select</span><span class="freq">REQ</span></div>
+        </div>
+
+        <div class="det-inline">
+          <div class="det-label">Conditional Logic in This Tab</div>
+          <p><code>Residential address is NOT in Lesotho</code> (<code>applicantIsTheResidentialAddressInLesotho = "no"</code>) &rarr; shows <code>applicantBlock7</code>, <code>applicantBlock8</code> with foreign residential address fields</p>
+          <p><code>Residential address is in Lesotho</code> (<code>applicantIsTheResidentialAddressInLesotho = "yes"</code>) &rarr; shows Lesotho-specific address fields (district, village, chief name)</p>
+          <p><code>Business owner gender = Female</code> and <code>Marital status is Married</code> &rarr; spouse information section appears</p>
+          <p><code>Owners ID uploaded</code> (<code>applicantUploadPassportCopy</code> has file) &rarr; triggers <strong>Send ID to Base 64 content</strong> internal bot for ID verification processing</p>
+        </div>
+
+        <div class="bot-inline">
+          <div class="bot-label">Bots in This Tab</div>
+          <p><strong>Send ID to Base 64 content</strong> (internal) -- converts the uploaded passport/ID file to base64 for downstream processing</p>
+          <p><strong>NATURAL PERSON read NP data</strong> (<code>GDB.GDB-NATURAL PERSONS(4.4)-read</code>) -- reads existing person data if the applicant is already registered</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- TAB: Type of Business -->
+    <h3 id="tab-business">2.3 Tab: Type of Business</h3>
+    <p><strong>96 components</strong> | Path: <code>applicantTabs &rarr; applicantTabsdataApplicantTypeOfBusiness</code></p>
+    <p>This tab collects the business details -- name, activities, address, turnover, staff, and operating information. The tab label dynamically displays the selected business type via <code>{{data.applicantTypeOfBusiness}}</code>.</p>
+
+    <details>
+      <summary>Key Fields and Sections</summary>
+      <div class="details-body">
+        <h5>Business Name and Verification</h5>
+        <div class="field-list">
+          <div class="field-item"><span class="fname">Business Name</span><span class="ftype">textfield</span><span class="freq">REQ</span></div>
+          <div class="field-item"><span class="fname">Company Name Exists</span><span class="ftype">radio</span><span class="ftype">(auto)</span></div>
+          <div class="field-item"><span class="fname">Company Business Name Already Exists</span><span class="ftype">radio</span><span class="ftype">(auto)</span></div>
+        </div>
+        <div class="bot-inline">
+          <div class="bot-label">Real-time Name Check Bots</div>
+          <p><strong>BUSINESS check if name exists - part A company name</strong> (<code>GDB.GDB-BUSINESS(10.2)-exists</code>) -- checks the GDB BUSINESS registry as the applicant types</p>
+          <p><strong>BUSINESS NAMES - check if name exists - company part A</strong> (<code>GDB.GDB-BUSINESS NAMES(3.2)-exists</code>) -- checks the reserved names registry</p>
+          <p><strong>BUSINESS check if similar names exist - part A</strong> (<code>GDB.GDB-BUSINESS(10.2)-exists</code>) -- similarity check</p>
+          <p><strong>Internal Copy business name for comparison</strong> -- copies the entered name to a comparison field for change detection</p>
+        </div>
+        <div class="det-inline">
+          <div class="det-label">Name Existence Logic</div>
+          <p><code>Company name exists</code> (<code>applicantCompanyNameExists = "true"</code>) &rarr; shows warning that the company name is already taken</p>
+          <p><code>Company name doesnt exist yet</code> (<code>applicantCompanyNameExists = "false"</code>) &rarr; name is available</p>
+          <p><code>similar company name exists</code> (<code>applicantCompanyNameAlreadyExists = "true"</code>) &rarr; shows similar names for awareness</p>
+        </div>
+
+        <h5>Activities List</h5>
+        <p>The <code>applicantListOfActivities2</code> is an <strong>edit grid</strong> where the applicant adds business activities. Each activity row includes:</p>
+        <ul>
+          <li>Activity selection (from classification catalog)</li>
+          <li>Whether a business name is wanted for the activity</li>
+          <li>Proposed activity business name</li>
+          <li>Automatic fee category determination (Trading vs Industrial)</li>
+        </ul>
+        <div class="det-inline">
+          <div class="det-label">Activity Determinants</div>
+          <p><code>Needs a trading licence</code> / <code>Needs an industrial licence</code> -- grid determinants that check each activity's category to determine which licences are required</p>
+          <p><code>Wants a business name for the activity</code> (<code>applicantDoYouWantABusinessNameForThisActivity = "yes"</code>) -- shows business name input for the activity</p>
+          <p><code>Trading licence fee 500/3000</code>, <code>Special fee M500/M4000</code>, <code>Special fee M5000/M15000</code> -- fee tier grid determinants</p>
+          <p><code>Today &le; 31-06-current year</code> / <code>Today &gt; 31-06-current year</code> -- date-based proration determinants</p>
+        </div>
+
+        <h5>Business Address and Operations</h5>
+        <div class="field-list">
+          <div class="field-item"><span class="fname">Business Address</span><span class="ftype">textfield</span></div>
+          <div class="field-item"><span class="fname">Village</span><span class="ftype">textfield</span></div>
+          <div class="field-item"><span class="fname">Turnover</span><span class="ftype">number</span></div>
+          <div class="field-item"><span class="fname">Number of Employees</span><span class="ftype">number</span></div>
+          <div class="field-item"><span class="fname">Do you have an operating office</span><span class="ftype">radio</span></div>
+        </div>
+        <div class="det-inline">
+          <div class="det-label">Turnover and Employee Logic</div>
+          <p><code>Annual turnover &le;5000000</code> / <code>&gt;5000000</code> -- determines fee tier for Business Permit</p>
+          <p><code>Number of employees &lt; 50</code> / <code>&gt; 50</code> -- determines insurance requirement level</p>
+          <p><code>Operating office</code> (<code>applicantDoYouHaveAnOperatingOffice = "yes"</code>) -- shows office address section</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- TAB: Shareholders -->
+    <h3 id="tab-shareholders">2.4 Tab: Shareholders <span class="badge badge-count">Company only</span></h3>
+    <p><strong>128 components</strong> | Path: <code>applicantTabs &rarr; applicantTabsshareholders</code></p>
+    <p>The largest tab. Collects share capital structure and individual/company shareholder details. Only visible when <code>guideTypeOfBusiness2 = "company"</code>.</p>
+
+    <details>
+      <summary>Key Fields and Sections</summary>
+      <div class="details-body">
+        <h5>Share Structure</h5>
+        <div class="field-list">
+          <div class="field-item"><span class="fname">What type of shares</span><span class="ftype">radio</span></div>
+          <div class="field-item"><span class="fname">Capital (total amount)</span><span class="ftype">number</span></div>
+          <div class="field-item"><span class="fname">Number of Individual Shareholders</span><span class="ftype">number</span></div>
+          <div class="field-item"><span class="fname">Number of Company Shareholders</span><span class="ftype">number</span></div>
+          <div class="field-item"><span class="fname">% of Individual Shareholders</span><span class="ftype">number</span></div>
+          <div class="field-item"><span class="fname">Preferred shares</span><span class="ftype">editgrid</span></div>
+          <div class="field-item"><span class="fname">List of Shareholders</span><span class="ftype">editgrid</span></div>
+        </div>
+
+        <div class="det-inline">
+          <div class="det-label">Share Type Logic</div>
+          <p><code>Only ordinary shares</code> (<code>applicantWhatTypeOfSharesWillYouHave = "onlyOrdinaryShares"</code>) &rarr; hides preferred shares grid</p>
+          <p><code>Ordinary and prefered shares</code> (<code>= "ordinarySharesAndPreferredShares"</code>) &rarr; shows both share types</p>
+          <p><code>Capital != total of shareholders shares</code> &rarr; shows validation warning when shares do not add up to declared capital</p>
+          <p><code>Total of all shares &gt; capital</code> &rarr; error state: shares exceed declared capital</p>
+        </div>
+
+        <h5>Per-Shareholder Details (Grid)</h5>
+        <p>The <code>applicantListOfShareholders2</code> edit grid collects for each shareholder:</p>
+        <div class="det-inline">
+          <div class="det-label">Grid Determinants (per row)</div>
+          <p><code>Individual shareholder</code> / <code>Company shareholder</code> -- shows person or company fields per row</p>
+          <p><code>Shareholder is director</code> -- shows director designation fields</p>
+          <p><code>Shareholder isfrom Lesotho</code> / <code>Shareholder is foreigner NP</code> / <code>Shareholder is foreigner LP</code> -- adjusts ID and address requirements</p>
+          <p><code>Shareholders owns &gt; 10% of shares</code> / <code>&le; 10%</code> -- triggers beneficial owner disclosure requirements</p>
+          <p><code>Shareholder's country in address is lesotho</code> -- adjusts address format</p>
+          <p><code>At least 30% of shareholders are foreigners</code> -- triggers foreign investment requirements</p>
+        </div>
+
+        <div class="bot-inline">
+          <div class="bot-label">Bots in This Tab</div>
+          <p><strong>INTERNAL copy directors from shareholders to managers</strong> -- when a shareholder is marked as director, their data auto-populates the Executives tab</p>
+          <p><strong>LEGAL PERSONS read Legal person data</strong> (<code>GDB.GDB-LEGAL PERSONS(5.6)-read</code>) -- reads existing company shareholder data from GDB</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- TAB: Beneficial Owners -->
+    <h3 id="tab-bo">2.5 Tab: Beneficial Owners <span class="badge badge-count">Company only</span></h3>
+    <p><strong>84 components</strong> | Path: <code>applicantTabs &rarr; applicantTabsbeneficialOwners</code></p>
+    <p>Collects Ultimate Beneficial Owner (UBO) information. Contains sub-tabs: <strong>Natural persons</strong> and <strong>Government/public authority</strong>.</p>
+
+    <details>
+      <summary>Key Fields and Conditional Logic</summary>
+      <div class="details-body">
+        <h5>Sub-tabs</h5>
+        <ul>
+          <li><strong>Natural persons</strong> (<code>applicantTabsBonaturalPersons</code>) -- individuals who ultimately own or control the company</li>
+          <li><strong>Government/public authority</strong> (<code>applicantTabsBogovernmentPublicAuthority</code>) -- government entities with beneficial ownership</li>
+        </ul>
+        <div class="det-inline">
+          <div class="det-label">Key Determinants</div>
+          <p><code>Any person owns more than 10% = YES</code> (<code>applicantDoesAnyPersonOwnMoreThan10... = "yes"</code>) &rarr; requires listing those persons as beneficial owners with full details</p>
+          <p><code>Any BO a government = YES</code> (<code>applicantIsAnyBeneficialOwnerAGovernment... = "yes"</code>) &rarr; shows government authority section</p>
+          <p><code>Company (less than 10%) will exercise control</code> -- when no single shareholder exceeds 10%, identifies who exercises effective control</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- TAB: Executives -->
+    <h3 id="tab-executives">2.6 Tab: Executives <span class="badge badge-count">Company only</span></h3>
+    <p><strong>61 components</strong> | Path: <code>applicantTabs &rarr; applicantTabsexecutives</code></p>
+    <p>Lists the company's managers and directors. Much of this data auto-populates from the Shareholders tab when shareholders are designated as directors.</p>
+
+    <details>
+      <summary>Key Fields and Logic</summary>
+      <div class="details-body">
+        <p>The <code>applicantListOfShareholdersAndDirectors</code> datagrid captures:</p>
+        <div class="field-list">
+          <div class="field-item"><span class="fname">Manager/Director name</span><span class="ftype">textfield</span></div>
+          <div class="field-item"><span class="fname">Position/Role</span><span class="ftype">select</span></div>
+          <div class="field-item"><span class="fname">Country</span><span class="ftype">select</span></div>
+          <div class="field-item"><span class="fname">Type of mandate</span><span class="ftype">select</span></div>
+          <div class="field-item"><span class="fname">Managers count</span><span class="ftype">number</span><span class="ftype">(computed)</span></div>
+        </div>
+        <div class="det-inline">
+          <div class="det-label">Key Determinants</div>
+          <p><code>Director in managers</code> -- grid determinant for director-specific fields per row</p>
+          <p><code>Country in managers is Lesotho</code> -- adjusts ID type requirements</p>
+          <p><code>Type of mandate = fixed (manager)</code> -- shows mandate duration fields</p>
+          <p><code>Managers count &gt; 0</code> -- validation: at least one manager required</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- TAB: Articles of Association -->
+    <h3 id="tab-articles">2.7 Tab: Articles of Association <span class="badge badge-count">Company only</span></h3>
+    <p><strong>11 components</strong> | Path: <code>applicantTabs &rarr; applicantTabsarticlesOfAssociation</code></p>
+    <p>Allows the applicant to choose between automated or custom articles of association.</p>
+
+    <details>
+      <summary>Key Fields and Logic</summary>
+      <div class="details-body">
+        <div class="field-list">
+          <div class="field-item"><span class="fname">Will you use automated articles?</span><span class="ftype">radio</span></div>
+          <div class="field-item"><span class="fname">Type of Company</span><span class="ftype">select</span></div>
+        </div>
+        <div class="det-inline">
+          <div class="det-label">Key Determinants</div>
+          <p><code>Automated articles of association</code> (<code>applicantWillYouUseTheAutomatedArticlesOfAssociationProvidedByObfc = "yes"</code>) &rarr; uses the standard OBFC-provided articles template</p>
+          <p><code>No automated articles of association</code> (<code>= "no"</code>) &rarr; requires manual upload of custom articles</p>
+          <p><code>Public company</code> (classification determinant on <code>applicantTypeOfCompany</code>) &rarr; triggers additional public company requirements</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- TAB: Incorporation Documents -->
+    <h3 id="tab-incdocs">2.8 Tab: Incorporation Documents <span class="badge badge-count">Company only</span></h3>
+    <p><strong>99 components</strong> | Path: <code>applicantTabs &rarr; applicantTabsincorporationDocuments</code></p>
+    <p>Contains the Memorandum of Association signing process and e-signature verification.</p>
+
+    <details>
+      <summary>Key Fields and Signature Flow</summary>
+      <div class="details-body">
+        <h5>MoA Signing Grid</h5>
+        <p>The <code>applicantMembersToSignMoA</code> grid lists all shareholders/members who must sign the Memorandum of Association. For each member:</p>
+        <div class="field-list">
+          <div class="field-item"><span class="fname">Member name</span><span class="ftype">auto-populated</span></div>
+          <div class="field-item"><span class="fname">ID number</span><span class="ftype">auto-populated</span></div>
+          <div class="field-item"><span class="fname">Verification code (BOT)</span><span class="ftype">auto-generated</span></div>
+          <div class="field-item"><span class="fname">Verification code (entered)</span><span class="ftype">textfield</span></div>
+          <div class="field-item"><span class="fname">Want to sign?</span><span class="ftype">radio</span></div>
+        </div>
+
+        <div class="det-inline">
+          <div class="det-label">Signature Determinants</div>
+          <p><code>Electronic signature</code> (<code>applicantElectronicOrManualSignature = "electronically"</code>) &rarr; enables e-signing flow</p>
+          <p><code>Manual signature</code> (<code>= "manually"</code>) &rarr; requires physical document upload</p>
+          <p><code>Verification code (BOT) received (!= empty)</code> -- grid det that checks if bot has delivered the code</p>
+          <p><code>verification code entered = code BOT received</code> -- validates the entered code matches</p>
+          <p><code>owner ID number = user ID number</code> -- identifies the current user in the signing list</p>
+          <p><code>All shareholders had signed</code> -- gates progression when all required signatures are collected</p>
+          <p><code>owner DONT want to sign (!= yes)</code> -- handles opt-out from signing</p>
+        </div>
+
+        <div class="bot-inline">
+          <div class="bot-label">Bots in This Tab</div>
+          <p><strong>INTERNAL bring data to memorandum of association</strong> -- copies shareholder data from Part A into the MoA template fields</p>
+          <p><strong>INTERNAL to incorporation documents</strong> -- prepares incorporation data for document generation</p>
+          <p><strong>SIGNATURE create get verif code</strong> (<code>GDB.GDB-SIGNATURES(1.2)-create-entries</code>) -- generates unique verification codes per signer</p>
+          <p><strong>MESSAGE sign the constitutional document (owner)</strong> -- sends notification/email with verification code</p>
+          <p><strong>Memorandum display</strong> (<code>generic-pdf-display</code>) -- renders the MoA PDF for preview</p>
+          <p><strong>INTERNAL Send true to status signed</strong> -- marks individual signature as complete</p>
+          <p><strong>Update Signatures with status signed</strong> (<code>GDB.GDB-SIGNATURES(1.2)-update-entries</code>) -- writes signature status to GDB</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- TAB: Business Permit -->
+    <h3 id="tab-permit">2.9 Tab: Business Permit</h3>
+    <p><strong>39 components</strong> | Path: <code>applicantTabs &rarr; applicantTabsbusinessPermit</code></p>
+    <p>Collects Business Permit-specific information including additional operational details and compliance data. Always visible, as every business needs a permit.</p>
+
+    <details>
+      <summary>Key Fields</summary>
+      <div class="details-body">
+        <p>This tab contains fields specifically required for the Business Permit registration, including:</p>
+        <ul>
+          <li>Additional business operation details</li>
+          <li>Compliance-related fields</li>
+          <li>Permit-specific document upload sections</li>
+          <li>Environmental and safety information for certain activity types</li>
+        </ul>
+        <p>Some subsections are conditional based on activity types selected in the Type of Business tab.</p>
+      </div>
+    </details>
+
+    <!-- DOCUMENTS TAB -->
+    <h3 id="documents-tab">2.10 Documents Tab</h3>
+    <p>The Documents tab displays document upload requirements. Based on the registrations activated for the application, the required documents change:</p>
+
+    <table>
+      <thead><tr><th>Registration</th><th>Required Documents</th></tr></thead>
+      <tbody>
+        <tr><td>Business Permit</td><td>Banking statement, Insurance certificate, Business plan</td></tr>
+        <tr><td>Business ID</td><td>Lease/Property title, Owner's national ID, Passport, Local representative ID, Incorporation document</td></tr>
+        <tr><td>Trading Licence</td><td><em>None</em></td></tr>
+        <tr><td>Industrial Licence</td><td><em>None</em></td></tr>
+        <tr><td>Company Incorporation</td><td>Managers ID, Shareholder ID, Consent as a director</td></tr>
+      </tbody>
+    </table>
+    <p>A <strong>sole proprietor</strong> will see: 3 (BP) + 5 (BID) = 8 documents. A <strong>company</strong> will see: 3 (BP) + 5 (BID) + 3 (CI) = 11 documents, plus any conditional Trading/Industrial documents.</p>
+
+    <!-- SEND PAGE -->
+    <h3 id="send-page">2.11 Send Page</h3>
+    <p>The final submission screen where the applicant reviews and submits the application.</p>
+
+    <details>
+      <summary>Send Page Fields and Logic</summary>
+      <div class="details-body">
+        <h5>Pre-submission Checks</h5>
+        <div class="det-inline">
+          <div class="det-label">Required Conditions for Submission</div>
+          <p><code>Form is valid</code> (<code>isFormValid = true</code>) -- all required fields pass validation</p>
+          <p><code>Current PartA tab is valid</code> (<code>isCurrentPartATabValid = true</code>) -- current tab validation</p>
+          <p><code>User is logged in</code> (<code>is_submit_allowed = true</code>) -- session check</p>
+          <p><code>Declaration filled</code> (<code>sendPageISolemnlyDeclare... = true</code>) -- applicant solemn declaration checkbox</p>
+        </div>
+
+        <h5>Name Reservation at Submission</h5>
+        <p>At submission time, the <strong>Reserve activity names</strong> bot (sort 0, the very first step) calls:</p>
+        <div class="bot-inline">
+          <div class="bot-label">Submission Bots</div>
+          <p><strong>BUSINESS NAMES reserve activity names</strong> (<code>GDB.GDB-BUSINESS NAMES(3.2)-update-or-create-entries</code>) -- reserves all proposed business/activity names in the GDB before the file enters processing</p>
+          <p><strong>BUSINESS NAMES (activities) - list of names in sendpage checked against GDB</strong> (<code>GDB.GDB-VIEW-Activity business names available(1.2)-list</code>) -- final availability check</p>
+        </div>
+
+        <div class="det-inline">
+          <div class="det-label">Send Page Determinants</div>
+          <p><code>Counter of activity business names &gt; 0</code> -- at least one activity has a business name to reserve</p>
+          <p><code>Counter of already reserved names in send page &gt; 0</code> -- some names were already reserved (warning)</p>
+          <p><code>Applicant will receive user rights</code> (<code>sendPageWillYouReceiveUserRights = "yes"</code>) -- grants portal access</p>
+        </div>
+
+        <h5>Payment</h5>
+        <div class="det-inline">
+          <div class="det-label">Payment Determinants</div>
+          <p><code>Will pay at Cashier</code> (<code>paymentProviderSelected = "frontdesk"</code>) -- routes to Cashier role after processing</p>
+          <p><code>iVeri</code> (<code>paymentProviderSelected = "iveri"</code>) -- online payment via iVeri gateway</p>
+          <p><code>Paid digitally</code> (<code>isPayedDigitally = true</code>) -- digital payment completed</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3: PROCESSING WORKFLOW                                -->
+    <!-- ============================================================ -->
+    <h2 id="processing">3. Processing Workflow</h2>
+    <p>After the applicant submits the file, it enters a <strong>multi-step processing pipeline</strong> with 50 roles. The pipeline follows a specific sort order, with some steps running in parallel. All 5 registrations share a common pattern: <strong>Review (human) &rarr; Validate (human) &rarr; Create (bot) &rarr; Certificate (bot)</strong>.</p>
+
+    <!-- Workflow Pipeline SVG -->
+    <div class="diagram-container" id="workflow-diagram">
+      <div class="diagram-title">Complete Processing Pipeline -- Sort Order 0 to Completion</div>
+      <svg viewBox="0 0 1050 620" xmlns="http://www.w3.org/2000/svg" style="max-width:1050px">
+        <defs>
+          <marker id="arrW" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+          </marker>
+          <marker id="arrR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/>
+          </marker>
+        </defs>
+
+        <!-- Title row labels -->
+        <text x="20" y="25" fill="#94a3b8" font-size="10" font-weight="700">SORT</text>
+        <text x="80" y="25" fill="#94a3b8" font-size="10" font-weight="700">ROLE NAME</text>
+        <text x="600" y="25" fill="#94a3b8" font-size="10" font-weight="700">TYPE</text>
+        <text x="700" y="25" fill="#94a3b8" font-size="10" font-weight="700">REGISTRATION</text>
+
+        <!-- Sort 0: Reserve Activity Names -->
+        <rect x="15" y="38" width="1020" height="36" rx="6" fill="#e3f2fd" stroke="#90caf9" stroke-width="1"/>
+        <text x="30" y="60" fill="#1565c0" font-size="11" font-weight="800">0</text>
+        <rect x="55" y="44" width="16" height="24" rx="3" fill="#1565c0"/>
+        <text x="63" y="60" fill="#fff" font-size="8" font-weight="700" text-anchor="middle">B</text>
+        <text x="80" y="60" fill="#1565c0" font-size="11" font-weight="700">Reserve activity names</text>
+        <text x="400" y="60" fill="#64748b" font-size="9">GDB-BUSINESS NAMES reserve | START role</text>
+        <text x="700" y="60" fill="#64748b" font-size="9">All registrations</text>
+
+        <!-- Arrow down -->
+        <line x1="525" y1="74" x2="525" y2="86" stroke="#475569" stroke-width="1.5" marker-end="url(#arrW)"/>
+
+        <!-- Sort 1: Validate Business Permit -->
+        <rect x="15" y="90" width="1020" height="36" rx="6" fill="#e8f5e9" stroke="#a5d6a7" stroke-width="1"/>
+        <text x="30" y="112" fill="#2e7d32" font-size="11" font-weight="800">1</text>
+        <rect x="55" y="96" width="16" height="24" rx="3" fill="#2e7d32"/>
+        <text x="63" y="112" fill="#fff" font-size="8" font-weight="700" text-anchor="middle">U</text>
+        <text x="80" y="112" fill="#2e7d32" font-size="11" font-weight="700">Validate Business Permit</text>
+        <text x="400" y="112" fill="#64748b" font-size="9">SEND BACK | VALIDATED | PENDING | REJECT</text>
+        <text x="700" y="112" fill="#2563eb" font-size="9" font-weight="600">Business Permit</text>
+
+        <line x1="525" y1="126" x2="525" y2="138" stroke="#475569" stroke-width="1.5" marker-end="url(#arrW)"/>
+
+        <!-- Sort 2: Create Business Permit -->
+        <rect x="15" y="142" width="1020" height="36" rx="6" fill="#e3f2fd" stroke="#90caf9" stroke-width="1"/>
+        <text x="30" y="164" fill="#1565c0" font-size="11" font-weight="800">2</text>
+        <rect x="55" y="148" width="16" height="24" rx="3" fill="#1565c0"/>
+        <text x="63" y="164" fill="#fff" font-size="8" font-weight="700" text-anchor="middle">B</text>
+        <text x="80" y="164" fill="#1565c0" font-size="11" font-weight="700">Create Business Permit</text>
+        <text x="400" y="164" fill="#64748b" font-size="9">PERMITS update-or-create in GDB</text>
+        <text x="700" y="164" fill="#2563eb" font-size="9" font-weight="600">Business Permit</text>
+
+        <line x1="525" y1="178" x2="525" y2="190" stroke="#475569" stroke-width="1.5" marker-end="url(#arrW)"/>
+
+        <!-- Sort 3: Review Business ID -->
+        <rect x="15" y="194" width="1020" height="36" rx="6" fill="#e8f5e9" stroke="#a5d6a7" stroke-width="1"/>
+        <text x="30" y="216" fill="#2e7d32" font-size="11" font-weight="800">3</text>
+        <rect x="55" y="200" width="16" height="24" rx="3" fill="#2e7d32"/>
+        <text x="63" y="216" fill="#fff" font-size="8" font-weight="700" text-anchor="middle">U</text>
+        <text x="80" y="216" fill="#2e7d32" font-size="11" font-weight="700">Review Business ID</text>
+        <text x="400" y="216" fill="#64748b" font-size="9">Name verification bots | SEND BACK | VALIDATED | PENDING | REJECT</text>
+        <text x="700" y="216" fill="#059669" font-size="9" font-weight="600">Business ID</text>
+
+        <line x1="525" y1="230" x2="525" y2="242" stroke="#475569" stroke-width="1.5" marker-end="url(#arrW)"/>
+
+        <!-- Sort 4: Validate Business ID -->
+        <rect x="15" y="246" width="1020" height="36" rx="6" fill="#e8f5e9" stroke="#a5d6a7" stroke-width="1"/>
+        <text x="30" y="268" fill="#2e7d32" font-size="11" font-weight="800">4</text>
+        <rect x="55" y="252" width="16" height="24" rx="3" fill="#2e7d32"/>
+        <text x="63" y="268" fill="#fff" font-size="8" font-weight="700" text-anchor="middle">U</text>
+        <text x="80" y="268" fill="#2e7d32" font-size="11" font-weight="700">Validate Business ID</text>
+        <text x="400" y="268" fill="#64748b" font-size="9">Final name check | SEND BACK | VALIDATED | PENDING | REJECT</text>
+        <text x="700" y="268" fill="#059669" font-size="9" font-weight="600">Business ID</text>
+
+        <line x1="525" y1="282" x2="525" y2="294" stroke="#475569" stroke-width="1.5" marker-end="url(#arrW)"/>
+
+        <!-- Sort 5-7: Create Person, Business ID, Relations -->
+        <rect x="15" y="298" width="1020" height="36" rx="6" fill="#e3f2fd" stroke="#90caf9" stroke-width="1"/>
+        <text x="30" y="320" fill="#1565c0" font-size="11" font-weight="800">5-7</text>
+        <rect x="55" y="304" width="16" height="24" rx="3" fill="#1565c0"/>
+        <text x="63" y="320" fill="#fff" font-size="8" font-weight="700" text-anchor="middle">B</text>
+        <text x="80" y="320" fill="#1565c0" font-size="10" font-weight="700">Create Person (5) | Create Business ID (6) | Relations (7)</text>
+        <text x="700" y="320" fill="#059669" font-size="9" font-weight="600">Business ID</text>
+
+        <line x1="525" y1="334" x2="525" y2="346" stroke="#475569" stroke-width="1.5" marker-end="url(#arrW)"/>
+
+        <!-- Sort 8-9: PARALLEL Trading + Industrial -->
+        <rect x="15" y="350" width="1020" height="72" rx="6" fill="#fff3e0" stroke="#ffcc80" stroke-width="1.5"/>
+        <text x="30" y="370" fill="#ef6c00" font-size="10" font-weight="800">8-9</text>
+        <text x="80" y="370" fill="#ef6c00" font-size="10" font-weight="800">PARALLEL LANES</text>
+
+        <!-- Lane A: Trading -->
+        <rect x="80" y="378" width="440" height="18" rx="4" fill="#e8f5e9"/>
+        <text x="90" y="392" fill="#2e7d32" font-size="9" font-weight="700">Sort 8: Review Trading (User) | Sort 9: Validate Trading (User)</text>
+        <text x="540" y="392" fill="#d97706" font-size="8" font-weight="600">Trading Licence</text>
+
+        <!-- Lane B: Industrial -->
+        <rect x="80" y="398" width="440" height="18" rx="4" fill="#f3e5f5"/>
+        <text x="90" y="412" fill="#7c3aed" font-size="9" font-weight="700">Sort 8: Review Industrial (User) | Sort 9: Validate Industrial (User)</text>
+        <text x="540" y="412" fill="#7c3aed" font-size="8" font-weight="600">Industrial Licence</text>
+
+        <line x1="525" y1="422" x2="525" y2="434" stroke="#475569" stroke-width="1.5" marker-end="url(#arrW)"/>
+
+        <!-- Sort 10-13: Creation Bots -->
+        <rect x="15" y="438" width="1020" height="36" rx="6" fill="#e3f2fd" stroke="#90caf9" stroke-width="1"/>
+        <text x="30" y="460" fill="#1565c0" font-size="11" font-weight="800">10-13</text>
+        <rect x="65" y="444" width="16" height="24" rx="3" fill="#1565c0"/>
+        <text x="73" y="460" fill="#fff" font-size="8" font-weight="700" text-anchor="middle">B</text>
+        <text x="90" y="460" fill="#1565c0" font-size="10" font-weight="700">Create Activities (10) | Create Fees (11) | Relations (12) | Update Names (13)</text>
+        <text x="700" y="460" fill="#64748b" font-size="9">All Licences</text>
+
+        <line x1="525" y1="474" x2="525" y2="486" stroke="#475569" stroke-width="1.5" marker-end="url(#arrW)"/>
+
+        <!-- Sort 14: Cert Business ID -->
+        <rect x="15" y="490" width="1020" height="36" rx="6" fill="#e3f2fd" stroke="#90caf9" stroke-width="1"/>
+        <text x="30" y="512" fill="#1565c0" font-size="11" font-weight="800">14</text>
+        <rect x="55" y="496" width="16" height="24" rx="3" fill="#1565c0"/>
+        <text x="63" y="512" fill="#fff" font-size="8" font-weight="700" text-anchor="middle">B</text>
+        <text x="80" y="512" fill="#1565c0" font-size="11" font-weight="700">Cert Business ID</text>
+        <text x="400" y="512" fill="#64748b" font-size="9">Generates Business ID card PDF</text>
+        <text x="700" y="512" fill="#059669" font-size="9" font-weight="600">Business ID</text>
+
+        <line x1="525" y1="526" x2="525" y2="538" stroke="#475569" stroke-width="1.5" marker-end="url(#arrW)"/>
+
+        <!-- Sort 130: Applicant Return -->
+        <rect x="15" y="542" width="1020" height="36" rx="6" fill="#e8f5e9" stroke="#a5d6a7" stroke-width="1"/>
+        <text x="30" y="564" fill="#2e7d32" font-size="11" font-weight="800">130</text>
+        <rect x="65" y="548" width="16" height="24" rx="3" fill="#2e7d32"/>
+        <text x="73" y="564" fill="#fff" font-size="8" font-weight="700" text-anchor="middle">U</text>
+        <text x="90" y="564" fill="#2e7d32" font-size="11" font-weight="700">Applicant (assigned_to=applicant)</text>
+        <text x="400" y="564" fill="#64748b" font-size="9">FILE PENDING | VALIDATED | 9 Assistance bot roles</text>
+        <text x="700" y="564" fill="#64748b" font-size="9">All registrations</text>
+
+        <!-- Sort 299: Final bots -->
+        <rect x="15" y="586" width="1020" height="28" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+        <text x="30" y="604" fill="#64748b" font-size="10" font-weight="800">299</text>
+        <text x="80" y="604" fill="#64748b" font-size="10" font-weight="600">Certificate bots, CI Review/Approval, Cashier, NAMES create, Permits create, remaining roles</text>
+
+        <!-- SEND BACK arrow -->
+        <path d="M 1040,112 Q 1070,340 1040,564" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrR)"/>
+        <text x="1050" y="340" fill="#dc2626" font-size="8" font-weight="700" transform="rotate(90,1050,340)">SEND BACK to Applicant</text>
+      </svg>
+    </div>
+
+    <!-- STEP BY STEP -->
+    <h3 id="step-by-step">3.1 Step-by-Step Processing</h3>
+
+    <div class="pipeline-step bot">
+      <div class="step-header">
+        <span class="step-sort">0</span>
+        <span class="step-name">Reserve Activity Names</span>
+        <span class="badge badge-bot">BotRole</span>
+        <span class="badge badge-reg">All Registrations</span>
+      </div>
+      <div class="step-desc">
+        <p>The <strong>start role</strong> (<code>start_role=true</code>). Immediately upon file submission, this bot reserves all proposed business names and activity names in the GDB by calling <code>GDB.GDB-BUSINESS NAMES(3.2)-update-or-create-entries</code>. This prevents name conflicts during the review period.</p>
+        <p>The bot also calls <strong>FILING dates list</strong> (<code>GDB.GDB-FILING DATES(1.0)-list</code>) to retrieve current filing period dates for fee proration calculations.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step user">
+      <div class="step-header">
+        <span class="step-sort">1</span>
+        <span class="step-name">Validate Business Permit</span>
+        <span class="badge badge-user">UserRole</span>
+        <span class="badge" style="background:#dbeafe;color:#2563eb">Business Permit</span>
+      </div>
+      <div class="step-desc">
+        <p>A human officer from MTICM/Local Authority reviews the Business Permit application. They verify the business plan, banking statement, and insurance certificate. The officer can:</p>
+        <ul>
+          <li><strong>VALIDATED</strong> -- approves, file proceeds to sort 2</li>
+          <li><strong>SEND BACK</strong> -- returns to applicant for corrections (file goes to sort 130)</li>
+          <li><strong>PENDING</strong> -- holds for further review</li>
+          <li><strong>REJECT</strong> -- permanently rejects the application</li>
+        </ul>
+        <p><em>Note: Despite the name "Validate," this is effectively the first review step for Business Permit. The "Review Business Permit" role exists at sort 299 as a later/secondary review.</em></p>
+      </div>
+    </div>
+
+    <div class="pipeline-step bot">
+      <div class="step-header">
+        <span class="step-sort">2</span>
+        <span class="step-name">Create Business Permit</span>
+        <span class="badge badge-bot">BotRole</span>
+        <span class="badge" style="background:#dbeafe;color:#2563eb">Business Permit</span>
+      </div>
+      <div class="step-desc">
+        <p>Executes <strong>PERMITS update create</strong> bot which calls <code>GDB.GDB-PERMITS(2.9)-update-or-create</code> to create the permit record in the GDB database. Also triggers the <strong>Business permit upload</strong> bot (<code>generic-pdf-generator</code>) to generate the PDF certificate.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step user">
+      <div class="step-header">
+        <span class="step-sort">3</span>
+        <span class="step-name">Review Business ID</span>
+        <span class="badge badge-user">UserRole</span>
+        <span class="badge" style="background:#d1fae5;color:#059669">Business ID</span>
+      </div>
+      <div class="step-desc">
+        <p>OBFC officer reviews the Business ID application. Key activities at this step:</p>
+        <ul>
+          <li>The <strong>Review business ID role - Copy Proposed name</strong> (internal bot) copies the proposed name to a comparison field</li>
+          <li><strong>BUSINESS - check if Name exists - Review Role</strong> checks the name in GDB</li>
+          <li><strong>BUSINESS NAMES activities - does name exists for company - Review role</strong> checks activity names</li>
+          <li><strong>BUSINESSES list similar registered names - Review</strong> lists similar names</li>
+          <li>Determinants show green/red indicators: <code>Proposed name is available</code> vs <code>exists in BUSINESSES</code></li>
+        </ul>
+        <p>Status options: SEND BACK / VALIDATED / PENDING / REJECT</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step user">
+      <div class="step-header">
+        <span class="step-sort">4</span>
+        <span class="step-name">Validate Business ID</span>
+        <span class="badge badge-user">UserRole</span>
+        <span class="badge" style="background:#d1fae5;color:#059669">Business ID</span>
+      </div>
+      <div class="step-desc">
+        <p>Second-level review by a senior OBFC officer. Same name verification flow as Review but with "Validate" variants of the bots and determinants. When VALIDATED, the <strong>INTERNAL sent back from BR review</strong> bot clears any send-back flags.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step bot">
+      <div class="step-header">
+        <span class="step-sort">5</span>
+        <span class="step-name">Create Person</span>
+        <span class="badge badge-bot">BotRole</span>
+        <span class="badge" style="background:#d1fae5;color:#059669">Business ID</span>
+      </div>
+      <div class="step-desc">
+        <p>Creates or updates person records in GDB: <strong>NATURAL PERSONS</strong> (owner, shareholders) and <strong>LEGAL PERSONS</strong> (company entities). Calls <code>GDB.GDB-NATURAL PERSONS(4.4)-update-or-create</code> and <code>GDB.GDB-LEGAL PERSONS(5.6)-update-or-create</code>.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step bot">
+      <div class="step-header">
+        <span class="step-sort">6</span>
+        <span class="step-name">Create Business ID</span>
+        <span class="badge badge-bot">BotRole</span>
+        <span class="badge" style="background:#d1fae5;color:#059669">Business ID</span>
+      </div>
+      <div class="step-desc">
+        <p><strong>BUSINESS update or create</strong> (<code>GDB.GDB-BUSINESS(10.2)-update-or-create</code>) creates the core business record. Also calls <strong>ACCOUNTS create</strong> and <strong>SHAREHOLDERS update or create entries</strong>.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step bot">
+      <div class="step-header">
+        <span class="step-sort">7</span>
+        <span class="step-name">Relations</span>
+        <span class="badge badge-bot">BotRole</span>
+        <span class="badge" style="background:#d1fae5;color:#059669">Business ID</span>
+      </div>
+      <div class="step-desc">
+        <p>Creates relationship records linking persons to the business via <code>GDB.GDB-RELATIONS(3.3)-create</code> and managers via <code>GDB.GDB-MANAGERS(2.1)-update-or-create-entries</code>.</p>
+      </div>
+    </div>
+
+    <h3 id="parallel-processing">3.2 Parallel Processing (Sort 8-9)</h3>
+
+    <div class="pipeline-step user">
+      <div class="step-header">
+        <span class="step-sort">8</span>
+        <span class="step-name">Review Trading | Review Industrial</span>
+        <span class="badge badge-user">UserRole</span>
+        <span class="badge" style="background:#fef3c7;color:#92400e">PARALLEL</span>
+      </div>
+      <div class="step-desc">
+        <p>Two review roles run <strong>in parallel</strong> at sort order 8:</p>
+        <ul>
+          <li><strong>Review Trading</strong> (Trading Licence) -- only activates if <code>applicantNumberOfTradeLicense &gt; 0</code></li>
+          <li><strong>Review Industrial</strong> (Industrial Licence) -- only activates if <code>applicantNumberOfIndustrialLicenses &gt; 0</code></li>
+        </ul>
+        <p>Both share the same status options: SEND BACK / VALIDATED / PENDING / REJECT.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step user">
+      <div class="step-header">
+        <span class="step-sort">9</span>
+        <span class="step-name">Validate Trading | Validate Industrial</span>
+        <span class="badge badge-user">UserRole</span>
+        <span class="badge" style="background:#fef3c7;color:#92400e">PARALLEL</span>
+      </div>
+      <div class="step-desc">
+        <p>Second-level validation, also <strong>in parallel</strong>. Final approval for trading and industrial licences.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step bot">
+      <div class="step-header">
+        <span class="step-sort">10</span>
+        <span class="step-name">Create Activities</span>
+        <span class="badge badge-bot">BotRole</span>
+      </div>
+      <div class="step-desc">
+        <p><strong>ACTIVITIES PER BUSINESS create entries</strong> (<code>GDB.GDB-APB(1.5)-create-entries</code>) creates all approved business activity records in GDB.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step bot">
+      <div class="step-header">
+        <span class="step-sort">11</span>
+        <span class="step-name">Create Fees</span>
+        <span class="badge badge-bot">BotRole</span>
+      </div>
+      <div class="step-desc">
+        <p>Creates all fee records: <strong>FEES create BR</strong> (Business Registration), <strong>FEES create TL fees</strong> (Trading), <strong>FEES create IL fees</strong> (Industrial), <strong>FEES create CI</strong> (Company Incorporation).</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step bot">
+      <div class="step-header">
+        <span class="step-sort">12</span>
+        <span class="step-name">Relations for Licences</span>
+        <span class="badge badge-bot">BotRole</span>
+      </div>
+      <div class="step-desc">
+        <p>Creates licence-to-business relationship records and licence entries via <code>GDB.GDB-LICENCES(4.6)-create-entries</code> for both Trading and Industrial licences.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step bot">
+      <div class="step-header">
+        <span class="step-sort">13</span>
+        <span class="step-name">Update Activity Names</span>
+        <span class="badge badge-bot">BotRole</span>
+      </div>
+      <div class="step-desc">
+        <p>Finalizes activity name records: marks approved names as confirmed and rejected names as declined via <code>GDB.GDB-BUSINESS NAMES(3.2)-update-entries</code>.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step bot">
+      <div class="step-header">
+        <span class="step-sort">14</span>
+        <span class="step-name">Cert Business ID</span>
+        <span class="badge badge-bot">BotRole</span>
+        <span class="badge" style="background:#d1fae5;color:#059669">Business ID</span>
+      </div>
+      <div class="step-desc">
+        <p>Generates the <strong>Business ID card</strong> PDF via <code>BUSINESS ID upload</code> bot (<code>generic-pdf-generator</code>). Final step in the main sequential pipeline.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-step user">
+      <div class="step-header">
+        <span class="step-sort">130</span>
+        <span class="step-name">Applicant</span>
+        <span class="badge badge-user">UserRole</span>
+        <span class="badge badge-count">assigned_to=applicant</span>
+      </div>
+      <div class="step-desc">
+        <p>The file returns to the <strong>applicant</strong> -- either after processing completes (receives documents) or after a SEND BACK (makes corrections and resubmits). Has <strong>9 Assistance sub-roles</strong> that run bots to prepare the file.</p>
+      </div>
+    </div>
+
+    <h3 id="assistance-roles">3.3 Assistance Roles</h3>
+    <p>Assistance roles (sort 130 and 299) are <span class="badge badge-assist">BotRole</span> roles that execute automatically. There are approximately <strong>18 Assistance roles</strong>:</p>
+
+    <details>
+      <summary>Assistance Roles at Sort 130 (Applicant return)</summary>
+      <div class="details-body">
+        <table>
+          <thead><tr><th>Role</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td>Assistance Reserve activity names</td><td>Re-reserves names after corrections</td></tr>
+            <tr><td>Assistance BR upload</td><td>Generates Business Registration summary PDF</td></tr>
+            <tr><td>Assistance BR create</td><td>Creates/updates BR data in GDB</td></tr>
+            <tr><td>Assistance BP create</td><td>Creates/updates Business Permit data</td></tr>
+            <tr><td>Assistance Proprietors create</td><td>Creates/updates proprietor person records</td></tr>
+            <tr><td>Assistance IL create</td><td>Creates/updates Industrial Licence data</td></tr>
+            <tr><td>Assistance relations2</td><td>Creates/updates relationship records</td></tr>
+            <tr><td>Assistance Relations industrial</td><td>Creates Industrial Licence relations</td></tr>
+            <tr><td>Assistance Update activity names</td><td>Updates activity name statuses</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details>
+      <summary>Assistance Roles at Sort 299 (Final processing)</summary>
+      <div class="details-body">
+        <table>
+          <thead><tr><th>Role</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td>Assistance CI create</td><td>Creates Company Incorporation records</td></tr>
+            <tr><td>Assistance Names create</td><td>Creates final name records</td></tr>
+            <tr><td>Assistance TL upload</td><td>Generates Trading Licence PDF</td></tr>
+            <tr><td>Assistance BP upload</td><td>Generates Business Permit PDF</td></tr>
+            <tr><td>Assistance CI upload</td><td>Generates Company Incorporation PDF</td></tr>
+            <tr><td>Assistance IL upload</td><td>Generates Industrial Licence PDF</td></tr>
+            <tr><td>Assistance TL create</td><td>Creates Trading Licence records</td></tr>
+            <tr><td>Assistance Relations trading</td><td>Creates Trading Licence relations</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4: DOCUMENTS & TEMPLATES                              -->
+    <!-- ============================================================ -->
+    <h2 id="documents">4. Documents &amp; Templates</h2>
+    <p>The service produces <strong>6 print documents</strong>. Each is generated by a document bot using the <code>generic-pdf-generator</code> service and can be displayed using <code>generic-pdf-display</code>.</p>
+
+    <table>
+      <thead>
+        <tr><th>#</th><th>Document Name</th><th>Sort</th><th>Registration</th><th>Generator Bot</th><th>Display Bot</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Memorandum of Association</strong></td><td>0</td><td>Company Incorporation</td><td>Company incorporation upload</td><td>Memorandum display</td></tr>
+        <tr><td>2</td><td><strong>Payment Slip</strong></td><td>2</td><td>All (payment receipt)</td><td>Summary upload</td><td>APPLICATION display</td></tr>
+        <tr><td>3</td><td><strong>Business ID</strong></td><td>3</td><td>Business ID</td><td>BUSINESS ID upload</td><td>BUSINESS ID display</td></tr>
+        <tr><td>4</td><td><strong>Business Permit</strong></td><td>4</td><td>Business Permit</td><td>Business permit upload</td><td>TEST BUSINESS PERMIT 2/3</td></tr>
+        <tr><td>5</td><td><strong>Trading Licence</strong></td><td>5</td><td>Trading Licence</td><td>Trade license upload</td><td>Trade license display</td></tr>
+        <tr><td>6</td><td><strong>Industrial Licence</strong></td><td>6</td><td>Industrial Licence</td><td>Industrial license upload</td><td>Industrial license display</td></tr>
+      </tbody>
+    </table>
+
+    <details>
+      <summary>Memorandum of Association</summary>
+      <div class="details-body">
+        <p><strong>ID:</strong> <code>528dab21-1dd1-bc91-232e-25645a1e6c1d</code></p>
+        <p>The constitutional document for company incorporation. Contains company name, type, registered office, objects, share capital structure, list of subscribers with details and share allocations, and digital signatures from all members.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Payment Slip</summary>
+      <div class="details-body">
+        <p><strong>ID:</strong> <code>fc904464-bbbe-811c-a442-69dd7ab6127e</code></p>
+        <p>Receipt itemizing all fees: Business Registration, Trading Licence fees (per activity), Industrial Licence fees (per activity), Company Incorporation fee (if applicable), payment method and date.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Business ID Card</summary>
+      <div class="details-body">
+        <p><strong>ID:</strong> <code>2c928087926fd2a1019270d541ce0048</code></p>
+        <p>Contains unique Business ID number, registered business name, owner details, business address, registration date, and QR code for verification. Generated at sort 14.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Business Permit Certificate</summary>
+      <div class="details-body">
+        <p><strong>ID:</strong> <code>2c928087926fd2a1019270af28ca0042</code></p>
+        <p>Contains permit number, business name and address, permitted activities, validity period, and issuing authority.</p>
+        <div class="issue-callout">
+          <div class="issue-title"><span class="issue-sev medium">MEDIUM</span> Display Bots Named "TEST"</div>
+          <div class="issue-desc">The display bots are named "TEST BUSINESS PERMIT 2" and "TEST BUSINESS PERMIT 3" -- likely development remnants not renamed for production.</div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Trading Licence Certificate</summary>
+      <div class="details-body">
+        <p><strong>ID:</strong> <code>2c92808792372fda01924858594d0164</code></p>
+        <p>Contains licence number, business name, licensed trading activities, fee amounts, validity period.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Industrial Licence Certificate</summary>
+      <div class="details-body">
+        <p><strong>ID:</strong> <code>2c92808792372fda019248587d080166</code></p>
+        <p>Contains licence number, business name, licensed industrial activities, fee amounts, validity period.</p>
+      </div>
+    </details>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5: APPENDIX                                           -->
+    <!-- ============================================================ -->
+    <h2 id="appendix">5. Appendix</h2>
+
+    <h3 id="known-issues">5.1 Known Issues</h3>
+
+    <div class="issue-callout">
+      <div class="issue-title"><span class="issue-sev high">HIGH</span> Test Role Visible in Production</div>
+      <div class="issue-desc">A role named <code>test</code> exists at sort 299. The associated bot (<code>test</code>, internal, ID: <code>397e74ff-c35a-452d-a36b-ebd61d2b635a</code>) is enabled in production. This should be disabled or removed.</div>
+    </div>
+
+    <div class="issue-callout">
+      <div class="issue-title"><span class="issue-sev medium">MEDIUM</span> TEST-Named Display Bots</div>
+      <div class="issue-desc">Business Permit display bots are named "TEST BUSINESS PERMIT 2" and "TEST BUSINESS PERMIT 3". These should be renamed for clarity.</div>
+    </div>
+
+    <div class="issue-callout">
+      <div class="issue-title"><span class="issue-sev medium">MEDIUM</span> Sort Order Gaps</div>
+      <div class="issue-desc">Large gap between sort 14 and sort 130 (Applicant), and then to sort 299 (remaining roles). Many critical roles (CI Review, CI Approval, Cashier, all Certificate bots) are at sort 299, making execution order unclear.</div>
+    </div>
+
+    <div class="issue-callout">
+      <div class="issue-title"><span class="issue-sev low">LOW</span> Typos in Determinant Names</div>
+      <div class="issue-desc">Several determinant names contain typos: "Busines name for comparisson" (comparison), "Rewiew comments not empty" (Review), "Similiar" (Similar), "otheCountry" (otherCountry), "Shareholder isfrom" (is from).</div>
+    </div>
+
+    <div class="issue-callout">
+      <div class="issue-title"><span class="issue-sev low">LOW</span> Duplicate/Copied Determinants</div>
+      <div class="issue-desc">Several determinants have "(generated by copying)" suffix, referencing the MoA template field. May be intentional for template-vs-form separation but should be documented.</div>
+    </div>
+
+    <div class="issue-callout">
+      <div class="issue-title"><span class="issue-sev low">LOW</span> Send File Form Not Configured</div>
+      <div class="issue-desc">The service does not have a <code>send_file</code> form type configured. Send page logic is embedded in the applicant form.</div>
+    </div>
+
+    <!-- DETERMINANT CATALOG -->
+    <h3 id="determinant-catalog">5.2 Determinant Catalog</h3>
+    <p>All 149 determinants organized by type:</p>
+
+    <details>
+      <summary>Radio Determinants (30)</summary>
+      <div class="details-body">
+        <table>
+          <thead><tr><th>Name</th><th>Field</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Business is sole proprietor</td><td>guideTypeOfBusiness2</td><td>soleProprietor</td></tr>
+            <tr><td>Business is company</td><td>guideTypeOfBusiness2</td><td>company</td></tr>
+            <tr><td>Application for myself</td><td>guideApplicationFor</td><td>yesIWillBeTheOwner</td></tr>
+            <tr><td>Application for someone else</td><td>guideApplicationFor</td><td>noIAmCreatingThisBusinessForAnotherPerson</td></tr>
+            <tr><td>Business owner from Lesotho</td><td>guideIsTheBusinessOwnerFromLesothoOrOtherCountry</td><td>lesotho</td></tr>
+            <tr><td>Business owner from other country</td><td>guideIsTheBusinessOwnerFromLesothoOrOtherCountry</td><td>otheCountry</td></tr>
+            <tr><td>Residential address is in Lesotho</td><td>applicantIsTheResidentialAddressInLesotho</td><td>yes</td></tr>
+            <tr><td>Residential address is NOT in Lesotho</td><td>applicantIsTheResidentialAddressInLesotho</td><td>no</td></tr>
+            <tr><td>Electronic signature</td><td>applicantElectronicOrManualSignature</td><td>electronically</td></tr>
+            <tr><td>Manual signature</td><td>applicantElectronicOrManualSignature</td><td>manually</td></tr>
+            <tr><td>Only ordinary shares</td><td>applicantWhatTypeOfSharesWillYouHave</td><td>onlyOrdinaryShares</td></tr>
+            <tr><td>Ordinary and preferred shares</td><td>applicantWhatTypeOfSharesWillYouHave</td><td>ordinarySharesAndPreferredShares</td></tr>
+            <tr><td>Automated articles of association</td><td>applicantWillYouUseTheAutomatedArticlesOfAssociationProvidedByObfc</td><td>yes</td></tr>
+            <tr><td>No automated articles</td><td>applicantWillYouUseTheAutomatedArticlesOfAssociationProvidedByObfc</td><td>no</td></tr>
+            <tr><td>Will pay at Cashier</td><td>paymentProviderSelected</td><td>frontdesk</td></tr>
+            <tr><td>iVeri</td><td>paymentProviderSelected</td><td>iveri</td></tr>
+          </tbody>
+        </table>
+        <p class="text-muted text-sm">Plus 14 additional radio determinants for name checks, accounts, and other conditions.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Numeric Determinants (26)</summary>
+      <div class="details-body">
+        <table>
+          <thead><tr><th>Name</th><th>Field</th><th>Operator</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Annual turnover &le; 5M</td><td>applicantTurnover</td><td>&le;</td><td>5,000,000</td></tr>
+            <tr><td>Annual turnover &gt; 5M</td><td>applicantTurnover</td><td>&gt;</td><td>5,000,000</td></tr>
+            <tr><td>Employees &le; 50</td><td>applicantNumberOfEmployees</td><td>&le;</td><td>50</td></tr>
+            <tr><td>Employees &gt; 50</td><td>applicantNumberOfEmployees</td><td>&gt;</td><td>50</td></tr>
+            <tr><td>At least 1 trade license</td><td>applicantNumberOfTradeLicense</td><td>&gt;</td><td>0</td></tr>
+            <tr><td>At least 1 industrial license</td><td>applicantNumberOfIndustrialLicenses</td><td>&gt;</td><td>0</td></tr>
+            <tr><td>30%+ foreign shareholders</td><td>applicantPrecentageOfSharesOwnedByForeignShareholders</td><td>&ge;</td><td>30</td></tr>
+            <tr><td>Managers count &gt; 0</td><td>applicantManagersCount</td><td>&gt;</td><td>0</td></tr>
+            <tr><td>Total shareholders &gt; 1</td><td>applicantShareholdersTot</td><td>&gt;</td><td>1</td></tr>
+          </tbody>
+        </table>
+        <p class="text-muted text-sm">Plus 17 additional numeric determinants for shares, counters, and validations.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Grid Determinants (50) | Boolean (6) | Text (12) | Classification (5) | FileUpload (1)</summary>
+      <div class="details-body">
+        <table>
+          <thead><tr><th>Category</th><th>Count</th><th>Target Grids</th></tr></thead>
+          <tbody>
+            <tr><td>Activities list</td><td>16</td><td>applicantListOfActivities2</td></tr>
+            <tr><td>Shareholders</td><td>14</td><td>applicantListOfShareholders2</td></tr>
+            <tr><td>Business name review/validate</td><td>8</td><td>brReview.../brApproval... grids</td></tr>
+            <tr><td>MoA signing</td><td>6</td><td>applicantMembersToSignMoA</td></tr>
+            <tr><td>MoA template copies</td><td>4</td><td>templatememorandum... grid</td></tr>
+            <tr><td>Managers/directors</td><td>3</td><td>applicantListOfShareholdersAndDirectors</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Boolean (6):</strong> Form valid, Tab valid, User logged in, Declaration, Fees paid, Paid digitally</p>
+        <p><strong>Text (12):</strong> Name comparisons, review comments, send-back flags</p>
+        <p><strong>Classification (5):</strong> Gender, Marital status, Nationality, Company type</p>
+        <p><strong>FileUpload (1):</strong> Owners ID uploaded</p>
+      </div>
+    </details>
+
+    <!-- Determinant Logic SVG -->
+    <div class="diagram-container">
+      <div class="diagram-title">Determinant Logic -- Representative Chains</div>
+      <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" style="max-width:800px">
+        <defs>
+          <marker id="arrD" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#92400e"/>
+          </marker>
+        </defs>
+
+        <!-- Chain 1: Business Type -->
+        <text x="20" y="30" fill="#334155" font-size="11" font-weight="700">Chain 1: Business Type Selection</text>
+        <rect x="20" y="40" width="160" height="40" rx="6" fill="#fef3c7" stroke="#fcd34d"/>
+        <text x="100" y="55" text-anchor="middle" fill="#92400e" font-size="9" font-weight="700">DETERMINANT</text>
+        <text x="100" y="70" text-anchor="middle" fill="#92400e" font-size="8">guideTypeOfBusiness2 = "company"</text>
+        <line x1="180" y1="60" x2="220" y2="60" stroke="#92400e" stroke-width="1.5" marker-end="url(#arrD)"/>
+
+        <rect x="225" y="40" width="120" height="40" rx="6" fill="#fde68a" stroke="#fbbf24"/>
+        <text x="285" y="55" text-anchor="middle" fill="#92400e" font-size="9" font-weight="700">EFFECT</text>
+        <text x="285" y="70" text-anchor="middle" fill="#92400e" font-size="8">activate=true, show=true</text>
+        <line x1="345" y1="60" x2="385" y2="50" stroke="#92400e" stroke-width="1.5" marker-end="url(#arrD)"/>
+        <line x1="345" y1="60" x2="385" y2="70" stroke="#92400e" stroke-width="1.5" marker-end="url(#arrD)"/>
+
+        <rect x="390" y="35" width="170" height="24" rx="4" fill="#e8f5e9" stroke="#a5d6a7"/>
+        <text x="475" y="52" text-anchor="middle" fill="#2e7d32" font-size="8">Shareholders tab (visible)</text>
+        <rect x="390" y="63" width="170" height="24" rx="4" fill="#e8f5e9" stroke="#a5d6a7"/>
+        <text x="475" y="80" text-anchor="middle" fill="#2e7d32" font-size="8">Executives tab (visible)</text>
+
+        <!-- Chain 2: Residential Address -->
+        <text x="20" y="120" fill="#334155" font-size="11" font-weight="700">Chain 2: Foreign Resident Detection</text>
+        <rect x="20" y="130" width="180" height="40" rx="6" fill="#fef3c7" stroke="#fcd34d"/>
+        <text x="110" y="145" text-anchor="middle" fill="#92400e" font-size="9" font-weight="700">DETERMINANT</text>
+        <text x="110" y="160" text-anchor="middle" fill="#92400e" font-size="8">applicantIsResAddr... = "no"</text>
+        <line x1="200" y1="150" x2="240" y2="150" stroke="#92400e" stroke-width="1.5" marker-end="url(#arrD)"/>
+
+        <rect x="245" y="130" width="120" height="40" rx="6" fill="#fde68a" stroke="#fbbf24"/>
+        <text x="305" y="145" text-anchor="middle" fill="#92400e" font-size="9" font-weight="700">EFFECT</text>
+        <text x="305" y="160" text-anchor="middle" fill="#92400e" font-size="8">activate=true</text>
+        <line x1="365" y1="150" x2="405" y2="140" stroke="#92400e" stroke-width="1.5" marker-end="url(#arrD)"/>
+        <line x1="365" y1="150" x2="405" y2="160" stroke="#92400e" stroke-width="1.5" marker-end="url(#arrD)"/>
+
+        <rect x="410" y="125" width="170" height="24" rx="4" fill="#e8f5e9" stroke="#a5d6a7"/>
+        <text x="495" y="142" text-anchor="middle" fill="#2e7d32" font-size="8">applicantBlock7 (foreign addr)</text>
+        <rect x="410" y="153" width="170" height="24" rx="4" fill="#e8f5e9" stroke="#a5d6a7"/>
+        <text x="495" y="170" text-anchor="middle" fill="#2e7d32" font-size="8">applicantBlock8 (local rep)</text>
+
+        <!-- Chain 3: Name Check -->
+        <text x="20" y="210" fill="#334155" font-size="11" font-weight="700">Chain 3: Business Name Availability</text>
+        <rect x="20" y="220" width="160" height="40" rx="6" fill="#fef3c7" stroke="#fcd34d"/>
+        <text x="100" y="235" text-anchor="middle" fill="#92400e" font-size="9" font-weight="700">DETERMINANT</text>
+        <text x="100" y="250" text-anchor="middle" fill="#92400e" font-size="8">companyNameExists = "true"</text>
+        <line x1="180" y1="240" x2="220" y2="240" stroke="#92400e" stroke-width="1.5" marker-end="url(#arrD)"/>
+
+        <rect x="225" y="220" width="120" height="40" rx="6" fill="#fde68a" stroke="#fbbf24"/>
+        <text x="285" y="235" text-anchor="middle" fill="#92400e" font-size="9" font-weight="700">EFFECT</text>
+        <text x="285" y="250" text-anchor="middle" fill="#92400e" font-size="8">activate=true, show=true</text>
+        <line x1="345" y1="240" x2="385" y2="240" stroke="#92400e" stroke-width="1.5" marker-end="url(#arrD)"/>
+
+        <rect x="390" y="225" width="200" height="30" rx="4" fill="#ffebee" stroke="#ef9a9a"/>
+        <text x="490" y="245" text-anchor="middle" fill="#c62828" font-size="9" font-weight="700">WARNING: Name already taken</text>
+
+        <!-- Legend -->
+        <rect x="620" y="220" width="12" height="12" rx="2" fill="#fef3c7" stroke="#fcd34d"/>
+        <text x="638" y="231" fill="#64748b" font-size="8">Determinant</text>
+        <rect x="620" y="238" width="12" height="12" rx="2" fill="#fde68a" stroke="#fbbf24"/>
+        <text x="638" y="249" fill="#64748b" font-size="8">Effect</text>
+        <rect x="620" y="256" width="12" height="12" rx="2" fill="#e8f5e9" stroke="#a5d6a7"/>
+        <text x="638" y="267" fill="#64748b" font-size="8">Component (show)</text>
+        <rect x="620" y="274" width="12" height="12" rx="2" fill="#ffebee" stroke="#ef9a9a"/>
+        <text x="638" y="285" fill="#64748b" font-size="8">Validation warning</text>
+      </svg>
+    </div>
+
+    <!-- BOT CATALOG -->
+    <h3 id="bot-catalog">5.3 Bot Catalog</h3>
+    <p>All 78 bots organized by category:</p>
+
+    <details>
+      <summary>Data Bots -- GDB Operations (47)</summary>
+      <div class="details-body">
+        <table>
+          <thead><tr><th>Category</th><th>Count</th><th>GDB Services</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Create</strong></td><td>15</td><td>BUSINESS, PERMITS, LICENCES, APB, FEES, RELATIONS, ACCOUNTS, SHAREHOLDERS, BUSINESS NAMES</td></tr>
+            <tr><td><strong>Update</strong></td><td>7</td><td>BUSINESS, NATURAL PERSONS, LEGAL PERSONS, SHAREHOLDERS, MANAGERS, SIGNATURES, BUSINESS NAMES</td></tr>
+            <tr><td><strong>Exist (check)</strong></td><td>14</td><td>BUSINESS (10.2), BUSINESS NAMES (3.2), VIEW-Activity business names (1.2)</td></tr>
+            <tr><td><strong>List</strong></td><td>5</td><td>BUSINESS, BUSINESS NAMES, FILING DATES, VIEW-Activity business names</td></tr>
+            <tr><td><strong>Read</strong></td><td>2</td><td>NATURAL PERSONS, LEGAL PERSONS</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details>
+      <summary>Document Bots (12)</summary>
+      <div class="details-body">
+        <table>
+          <thead><tr><th>Bot</th><th>Type</th><th>Document</th></tr></thead>
+          <tbody>
+            <tr><td>Business permit upload</td><td>generate+upload</td><td>Business Permit PDF</td></tr>
+            <tr><td>Trade license upload</td><td>generate+upload</td><td>Trading Licence PDF</td></tr>
+            <tr><td>Industrial license upload</td><td>generate+upload</td><td>Industrial Licence PDF</td></tr>
+            <tr><td>Company incorporation upload</td><td>generate+upload</td><td>MoA PDF</td></tr>
+            <tr><td>Summary upload</td><td>generate+upload</td><td>Payment Slip PDF</td></tr>
+            <tr><td>BUSINESS ID upload</td><td>generate+upload</td><td>Business ID card PDF</td></tr>
+            <tr><td>Memorandum display</td><td>display</td><td>MoA preview</td></tr>
+            <tr><td>Trade license display</td><td>display</td><td>Trading Licence preview</td></tr>
+            <tr><td>Industrial license display</td><td>display</td><td>Industrial Licence preview</td></tr>
+            <tr><td>BUSINESS ID display</td><td>display</td><td>Business ID preview</td></tr>
+            <tr><td>TEST BUSINESS PERMIT 2</td><td>display</td><td>Business Permit preview</td></tr>
+            <tr><td>TEST BUSINESS PERMIT 3</td><td>display</td><td>Business Permit preview (alt)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details>
+      <summary>Internal Bots (10) | Message Bots (2) | Other (7)</summary>
+      <div class="details-body">
+        <h5>Internal (10)</h5>
+        <p>Copy Proposed name (Review/Validate), Copy business name for comparison, Bring data to MoA, Copy directors to managers, To incorporation documents, Send true to status signed, Sent back from BR review, Activity data, Proposed activity name to comparison.</p>
+        <h5>Message (2)</h5>
+        <p>MESSAGE Annual reminder, MESSAGE sign the constitutional document (owner).</p>
+        <h5>Other (7)</h5>
+        <p>Data Extractor, Send ID to Base 64, Internal Activities (x2), APPLICATION display, <strong>test</strong> (issue).</p>
+      </div>
+    </details>
+
+    <!-- TECH REFERENCE -->
+    <h3 id="tech-reference">5.4 Technical Reference</h3>
+
+    <table>
+      <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Service ID</td><td><code>2c92808792372fda0192430feea30000</code></td></tr>
+        <tr><td>Service Status</td><td><span class="badge badge-active">ACTIVE</span></td></tr>
+        <tr><td>Complexity Score</td><td><span class="badge badge-issue">HIGH</span></td></tr>
+        <tr><td>Total Registrations</td><td>5</td></tr>
+        <tr><td>Total Form Components</td><td>722 (applicant) + 11 (guide) = 733</td></tr>
+        <tr><td>Total Fields</td><td>1,635</td></tr>
+        <tr><td>Required Fields</td><td>139</td></tr>
+        <tr><td>Total Determinants</td><td>149</td></tr>
+        <tr><td>Total Bots</td><td>78</td></tr>
+        <tr><td>Total Roles</td><td>50</td></tr>
+        <tr><td>Component Behaviours</td><td>230</td></tr>
+        <tr><td>Print Documents</td><td>6</td></tr>
+      </tbody>
+    </table>
+
+    <h5>Field Types Distribution</h5>
+    <table>
+      <thead><tr><th>Type</th><th>Count</th><th>Type</th><th>Count</th><th>Type</th><th>Count</th></tr></thead>
+      <tbody>
+        <tr><td>textfield</td><td>748</td><td>number</td><td>230</td><td>select</td><td>166</td></tr>
+        <tr><td>panel</td><td>130</td><td>button</td><td>79</td><td>datetime</td><td>53</td></tr>
+        <tr><td>radio</td><td>50</td><td>editgrid</td><td>26</td><td>htmlelement</td><td>23</td></tr>
+        <tr><td>datagrid</td><td>21</td><td>checkbox</td><td>19</td><td>file/fileupload</td><td>31</td></tr>
+        <tr><td>textarea</td><td>15</td><td>email</td><td>12</td><td>fieldset</td><td>12</td></tr>
+        <tr><td>unknown</td><td>10</td><td>qrcode</td><td>5</td><td>string/hidden</td><td>3</td></tr>
+      </tbody>
+    </table>
+
+    <h5>GDB Services Referenced</h5>
+    <table>
+      <thead><tr><th>GDB Service</th><th>Operations Used</th></tr></thead>
+      <tbody>
+        <tr><td>GDB-BUSINESS(10.2)</td><td>update-or-create, exists, list, update</td></tr>
+        <tr><td>GDB-BUSINESS NAMES(3.2)</td><td>update-or-create-entries, exists, list, update-entries</td></tr>
+        <tr><td>GDB-NATURAL PERSONS(4.4)</td><td>update-or-create, update-or-create-entries, read</td></tr>
+        <tr><td>GDB-LEGAL PERSONS(5.6)</td><td>update-or-create, update-or-create-entries, read</td></tr>
+        <tr><td>GDB-RELATIONS(3.3)</td><td>create, create-entries, update-or-create-entries</td></tr>
+        <tr><td>GDB-FEES(1.6)</td><td>create, create-entries</td></tr>
+        <tr><td>GDB-LICENCES(4.6)</td><td>create-entries</td></tr>
+        <tr><td>GDB-PERMITS(2.9)</td><td>update-or-create</td></tr>
+        <tr><td>GDB-SHAREHOLDERS(3.0)</td><td>update-or-create-entries</td></tr>
+        <tr><td>GDB-MANAGERS(2.1)</td><td>update-or-create-entries</td></tr>
+        <tr><td>GDB-ACCOUNTS(1.0)</td><td>create-entries</td></tr>
+        <tr><td>GDB-APB(1.5)</td><td>create-entries</td></tr>
+        <tr><td>GDB-SIGNATURES(1.2)</td><td>create-entries, update-entries</td></tr>
+        <tr><td>GDB-FILING DATES(1.0)</td><td>list</td></tr>
+        <tr><td>GDB-VIEW-Activity business names(1.2)</td><td>exists, list</td></tr>
+        <tr><td>generic-pdf-generator</td><td>6 document templates</td></tr>
+        <tr><td>generic-pdf-display</td><td>7 display instances</td></tr>
+      </tbody>
+    </table>
+
+    <h5>Institution Summary</h5>
+    <table>
+      <thead><tr><th>Institution ID</th><th>Registrations</th><th>Likely Entity</th></tr></thead>
+      <tbody>
+        <tr><td><code>301c8ef4-b98a-...</code></td><td>Business Permit, Trading Licence, Industrial Licence</td><td>MTICM / Ministry of Trade, Industry, Cooperatives and Marketing</td></tr>
+        <tr><td><code>9bb1decc-b028-...</code></td><td>Business ID</td><td>OBFC / One-Stop Business Facilitation Centre</td></tr>
+        <tr><td><code>f0a89b81-87fc-...</code></td><td>Company Incorporation</td><td>LAA / Registrar of Companies</td></tr>
+      </tbody>
+    </table>
+
+    <!-- FOOTER -->
+    <footer class="manual-version">
+      <p>BPA Documentation v3.0 -- Generated 2026-02-19 -- Source: BPA-lesotho2/2c92808792372fda0192430feea30000</p>
+      <p>Generated by /bpa-docs prototype -- Structured by Registration &rarr; Applicant File &rarr; Processing Workflow</p>
+    </footer>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<!-- ============================================================ -->
+<!-- SCROLL-SPY & SEARCH SCRIPT                                    -->
+<!-- ============================================================ -->
+<script>
+(function() {
+  // Scroll spy
+  var navLinks = document.querySelectorAll('#sidebarNav a[href^="#"]');
+  var sections = [];
+  navLinks.forEach(function(link) {
+    var id = link.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: link });
+  });
+
+  function updateActive() {
+    var current = '';
+    var scrollY = window.scrollY + 120;
+    for (var i = sections.length - 1; i >= 0; i--) {
+      if (sections[i].el.offsetTop <= scrollY) {
+        current = sections[i].id;
+        break;
+      }
+    }
+    navLinks.forEach(function(l) { l.classList.remove('active'); });
+    if (current) {
+      var active = document.querySelector('#sidebarNav a[href="#' + current + '"]');
+      if (active) active.classList.add('active');
+    }
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+
+  // Search filter
+  var searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', function() {
+    var query = this.value.toLowerCase();
+    navLinks.forEach(function(link) {
+      var text = link.textContent.toLowerCase();
+      link.style.display = (!query || text.indexOf(query) >= 0) ? '' : 'none';
+    });
+    var navSections = document.querySelectorAll('.nav-section');
+    navSections.forEach(function(sec) {
+      sec.style.display = query ? 'none' : '';
+    });
+  });
+})();
+</script>
+</body>
+</html>
