@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BPA Service Analysis - Register a Business - Lesotho</title>
+<style>
+/* ================================================================
+   EG V27.19 BPA Service Analysis Model - Stylesheet
+   ================================================================ */
+:root {
+  --primary: #1e40af;
+  --primary-light: #2563eb;
+  --primary-lighter: #dbeafe;
+  --primary-bg: #eff6ff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --success: #059669;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --bot-color: #7c3aed;
+  --user-color: #2563eb;
+  --sidebar-width: 280px;
+  --font-size-sm: 12px;
+  --font-size-base: 13px;
+  --font-size-md: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--gray-800);
+  background: var(--gray-50);
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--gray-900);
+  color: #fff;
+  overflow-y: auto;
+  z-index: 1000;
+  padding: 16px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-600) var(--gray-900);
+}
+.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar-track { background: var(--gray-900); }
+.sidebar::-webkit-scrollbar-thumb { background: var(--gray-600); border-radius: 3px; }
+
+.sidebar .logo {
+  padding: 8px 16px 16px;
+  border-bottom: 1px solid var(--gray-700);
+  margin-bottom: 8px;
+}
+.sidebar .logo h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+.sidebar .logo .subtitle {
+  font-size: 11px;
+  color: var(--gray-400);
+  margin-top: 2px;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 5px 16px 5px 20px;
+  color: var(--gray-300);
+  text-decoration: none;
+  font-size: 12px;
+  transition: all 0.15s;
+  border-left: 3px solid transparent;
+}
+.sidebar nav a:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-left-color: var(--primary-light);
+}
+.sidebar nav a.section-header {
+  font-weight: 700;
+  color: #fff;
+  font-size: 12px;
+  padding-top: 12px;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.sidebar nav a.sub { padding-left: 36px; font-size: 11px; }
+.sidebar nav a.sub2 { padding-left: 48px; font-size: 11px; color: var(--gray-400); }
+
+/* Main Content */
+.main-content {
+  margin-left: var(--sidebar-width);
+  padding: 32px 40px;
+  max-width: 1200px;
+}
+
+/* Cover Header */
+.cover-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 40px 48px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.cover-header::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+.cover-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.cover-header .meta-row {
+  display: flex;
+  gap: 32px;
+  margin-top: 16px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+.cover-header .meta-row .meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cover-header .meta-row .meta-label {
+  font-weight: 600;
+  opacity: 0.8;
+}
+.cover-header .template-ref {
+  margin-top: 16px;
+  font-size: 11px;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Section Headers */
+h2.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 8px;
+  margin: 40px 0 20px;
+}
+h3.subsection-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin: 28px 0 12px;
+  padding-left: 8px;
+  border-left: 4px solid var(--primary-light);
+}
+h4.detail-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin: 20px 0 8px;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 20px;
+  font-size: var(--font-size-base);
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+table th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 8px 12px;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+table td {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: top;
+}
+table tr:nth-child(even) td { background: var(--gray-50); }
+table tr:hover td { background: var(--primary-lighter); }
+
+/* Description tables (key-value) */
+table.desc-table th { width: 200px; background: var(--gray-100); color: var(--gray-700); }
+table.desc-table td { font-weight: 500; }
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.badge-bot { background: #ede9fe; color: var(--bot-color); }
+.badge-user { background: var(--primary-lighter); color: var(--primary); }
+.badge-start { background: #d1fae5; color: var(--success); }
+.badge-yes { background: #d1fae5; color: var(--success); }
+.badge-no { background: var(--gray-100); color: var(--gray-500); }
+.badge-required { background: #fee2e2; color: var(--danger); }
+.badge-optional { background: #fef3c7; color: var(--warning); }
+.badge-type {
+  background: var(--gray-100);
+  color: var(--gray-600);
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 10px;
+}
+
+/* ID display */
+.id-mono {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 11px;
+  color: var(--gray-500);
+  word-break: break-all;
+}
+
+/* Overview cards */
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 16px 0 24px;
+}
+.overview-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--primary);
+}
+.overview-card .card-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.overview-card .card-label {
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-top: 4px;
+}
+
+/* SVG Diagram containers */
+.diagram-container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 16px 0 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+.diagram-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* TOC */
+.toc {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px 32px;
+  margin: 16px 0 32px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.toc h3 { font-size: 16px; margin-bottom: 12px; color: var(--primary); }
+.toc ol { padding-left: 20px; }
+.toc ol li { margin: 4px 0; }
+.toc ol li a { color: var(--primary-light); text-decoration: none; font-size: 13px; }
+.toc ol li a:hover { text-decoration: underline; }
+.toc ol ol { margin-top: 2px; }
+
+/* Footer */
+.manual-version {
+  margin-top: 48px;
+  padding: 24px;
+  background: var(--gray-100);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--gray-500);
+}
+.manual-version p { margin: 2px 0; }
+
+/* Collapsible */
+details { margin: 4px 0; }
+details summary {
+  cursor: pointer;
+  padding: 6px 12px;
+  background: var(--gray-100);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 13px;
+}
+details[open] summary { margin-bottom: 8px; }
+
+/* Not configured */
+.not-configured { color: var(--gray-400); font-style: italic; }
+
+/* Print Styles */
+@media print {
+  .sidebar { display: none; }
+  .main-content { margin-left: 0; padding: 16px; max-width: 100%; }
+  .cover-header { background: var(--primary) !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  table { page-break-inside: avoid; }
+  table th { background: var(--primary) !important; color: #fff !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  h2.section-title { page-break-before: always; }
+  .diagram-container { page-break-inside: avoid; }
+  body { font-size: 11px; }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sidebar { width: 240px; }
+  .main-content { margin-left: 240px; padding: 20px; }
+}
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .main-content { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SIDEBAR NAVIGATION
+     ============================================================ -->
+<div class="sidebar">
+  <div class="logo">
+    <h2>BPA Service Analysis</h2>
+    <div class="subtitle">Register a Business -- Lesotho</div>
+  </div>
+  <nav>
+    <a href="#cover" class="section-header">Overview</a>
+    <a href="#toc" class="sub">Table of Contents</a>
+    <a href="#overview-stats" class="sub">Key Statistics</a>
+    <a href="#overview-diagram" class="sub">Service Diagram</a>
+
+    <a href="#sec1" class="section-header">1. Registrations</a>
+    <a href="#sec1-1" class="sub">1.1 Business ID</a>
+    <a href="#sec1-2" class="sub">1.2 Business Permit</a>
+    <a href="#sec1-3" class="sub">1.3 Company Incorporation</a>
+    <a href="#sec1-4" class="sub">1.4 Industrial Licence</a>
+    <a href="#sec1-5" class="sub">1.5 Trading Licence</a>
+
+    <a href="#sec2" class="section-header">2. Application (DS)</a>
+    <a href="#sec2-1" class="sub">2.1 Guide</a>
+    <a href="#sec2-2" class="sub">2.2 Form Structure</a>
+    <a href="#sec2-3" class="sub">2.3 Form Tabs Detail</a>
+    <a href="#sec2-4" class="sub">2.4 Payment</a>
+    <a href="#sec2-5" class="sub">2.5 Send / Submit</a>
+
+    <a href="#sec3" class="section-header">3. Processing (Roles)</a>
+    <a href="#sec3-0" class="sub">3.0 Workflow Diagram</a>
+    <a href="#sec3-1" class="sub">3.1 Reserve Activity Names</a>
+    <a href="#sec3-2" class="sub">3.2 Validate Business Permit</a>
+    <a href="#sec3-3" class="sub">3.3 Create Business Permit</a>
+    <a href="#sec3-4" class="sub">3.4 Review Business ID</a>
+    <a href="#sec3-5" class="sub">3.5 Validate Business ID</a>
+    <a href="#sec3-6" class="sub">3.6 Create Person</a>
+    <a href="#sec3-7" class="sub">3.7 Create Business ID</a>
+    <a href="#sec3-8" class="sub">3.8 Relations</a>
+    <a href="#sec3-9" class="sub">3.9 Review Industrial</a>
+    <a href="#sec3-10" class="sub">3.10 Review Trading</a>
+    <a href="#sec3-11" class="sub">3.11 Validate Industrial</a>
+    <a href="#sec3-12" class="sub">3.12 Validate Trading</a>
+    <a href="#sec3-13" class="sub">3.13 Create Activities</a>
+    <a href="#sec3-14" class="sub">3.14 Create Fees</a>
+    <a href="#sec3-more" class="sub">3.15+ Other Roles</a>
+
+    <a href="#sec4" class="section-header">4. Bots</a>
+    <a href="#sec4-data" class="sub">4.1 Data Bots</a>
+    <a href="#sec4-doc" class="sub">4.2 Document Bots</a>
+    <a href="#sec4-int" class="sub">4.3 Internal Bots</a>
+    <a href="#sec4-msg" class="sub">4.4 Message Bots</a>
+
+    <a href="#sec5" class="section-header">5. Documents</a>
+
+    <a href="#sec6" class="section-header">6. Appendix</a>
+    <a href="#sec6-1" class="sub">6.1 Notifications</a>
+    <a href="#sec6-2" class="sub">6.2 Requirements Catalog</a>
+    <a href="#sec6-3" class="sub">6.3 Determinants Reference</a>
+  </nav>
+</div>
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<div class="main-content">
+
+<!-- COVER -->
+<div class="cover-header" id="cover">
+  <h1>BPA Service Analysis -- Register a Business</h1>
+  <div class="meta-row">
+    <div class="meta-item"><span class="meta-label">Country:</span> Lesotho</div>
+    <div class="meta-item"><span class="meta-label">Service ID:</span> 2c92808792372fda0192430feea30000</div>
+    <div class="meta-item"><span class="meta-label">Status:</span> Active</div>
+    <div class="meta-item"><span class="meta-label">Date:</span> 2026-02-19</div>
+  </div>
+  <div class="meta-row">
+    <div class="meta-item"><span class="meta-label">Complexity:</span> High</div>
+    <div class="meta-item"><span class="meta-label">Registrations:</span> 5</div>
+    <div class="meta-item"><span class="meta-label">Fields:</span> 1,635</div>
+    <div class="meta-item"><span class="meta-label">Determinants:</span> 149</div>
+  </div>
+  <p class="template-ref">Based on EG V27.19 -- BPA Service Analysis Model</p>
+</div>
+
+<!-- OVERVIEW STATS -->
+<div id="overview-stats">
+  <div class="overview-cards">
+    <div class="overview-card">
+      <div class="card-value">5</div>
+      <div class="card-label">Registrations</div>
+    </div>
+    <div class="overview-card">
+      <div class="card-value">1,635</div>
+      <div class="card-label">Total Fields</div>
+    </div>
+    <div class="overview-card">
+      <div class="card-value">149</div>
+      <div class="card-label">Determinants</div>
+    </div>
+    <div class="overview-card">
+      <div class="card-value">50</div>
+      <div class="card-label">Workflow Roles</div>
+    </div>
+    <div class="overview-card">
+      <div class="card-value">78</div>
+      <div class="card-label">Automation Bots</div>
+    </div>
+    <div class="overview-card">
+      <div class="card-value">6</div>
+      <div class="card-label">Print Documents</div>
+    </div>
+  </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc" id="toc">
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#sec1">Registrations</a>
+      <ol>
+        <li><a href="#sec1-1">1.1 Business ID</a></li>
+        <li><a href="#sec1-2">1.2 Business Permit</a></li>
+        <li><a href="#sec1-3">1.3 Company Incorporation</a></li>
+        <li><a href="#sec1-4">1.4 Industrial Licence</a></li>
+        <li><a href="#sec1-5">1.5 Trading Licence</a></li>
+      </ol>
+    </li>
+    <li><a href="#sec2">Application (Citizen-Facing / DS)</a>
+      <ol>
+        <li><a href="#sec2-1">2.1 Guide (Screening Questions)</a></li>
+        <li><a href="#sec2-2">2.2 Form Structure Overview</a></li>
+        <li><a href="#sec2-3">2.3 Form Tabs Detail</a></li>
+        <li><a href="#sec2-4">2.4 Payment</a></li>
+        <li><a href="#sec2-5">2.5 Send / Submit</a></li>
+      </ol>
+    </li>
+    <li><a href="#sec3">Processing (Roles / Part B)</a>
+      <ol>
+        <li><a href="#sec3-0">3.0 Processing Workflow Diagram</a></li>
+        <li><a href="#sec3-1">3.1 Reserve Activity Names (Bot, Start)</a></li>
+        <li><a href="#sec3-2">3.2 Validate Business Permit (User)</a></li>
+        <li><a href="#sec3-3">3.3 Create Business Permit (Bot)</a></li>
+        <li><a href="#sec3-4">3.4 Review Business ID (User)</a></li>
+        <li><a href="#sec3-5">3.5 Validate Business ID (User)</a></li>
+        <li><a href="#sec3-6">3.6 Create Person (Bot)</a></li>
+        <li><a href="#sec3-7">3.7 Create Business ID (Bot)</a></li>
+        <li><a href="#sec3-8">3.8 Relations (Bot)</a></li>
+        <li><a href="#sec3-9">3.9 Review Industrial (User)</a></li>
+        <li><a href="#sec3-10">3.10 Review Trading (User)</a></li>
+        <li><a href="#sec3-11">3.11 Validate Industrial (User)</a></li>
+        <li><a href="#sec3-12">3.12 Validate Trading (User)</a></li>
+        <li><a href="#sec3-13">3.13 -- 3.17 Create Activities / Fees / Certs</a></li>
+      </ol>
+    </li>
+    <li><a href="#sec4">Bots (Automation)</a></li>
+    <li><a href="#sec5">Documents &amp; Templates</a></li>
+    <li><a href="#sec6">Appendix</a>
+      <ol>
+        <li><a href="#sec6-1">6.1 Notifications</a></li>
+        <li><a href="#sec6-2">6.2 Requirements Catalog</a></li>
+        <li><a href="#sec6-3">6.3 Determinant Reference Table</a></li>
+      </ol>
+    </li>
+  </ol>
+</div>
+
+<!-- SERVICE OVERVIEW DIAGRAM -->
+<div id="overview-diagram">
+<h2 class="section-title">Service Overview Diagram</h2>
+<div class="diagram-container">
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif">
+  <!-- Central service node -->
+  <rect x="320" y="20" width="260" height="60" rx="8" fill="#1e40af" stroke="#1e3a8a" stroke-width="2"/>
+  <text x="450" y="45" text-anchor="middle" fill="white" font-weight="700" font-size="14">Register a Business</text>
+  <text x="450" y="62" text-anchor="middle" fill="#93c5fd" font-size="10">Lesotho -- 5 Registrations</text>
+
+  <!-- Registration boxes -->
+  <!-- Business ID -->
+  <line x1="180" y1="130" x2="450" y2="80" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4"/>
+  <rect x="50" y="110" width="200" height="50" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="150" y="133" text-anchor="middle" font-weight="600" font-size="12" fill="#1e40af">Business ID</text>
+  <text x="150" y="148" text-anchor="middle" font-size="9" fill="#6b7280">OBFC (9bb1decc...)</text>
+
+  <!-- Business Permit -->
+  <line x1="370" y1="130" x2="420" y2="80" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4"/>
+  <rect x="270" y="110" width="200" height="50" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="370" y="133" text-anchor="middle" font-weight="600" font-size="12" fill="#1e40af">Business Permit</text>
+  <text x="370" y="148" text-anchor="middle" font-size="9" fill="#6b7280">MTICM (301c8ef4...)</text>
+
+  <!-- Company Incorporation -->
+  <line x1="580" y1="130" x2="480" y2="80" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4"/>
+  <rect x="490" y="110" width="200" height="50" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="590" y="133" text-anchor="middle" font-weight="600" font-size="12" fill="#1e40af">Company Incorporation</text>
+  <text x="590" y="148" text-anchor="middle" font-size="9" fill="#6b7280">OBFC (f0a89b81...)</text>
+
+  <!-- Industrial Licence -->
+  <line x1="250" y1="210" x2="400" y2="160" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4"/>
+  <rect x="130" y="195" width="200" height="50" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="230" y="218" text-anchor="middle" font-weight="600" font-size="12" fill="#1e40af">Industrial Licence</text>
+  <text x="230" y="233" text-anchor="middle" font-size="9" fill="#6b7280">MTICM (301c8ef4...)</text>
+
+  <!-- Trading Licence -->
+  <line x1="600" y1="210" x2="500" y2="160" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4"/>
+  <rect x="490" y="195" width="200" height="50" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="590" y="218" text-anchor="middle" font-weight="600" font-size="12" fill="#1e40af">Trading Licence</text>
+  <text x="590" y="233" text-anchor="middle" font-size="9" fill="#6b7280">MTICM (301c8ef4...)</text>
+
+  <!-- Determinant logic arrows -->
+  <text x="450" y="290" text-anchor="middle" font-size="11" fill="#6b7280" font-style="italic">Key determinants controlling registration activation:</text>
+
+  <!-- Determinant boxes -->
+  <rect x="40" y="310" width="250" height="38" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="165" y="334" text-anchor="middle" font-size="10" fill="#92400e">Business is sole proprietor / company</text>
+
+  <rect x="320" y="310" width="250" height="38" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="445" y="334" text-anchor="middle" font-size="10" fill="#92400e">Needs a trading licence (activity)</text>
+
+  <rect x="600" y="310" width="260" height="38" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="730" y="334" text-anchor="middle" font-size="10" fill="#92400e">Needs an industrial licence (activity)</text>
+
+  <rect x="160" y="365" width="280" height="38" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="300" y="389" text-anchor="middle" font-size="10" fill="#92400e">Business owner from Lesotho / other country</text>
+
+  <rect x="470" y="365" width="280" height="38" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="610" y="389" text-anchor="middle" font-size="10" fill="#92400e">Application for myself / someone else</text>
+
+  <!-- Legend -->
+  <rect x="40" y="430" width="12" height="12" rx="2" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="58" y="441" font-size="10" fill="#6b7280">Registration</text>
+  <rect x="160" y="430" width="12" height="12" rx="2" fill="#fef3c7" stroke="#d97706"/>
+  <text x="178" y="441" font-size="10" fill="#6b7280">Determinant</text>
+  <rect x="280" y="430" width="12" height="12" rx="2" fill="#1e40af"/>
+  <text x="298" y="441" font-size="10" fill="#6b7280">Service</text>
+</svg>
+</div>
+</div>
+
+<!-- ============================================================
+     SECTION 1: REGISTRATIONS
+     ============================================================ -->
+<h2 class="section-title" id="sec1">Section 1: Registrations</h2>
+
+<!-- 1.1 BUSINESS ID -->
+<h3 class="subsection-title" id="sec1-1">1.1 Business ID</h3>
+
+<h4 class="detail-title" id="sec1-1-1">1.1.1 Description</h4>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Business ID</td></tr>
+  <tr><td>Registration ID</td><td class="id-mono">2c92808792372fda019243142d8d0014</td></tr>
+  <tr><td>Operational</td><td><span class="badge badge-yes">Yes</span></td></tr>
+  <tr><td>Description</td><td class="not-configured">(Not configured)</td></tr>
+</table>
+
+<h4 class="detail-title" id="sec1-1-2">1.1.2 Institution Involved</h4>
+<table>
+  <tr><th>Institution ID</th><th>Notes</th></tr>
+  <tr><td class="id-mono">9bb1decc-b028-4cd6-aa84-dd84a291460d</td><td>One Bussiness Factory Centre (OBFC)</td></tr>
+</table>
+
+<h4 class="detail-title" id="sec1-1-3">1.1.3 Determinants</h4>
+<p>Business ID is always required -- no conditional determinants restrict its activation.</p>
+
+<h4 class="detail-title" id="sec1-1-4">1.1.4 Results (Documents Produced)</h4>
+<table>
+  <tr><th>Document Name</th><th>Physical (P)</th><th>Dematerialized (D)</th><th>Notes</th></tr>
+  <tr><td>Business ID Card</td><td></td><td>D</td><td>Generated via "BUSINESS ID upload" bot (PDF)</td></tr>
+</table>
+
+<h4 class="detail-title" id="sec1-1-5">1.1.5 Requirements (Documents Required)</h4>
+<table>
+  <tr><th>Document Name</th><th>Required</th><th>Upload (IN)</th><th>Requirement ID</th></tr>
+  <tr><td>Lease or Property title</td><td><span class="badge badge-required">Required</span></td><td>IN</td><td class="id-mono">28e23149-77da-4933-98e0-58164a5fc02a</td></tr>
+  <tr><td>Business owner's national ID</td><td><span class="badge badge-required">Required</span></td><td>IN</td><td class="id-mono">78854fce-ab74-4fca-a724-b52f99dc1b57</td></tr>
+  <tr><td>Applicant passport</td><td><span class="badge badge-required">Required</span></td><td>IN</td><td class="id-mono">18f9cd4d-c83f-4d6b-a441-6f6219615b1b</td></tr>
+  <tr><td>Local representative ID</td><td><span class="badge badge-required">Required</span></td><td>IN</td><td class="id-mono">0d7daa18-9d59-4ff5-be24-fc568983ea7c</td></tr>
+  <tr><td>Incorporation document</td><td><span class="badge badge-required">Required</span></td><td>IN</td><td class="id-mono">bf8e965a-db82-4739-a036-cfd2293ced16</td></tr>
+</table>
+
+<h4 class="detail-title" id="sec1-1-6">1.1.6 Costs</h4>
+<p class="not-configured">Cost information is configured at the service level and applied via the "Create Fees" bot role. See Section 4.</p>
+
+<!-- 1.2 BUSINESS PERMIT -->
+<h3 class="subsection-title" id="sec1-2">1.2 Business Permit</h3>
+
+<h4 class="detail-title">1.2.1 Description</h4>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Business Permit</td></tr>
+  <tr><td>Registration ID</td><td class="id-mono">2c92808792372fda01924313dd6f000f</td></tr>
+  <tr><td>Operational</td><td><span class="badge badge-yes">Yes</span></td></tr>
+  <tr><td>Description</td><td class="not-configured">(Not configured)</td></tr>
+</table>
+
+<h4 class="detail-title">1.2.2 Institution Involved</h4>
+<table>
+  <tr><th>Institution ID</th><th>Notes</th></tr>
+  <tr><td class="id-mono">301c8ef4-b98a-4b28-9d18-820e0f828e82</td><td>Ministry of Trade, Industry, Cooperatives and Marketing (MTICM)</td></tr>
+</table>
+
+<h4 class="detail-title">1.2.3 Determinants</h4>
+<p>Business Permit is always required -- no conditional determinants restrict its activation.</p>
+
+<h4 class="detail-title">1.2.4 Results (Documents Produced)</h4>
+<table>
+  <tr><th>Document Name</th><th>Physical (P)</th><th>Dematerialized (D)</th><th>Notes</th></tr>
+  <tr><td>Business Permit Certificate</td><td></td><td>D</td><td>Generated via "Business permit upload" bot (PDF)</td></tr>
+</table>
+
+<h4 class="detail-title">1.2.5 Requirements (Documents Required)</h4>
+<table>
+  <tr><th>Document Name</th><th>Required</th><th>Upload (IN)</th><th>Requirement ID</th></tr>
+  <tr><td>Banking statement</td><td><span class="badge badge-required">Required</span></td><td>IN</td><td class="id-mono">1d92b3ce-ef5d-473d-9db9-30db5bd99bb8</td></tr>
+  <tr><td>Insurance certificate for employees</td><td><span class="badge badge-required">Required</span></td><td>IN</td><td class="id-mono">03b623b2-fcab-4522-8e87-fcc6edb5a7c1</td></tr>
+  <tr><td>Business plan</td><td><span class="badge badge-required">Required</span></td><td>IN</td><td class="id-mono">a48c1ccc-e0bd-46c9-80de-38be8bfa16a9</td></tr>
+</table>
+
+<h4 class="detail-title">1.2.6 Costs</h4>
+<p class="not-configured">Fee creation handled via "FEES create BR" bot. See Section 4.</p>
+
+<!-- 1.3 COMPANY INCORPORATION -->
+<h3 class="subsection-title" id="sec1-3">1.3 Company Incorporation</h3>
+
+<h4 class="detail-title">1.3.1 Description</h4>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Company Incorporation</td></tr>
+  <tr><td>Registration ID</td><td class="id-mono">2c9280859173da120191754eadcb0ab0</td></tr>
+  <tr><td>Operational</td><td><span class="badge badge-yes">Yes</span></td></tr>
+  <tr><td>Conditional</td><td>Only when "Business is company" determinant is active</td></tr>
+  <tr><td>Description</td><td class="not-configured">(Not configured)</td></tr>
+</table>
+
+<h4 class="detail-title">1.3.2 Institution Involved</h4>
+<table>
+  <tr><th>Institution ID</th><th>Notes</th></tr>
+  <tr><td class="id-mono">f0a89b81-87fc-48e7-86a7-be635342e705</td><td>One Business Factory Centre (OBFC) - Company Registrar</td></tr>
+</table>
+
+<h4 class="detail-title">1.3.3 Determinants</h4>
+<table>
+  <tr><th>Determinant</th><th>Condition</th><th>Effect</th></tr>
+  <tr><td>Business is company</td><td>guideTypeOfBusiness2 = "company"</td><td>Activates Company Incorporation registration</td></tr>
+</table>
+
+<h4 class="detail-title">1.3.4 Results (Documents Produced)</h4>
+<table>
+  <tr><th>Document Name</th><th>Physical (P)</th><th>Dematerialized (D)</th><th>Notes</th></tr>
+  <tr><td>Certificate of Incorporation</td><td></td><td>D</td><td>Generated via "Company incorporation upload" bot (PDF)</td></tr>
+  <tr><td>Memorandum of Association</td><td></td><td>D</td><td>Generated via "Memorandum display" bot (PDF)</td></tr>
+</table>
+
+<h4 class="detail-title">1.3.5 Requirements (Documents Required)</h4>
+<table>
+  <tr><th>Document Name</th><th>Required</th><th>Upload (IN)</th><th>Requirement ID</th></tr>
+  <tr><td>Managers ID</td><td><span class="badge badge-required">Required</span></td><td>IN</td><td class="id-mono">0c66e980-3a5b-4743-a2e5-f5a7a88c31bd</td></tr>
+  <tr><td>Shareholder ID</td><td><span class="badge badge-required">Required</span></td><td>IN</td><td class="id-mono">adfa9dab-5310-453e-8f78-43c7845f5547</td></tr>
+  <tr><td>Consent as a director</td><td><span class="badge badge-required">Required</span></td><td>IN</td><td class="id-mono">93fcc844-18bd-4a24-8036-b157c147e046</td></tr>
+</table>
+
+<h4 class="detail-title">1.3.6 Costs</h4>
+<p class="not-configured">Fee creation handled via "FEES create CI" bot. See Section 4.</p>
+
+<!-- 1.4 INDUSTRIAL LICENCE -->
+<h3 class="subsection-title" id="sec1-4">1.4 Industrial Licence</h3>
+
+<h4 class="detail-title">1.4.1 Description</h4>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Industrial Licence</td></tr>
+  <tr><td>Registration ID</td><td class="id-mono">2c92808792372fda01924314fff6001e</td></tr>
+  <tr><td>Operational</td><td><span class="badge badge-yes">Yes</span></td></tr>
+  <tr><td>Conditional</td><td>Only when at least one activity requires an industrial licence</td></tr>
+  <tr><td>Description</td><td class="not-configured">(Not configured)</td></tr>
+</table>
+
+<h4 class="detail-title">1.4.2 Institution Involved</h4>
+<table>
+  <tr><th>Institution ID</th><th>Notes</th></tr>
+  <tr><td class="id-mono">301c8ef4-b98a-4b28-9d18-820e0f828e82</td><td>Ministry of Trade, Industry, Cooperatives and Marketing (MTICM)</td></tr>
+</table>
+
+<h4 class="detail-title">1.4.3 Determinants</h4>
+<table>
+  <tr><th>Determinant</th><th>Condition</th><th>Effect</th></tr>
+  <tr><td>Needs an industrial licence</td><td>applicantListOfActivities2 grid condition</td><td>Activates Industrial Licence registration</td></tr>
+  <tr><td>Applying for at least 1 industrial license</td><td>applicantNumberOfIndustrialLicenses &gt; 0</td><td>Controls Industrial Licence workflow</td></tr>
+</table>
+
+<h4 class="detail-title">1.4.4 Results (Documents Produced)</h4>
+<table>
+  <tr><th>Document Name</th><th>Physical (P)</th><th>Dematerialized (D)</th><th>Notes</th></tr>
+  <tr><td>Industrial Licence Certificate</td><td></td><td>D</td><td>Generated via "Industrial license upload" bot (PDF)</td></tr>
+</table>
+
+<h4 class="detail-title">1.4.5 Requirements (Documents Required)</h4>
+<table>
+  <tr><th>Document Name</th><th>Required</th><th>Upload (IN)</th></tr>
+  <tr><td colspan="3" class="not-configured">No document requirements configured for this registration.</td></tr>
+</table>
+
+<h4 class="detail-title">1.4.6 Costs</h4>
+<p>Fee calculation: depends on activity type and turnover thresholds. Created via "FEES create IL fees" bot.</p>
+<table>
+  <tr><th>Fee Determinant</th><th>Condition</th></tr>
+  <tr><td>Annual turnover &lt;= 5,000,000</td><td>applicantTurnover &lt;= 5000000</td></tr>
+  <tr><td>Annual turnover &gt; 5,000,000</td><td>applicantTurnover &gt; 5000000</td></tr>
+  <tr><td>Special fee M500/M4000</td><td>Grid-based activity classification</td></tr>
+  <tr><td>Special fee M5000/M15000</td><td>Grid-based activity classification</td></tr>
+  <tr><td>Today &lt;= 30-Jun (half-year proration)</td><td>Date-based fee calculation</td></tr>
+  <tr><td>Today &gt; 30-Jun (full year)</td><td>Date-based fee calculation</td></tr>
+</table>
+
+<!-- 1.5 TRADING LICENCE -->
+<h3 class="subsection-title" id="sec1-5">1.5 Trading Licence</h3>
+
+<h4 class="detail-title">1.5.1 Description</h4>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Trading Licence</td></tr>
+  <tr><td>Registration ID</td><td class="id-mono">2c92808792372fda01924314a8320019</td></tr>
+  <tr><td>Operational</td><td><span class="badge badge-yes">Yes</span></td></tr>
+  <tr><td>Conditional</td><td>Only when at least one activity requires a trading licence</td></tr>
+  <tr><td>Description</td><td class="not-configured">(Not configured)</td></tr>
+</table>
+
+<h4 class="detail-title">1.5.2 Institution Involved</h4>
+<table>
+  <tr><th>Institution ID</th><th>Notes</th></tr>
+  <tr><td class="id-mono">301c8ef4-b98a-4b28-9d18-820e0f828e82</td><td>Ministry of Trade, Industry, Cooperatives and Marketing (MTICM)</td></tr>
+</table>
+
+<h4 class="detail-title">1.5.3 Determinants</h4>
+<table>
+  <tr><th>Determinant</th><th>Condition</th><th>Effect</th></tr>
+  <tr><td>Needs a trading licence</td><td>applicantListOfActivities2 grid condition</td><td>Activates Trading Licence registration</td></tr>
+  <tr><td>Applying for at least 1 trade license</td><td>applicantNumberOfTradeLicense &gt; 0</td><td>Controls Trading Licence workflow</td></tr>
+</table>
+
+<h4 class="detail-title">1.5.4 Results (Documents Produced)</h4>
+<table>
+  <tr><th>Document Name</th><th>Physical (P)</th><th>Dematerialized (D)</th><th>Notes</th></tr>
+  <tr><td>Trading Licence Certificate</td><td></td><td>D</td><td>Generated via "Trade license upload" bot (PDF)</td></tr>
+</table>
+
+<h4 class="detail-title">1.5.5 Requirements (Documents Required)</h4>
+<table>
+  <tr><th>Document Name</th><th>Required</th><th>Upload (IN)</th></tr>
+  <tr><td colspan="3" class="not-configured">No document requirements configured for this registration.</td></tr>
+</table>
+
+<h4 class="detail-title">1.5.6 Costs</h4>
+<p>Fee calculation: depends on activity type and turnover. Created via "FEES create TL fees" bot.</p>
+<table>
+  <tr><th>Fee Determinant</th><th>Condition</th></tr>
+  <tr><td>Trading licence fee M500/M3000</td><td>Grid-based activity classification</td></tr>
+  <tr><td>NOT IN Trading licence fee M500/M3000</td><td>Default fee tier</td></tr>
+  <tr><td>Number of employees &lt;= 50</td><td>Small business rate</td></tr>
+  <tr><td>Number of employees &gt; 50</td><td>Larger business rate</td></tr>
+</table>
+
+
+<!-- ============================================================
+     SECTION 2: APPLICATION (CITIZEN-FACING / DS)
+     ============================================================ -->
+<h2 class="section-title" id="sec2">Section 2: Application (Citizen-Facing / DS)</h2>
+
+<!-- 2.1 GUIDE -->
+<h3 class="subsection-title" id="sec2-1">2.1 Guide (Screening Questions)</h3>
+<p>The guide form collects initial screening information before the main application form. It has <strong>3 screening questions</strong> that determine which registrations and form sections are activated.</p>
+
+<table>
+  <tr><th>#</th><th>Field Key</th><th>Label</th><th>Type</th><th>Required</th><th>Related Determinants</th></tr>
+  <tr>
+    <td>1</td>
+    <td class="id-mono">guideTypeOfBusiness2</td>
+    <td><strong>Business is</strong></td>
+    <td><span class="badge badge-type">radio</span></td>
+    <td><span class="badge badge-required">Required</span></td>
+    <td>
+      "Business is sole proprietor" (= soleProprietor)<br>
+      "Business is company" (= company)
+    </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td class="id-mono">guideApplicationFor</td>
+    <td><strong>Application for</strong></td>
+    <td><span class="badge badge-type">radio</span></td>
+    <td></td>
+    <td>
+      "Application for myself" (= yesIWillBeTheOwner)<br>
+      "Application for someone else" (= noIAmCreatingThisBusinessForAnotherPerson)
+    </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td class="id-mono">guideIsTheBusinessOwnerFromLesothoOrOtherCountry</td>
+    <td><strong>Is the business owner from Lesotho or other country</strong></td>
+    <td><span class="badge badge-type">radio</span></td>
+    <td></td>
+    <td>
+      "Business owner (guide) is from Lesotho" (= lesotho)<br>
+      "Business owner (guide) is from other country" (= otheCountry)
+    </td>
+  </tr>
+</table>
+
+<p>All guide questions are linked to all 5 registrations. The "Start application" button triggers the main form.</p>
+
+<!-- 2.2 FORM STRUCTURE -->
+<h3 class="subsection-title" id="sec2-2">2.2 Form Structure Overview</h3>
+
+<p>The applicant form contains <strong>722 components</strong> organized into <strong>8 main tabs</strong> with a total of <strong>1,635 fields</strong> (including processing fields).</p>
+
+<!-- Form Structure Diagram -->
+<div class="diagram-container">
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif">
+  <text x="450" y="20" text-anchor="middle" font-weight="700" font-size="14" fill="#1e40af">Applicant Form Structure</text>
+  <text x="450" y="35" text-anchor="middle" font-size="10" fill="#6b7280">applicantTabs -- 8 tabs, 722 components</text>
+
+  <!-- Tab boxes -->
+  <rect x="10" y="55" width="105" height="50" rx="5" fill="#1e40af"/>
+  <text x="62" y="75" text-anchor="middle" fill="white" font-size="9" font-weight="600">Business Owner</text>
+  <text x="62" y="90" text-anchor="middle" fill="#93c5fd" font-size="8">36 fields</text>
+
+  <rect x="125" y="55" width="105" height="50" rx="5" fill="#1e40af"/>
+  <text x="177" y="75" text-anchor="middle" fill="white" font-size="9" font-weight="600">Type of Business</text>
+  <text x="177" y="90" text-anchor="middle" fill="#93c5fd" font-size="8">48 fields</text>
+
+  <rect x="240" y="55" width="105" height="50" rx="5" fill="#1e40af"/>
+  <text x="292" y="75" text-anchor="middle" fill="white" font-size="9" font-weight="600">Shareholders</text>
+  <text x="292" y="90" text-anchor="middle" fill="#93c5fd" font-size="8">80 fields</text>
+
+  <rect x="355" y="55" width="105" height="50" rx="5" fill="#1e40af"/>
+  <text x="407" y="75" text-anchor="middle" fill="white" font-size="9" font-weight="600">Executives</text>
+  <text x="407" y="90" text-anchor="middle" fill="#93c5fd" font-size="8">35 fields</text>
+
+  <rect x="470" y="55" width="105" height="50" rx="5" fill="#1e40af"/>
+  <text x="522" y="75" text-anchor="middle" fill="white" font-size="9" font-weight="600">Beneficial Owners</text>
+  <text x="522" y="90" text-anchor="middle" fill="#93c5fd" font-size="8">58 fields</text>
+
+  <rect x="585" y="55" width="105" height="50" rx="5" fill="#1e40af"/>
+  <text x="637" y="75" text-anchor="middle" fill="white" font-size="9" font-weight="600">Business Permit</text>
+  <text x="637" y="90" text-anchor="middle" fill="#93c5fd" font-size="8">23 fields</text>
+
+  <rect x="700" y="55" width="105" height="50" rx="5" fill="#7c3aed"/>
+  <text x="752" y="75" text-anchor="middle" fill="white" font-size="9" font-weight="600">Incorp. Documents</text>
+  <text x="752" y="90" text-anchor="middle" fill="#c4b5fd" font-size="8">53 fields</text>
+
+  <rect x="815" y="55" width="75" height="50" rx="5" fill="#7c3aed"/>
+  <text x="852" y="75" text-anchor="middle" fill="white" font-size="9" font-weight="600">Articles</text>
+  <text x="852" y="90" text-anchor="middle" fill="#c4b5fd" font-size="8">2 fields</text>
+
+  <!-- Conditional labels -->
+  <text x="752" y="118" text-anchor="middle" font-size="8" fill="#7c3aed" font-style="italic">Company only</text>
+  <text x="852" y="118" text-anchor="middle" font-size="8" fill="#7c3aed" font-style="italic">Company only</text>
+
+  <!-- Field type breakdown -->
+  <text x="450" y="155" text-anchor="middle" font-weight="700" font-size="12" fill="#374151">Component Type Distribution (722 in form)</text>
+
+  <rect x="50" y="170" width="250" height="18" rx="3" fill="#dbeafe"/>
+  <rect x="50" y="170" width="43" height="18" rx="3" fill="#2563eb"/>
+  <text x="55" y="183" font-size="9" fill="white" font-weight="600">textfield: 125</text>
+
+  <rect x="50" y="192" width="245" height="18" rx="3" fill="#dbeafe"/>
+  <rect x="50" y="192" width="42" height="18" rx="3" fill="#2563eb"/>
+  <text x="55" y="205" font-size="9" fill="white" font-weight="600">number: 123</text>
+
+  <rect x="50" y="214" width="237" height="18" rx="3" fill="#dbeafe"/>
+  <rect x="50" y="214" width="41" height="18" rx="3" fill="#3b82f6"/>
+  <text x="55" y="227" font-size="9" fill="white" font-weight="600">columns: 118</text>
+
+  <rect x="50" y="236" width="195" height="18" rx="3" fill="#dbeafe"/>
+  <rect x="50" y="236" width="33" height="18" rx="3" fill="#60a5fa"/>
+  <text x="55" y="249" font-size="9" fill="white" font-weight="600">select: 97</text>
+
+  <rect x="350" y="170" width="123" height="18" rx="3" fill="#ede9fe"/>
+  <rect x="350" y="170" width="21" height="18" rx="3" fill="#7c3aed"/>
+  <text x="375" y="183" font-size="9" fill="#374151">content: 61</text>
+
+  <rect x="350" y="192" width="113" height="18" rx="3" fill="#ede9fe"/>
+  <rect x="350" y="192" width="19" height="18" rx="3" fill="#7c3aed"/>
+  <text x="375" y="205" font-size="9" fill="#374151">panel: 56</text>
+
+  <rect x="350" y="214" width="55" height="18" rx="3" fill="#fef3c7"/>
+  <rect x="350" y="214" width="9" height="18" rx="3" fill="#d97706"/>
+  <text x="365" y="227" font-size="9" fill="#374151">radio: 27</text>
+
+  <rect x="350" y="236" width="43" height="18" rx="3" fill="#fef3c7"/>
+  <rect x="350" y="236" width="7" height="18" rx="3" fill="#d97706"/>
+  <text x="363" y="249" font-size="9" fill="#374151">button: 21</text>
+
+  <rect x="550" y="170" width="40" height="18" rx="3" fill="#d1fae5"/>
+  <text x="555" y="183" font-size="9" fill="#374151">datetime: 20</text>
+
+  <rect x="550" y="192" width="33" height="18" rx="3" fill="#d1fae5"/>
+  <text x="555" y="205" font-size="9" fill="#374151">file: 16</text>
+
+  <rect x="550" y="214" width="33" height="18" rx="3" fill="#d1fae5"/>
+  <text x="555" y="227" font-size="9" fill="#374151">editgrid: 16</text>
+
+  <rect x="550" y="236" width="30" height="18" rx="3" fill="#d1fae5"/>
+  <text x="555" y="249" font-size="9" fill="#374151">email: 9</text>
+
+  <rect x="700" y="170" width="30" height="18" rx="3" fill="#fce7f3"/>
+  <text x="705" y="183" font-size="9" fill="#374151">fieldset: 10</text>
+
+  <rect x="700" y="192" width="25" height="18" rx="3" fill="#fce7f3"/>
+  <text x="705" y="205" font-size="9" fill="#374151">textarea: 6</text>
+
+  <rect x="700" y="214" width="20" height="18" rx="3" fill="#fce7f3"/>
+  <text x="705" y="227" font-size="9" fill="#374151">datagrid: 4</text>
+
+  <rect x="700" y="236" width="18" height="18" rx="3" fill="#fce7f3"/>
+  <text x="705" y="249" font-size="9" fill="#374151">tabs: 2</text>
+</svg>
+</div>
+
+<!-- 2.3 FORM TABS DETAIL -->
+<h3 class="subsection-title" id="sec2-3">2.3 Form Tabs Detail</h3>
+
+<table>
+  <tr><th>#</th><th>Tab Key</th><th>Tab Description</th><th>Input Fields</th><th>Registrations</th><th>Key Determinants</th></tr>
+  <tr>
+    <td>1</td>
+    <td class="id-mono">applicantTabsbusinessOwner</td>
+    <td><strong>Business Owner</strong><br>Owner personal details: name, DOB, gender, nationality, ID, address, passport upload</td>
+    <td>36</td>
+    <td>All 5</td>
+    <td>Application for myself/someone else; Owner from Lesotho/other; Residential address in Lesotho</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td class="id-mono">applicantTabsdataApplicantTypeOfBusiness</td>
+    <td><strong>Type of Business</strong><br>Business name, address, turnover, employees, activities list, operating office details</td>
+    <td>48</td>
+    <td>All 5</td>
+    <td>Business is sole proprietor/company; Business name availability checks; Activity selections</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td class="id-mono">applicantTabsshareholders</td>
+    <td><strong>Shareholders</strong><br>Individual and company shareholders: shares, types, IDs, addresses, percentages</td>
+    <td>80</td>
+    <td>Company Incorporation</td>
+    <td>Business is company; Share type (ordinary/preferred); Individual/company shareholders; Foreigner shareholders</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td class="id-mono">applicantTabsexecutives</td>
+    <td><strong>Executives (Directors/Managers)</strong><br>Directors, secretaries: personal info, mandate type, addresses</td>
+    <td>35</td>
+    <td>Company Incorporation</td>
+    <td>Business is company; Director in managers; Managers count &gt; 0</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td class="id-mono">applicantTabsbeneficialOwners</td>
+    <td><strong>Beneficial Owners</strong><br>UBO information: persons owning &gt; 10%, government entities, control relationships</td>
+    <td>58</td>
+    <td>Company Incorporation</td>
+    <td>Business is company; Any person owns &gt; 10%; Any BO is government</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td class="id-mono">applicantTabsbusinessPermit</td>
+    <td><strong>Business Permit</strong><br>Permit-specific data, operating details</td>
+    <td>23</td>
+    <td>Business Permit</td>
+    <td>Operating office; Number of employees</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td class="id-mono">applicantTabsincorporationDocuments</td>
+    <td><strong>Incorporation Documents</strong><br>Memorandum of association, MoA signatories, verification codes, electronic signatures</td>
+    <td>53</td>
+    <td>Company Incorporation</td>
+    <td>Business is company; Automated articles of association; Electronic/manual signature; All shareholders signed</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td class="id-mono">applicantTabsarticlesOfAssociation</td>
+    <td><strong>Articles of Association</strong><br>Additional company constitution documents</td>
+    <td>2</td>
+    <td>Company Incorporation</td>
+    <td>Business is company; Automated articles / No automated articles</td>
+  </tr>
+</table>
+
+<!-- 2.4 PAYMENT -->
+<h3 class="subsection-title" id="sec2-4">2.4 Payment</h3>
+<table>
+  <tr><th>Payment Option</th><th>Determinant</th><th>Target Field</th></tr>
+  <tr><td>iVeri (digital payment)</td><td>iVeri</td><td class="id-mono">paymentProviderSelected = "iveri"</td></tr>
+  <tr><td>Front Desk / Cashier</td><td>Will pay at Cashier</td><td class="id-mono">paymentProviderSelected = "frontdesk"</td></tr>
+</table>
+<p>Related determinants: "Paid digitally" (isPayedDigitally = true), "Fees paid" (cashierIDeclareThatTheFeesHaveBeenDulyPaid = true)</p>
+
+<!-- 2.5 SEND -->
+<h3 class="subsection-title" id="sec2-5">2.5 Send / Submit</h3>
+<table>
+  <tr><th>Validation</th><th>Determinant</th><th>Field</th></tr>
+  <tr><td>User is logged in</td><td>User is logged in</td><td class="id-mono">is_submit_allowed = true</td></tr>
+  <tr><td>Form is valid</td><td>Form is valid</td><td class="id-mono">isFormValid = true</td></tr>
+  <tr><td>Current Part A tab is valid</td><td>Current PartA tab is valid</td><td class="id-mono">isCurrentPartATabValid = true</td></tr>
+  <tr><td>Declaration filled</td><td>Declaration filled</td><td class="id-mono">sendPage solemn declaration checkbox = true</td></tr>
+  <tr><td>Applicant receives user rights</td><td>Applicant will receive user rights</td><td class="id-mono">sendPageWillYouReceiveUserRights = "yes"</td></tr>
+</table>
+
+
+<!-- ============================================================
+     SECTION 3: PROCESSING (ROLES / PART B)
+     ============================================================ -->
+<h2 class="section-title" id="sec3">Section 3: Processing (Roles / Part B)</h2>
+
+<p>The service has <strong>50 workflow roles</strong>: 18 primary processing roles (sorted 0-14) and 32 assistance/support roles (sorted 130-299). There are <strong>22 BotRoles</strong> (automated) and <strong>28 UserRoles</strong> (human).</p>
+
+<!-- 3.0 PROCESSING WORKFLOW DIAGRAM -->
+<h3 class="subsection-title" id="sec3-0">3.0 Processing Workflow Diagram</h3>
+
+<div class="diagram-container">
+<svg viewBox="0 0 950 620" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#6b7280"/>
+    </marker>
+    <marker id="arrowblue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <text x="475" y="20" text-anchor="middle" font-weight="700" font-size="14" fill="#1e40af">Processing Workflow - Register a Business</text>
+
+  <!-- START: Application Submitted -->
+  <rect x="365" y="35" width="220" height="35" rx="17" fill="#059669"/>
+  <text x="475" y="57" text-anchor="middle" fill="white" font-weight="600" font-size="11">APPLICATION SUBMITTED</text>
+
+  <!-- Step 0: Reserve Activity Names (Bot, Start) -->
+  <line x1="475" y1="70" x2="475" y2="85" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <rect x="355" y="85" width="240" height="36" rx="5" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="475" y="100" text-anchor="middle" font-weight="600" font-size="10" fill="#7c3aed">0. Reserve Activity Names</text>
+  <text x="475" y="113" text-anchor="middle" font-size="8" fill="#7c3aed">BOT | Start Role</text>
+
+  <!-- Step 1: Validate Business Permit (User) -->
+  <line x1="475" y1="121" x2="475" y2="136" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <rect x="355" y="136" width="240" height="36" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="475" y="151" text-anchor="middle" font-weight="600" font-size="10" fill="#1e40af">1. Validate Business Permit</text>
+  <text x="475" y="164" text-anchor="middle" font-size="8" fill="#2563eb">USER | Business Permit</text>
+
+  <!-- Step 2: Create Business Permit (Bot) -->
+  <line x1="475" y1="172" x2="475" y2="187" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <rect x="355" y="187" width="240" height="36" rx="5" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="475" y="202" text-anchor="middle" font-weight="600" font-size="10" fill="#7c3aed">2. Create Business Permit</text>
+  <text x="475" y="215" text-anchor="middle" font-size="8" fill="#7c3aed">BOT | Business Permit</text>
+
+  <!-- Step 3: Review Business ID (User) -->
+  <line x1="475" y1="223" x2="475" y2="238" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <rect x="355" y="238" width="240" height="36" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="475" y="253" text-anchor="middle" font-weight="600" font-size="10" fill="#1e40af">3. Review Business ID</text>
+  <text x="475" y="266" text-anchor="middle" font-size="8" fill="#2563eb">USER | Business ID</text>
+
+  <!-- Step 4: Validate Business ID (User) -->
+  <line x1="475" y1="274" x2="475" y2="289" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <rect x="355" y="289" width="240" height="36" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="475" y="304" text-anchor="middle" font-weight="600" font-size="10" fill="#1e40af">4. Validate Business ID</text>
+  <text x="475" y="317" text-anchor="middle" font-size="8" fill="#2563eb">USER | Business ID</text>
+
+  <!-- Step 5: Create Person (Bot) -->
+  <line x1="475" y1="325" x2="475" y2="340" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <rect x="355" y="340" width="240" height="36" rx="5" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="475" y="355" text-anchor="middle" font-weight="600" font-size="10" fill="#7c3aed">5. Create Person</text>
+  <text x="475" y="368" text-anchor="middle" font-size="8" fill="#7c3aed">BOT | All Registrations</text>
+
+  <!-- Step 6: Create Business ID (Bot) -->
+  <line x1="475" y1="376" x2="475" y2="391" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <rect x="355" y="391" width="240" height="36" rx="5" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="475" y="406" text-anchor="middle" font-weight="600" font-size="10" fill="#7c3aed">6. Create Business ID</text>
+  <text x="475" y="419" text-anchor="middle" font-size="8" fill="#7c3aed">BOT | All Registrations</text>
+
+  <!-- Step 7: Relations (Bot) -->
+  <line x1="475" y1="427" x2="475" y2="442" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <rect x="355" y="442" width="240" height="36" rx="5" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="475" y="457" text-anchor="middle" font-weight="600" font-size="10" fill="#7c3aed">7. Relations</text>
+  <text x="475" y="470" text-anchor="middle" font-size="8" fill="#7c3aed">BOT | All Registrations</text>
+
+  <!-- Parallel: Review Industrial + Review Trading -->
+  <line x1="475" y1="478" x2="240" y2="500" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <line x1="475" y1="478" x2="710" y2="500" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <rect x="95" y="500" width="190" height="36" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="190" y="515" text-anchor="middle" font-weight="600" font-size="10" fill="#1e40af">8a. Review Industrial</text>
+  <text x="190" y="528" text-anchor="middle" font-size="8" fill="#2563eb">USER | Industrial Licence</text>
+
+  <rect x="655" y="500" width="190" height="36" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="750" y="515" text-anchor="middle" font-weight="600" font-size="10" fill="#1e40af">8b. Review Trading</text>
+  <text x="750" y="528" text-anchor="middle" font-size="8" fill="#2563eb">USER | Trading Licence</text>
+
+  <!-- Validate parallel -->
+  <line x1="190" y1="536" x2="190" y2="555" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <line x1="750" y1="536" x2="750" y2="555" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <rect x="95" y="555" width="190" height="36" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="190" y="570" text-anchor="middle" font-weight="600" font-size="10" fill="#1e40af">9a. Validate Industrial</text>
+  <text x="190" y="583" text-anchor="middle" font-size="8" fill="#2563eb">USER | Industrial Licence</text>
+
+  <rect x="655" y="555" width="190" height="36" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="750" y="570" text-anchor="middle" font-weight="600" font-size="10" fill="#1e40af">9b. Validate Trading</text>
+  <text x="750" y="583" text-anchor="middle" font-size="8" fill="#2563eb">USER | Trading Licence</text>
+
+  <!-- Send back arrows -->
+  <line x1="310" y1="151" x2="355" y2="151" stroke="#dc2626" stroke-width="1" stroke-dasharray="3"/>
+  <text x="300" y="155" text-anchor="end" font-size="8" fill="#dc2626">SEND BACK</text>
+
+  <line x1="310" y1="253" x2="355" y2="253" stroke="#dc2626" stroke-width="1" stroke-dasharray="3"/>
+  <text x="300" y="257" text-anchor="end" font-size="8" fill="#dc2626">SEND BACK</text>
+
+  <!-- Legend -->
+  <rect x="20" y="35" width="12" height="12" rx="2" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="38" y="45" font-size="9" fill="#6b7280">User Role</text>
+  <rect x="20" y="52" width="12" height="12" rx="2" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="38" y="62" font-size="9" fill="#6b7280">Bot Role</text>
+  <line x1="20" y1="75" x2="40" y2="75" stroke="#dc2626" stroke-width="1" stroke-dasharray="3"/>
+  <text x="45" y="79" font-size="9" fill="#6b7280">Send Back</text>
+
+  <!-- Continues label -->
+  <text x="475" y="610" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Continues: Create Activities (10) -- Create Fees (11) -- Relations for Licences (12) -- Update Activity Names (13) -- Cert Roles (14) -- Applicant</text>
+</svg>
+</div>
+
+<!-- ROLE DETAILS -->
+<!-- 3.1 Reserve Activity Names -->
+<h3 class="subsection-title" id="sec3-1">3.1 Reserve Activity Names</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Reserve activity names</td></tr>
+  <tr><td>Short Name</td><td>Reserve activity nam</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-bot">BotRole</span></td></tr>
+  <tr><td>Start Role</td><td><span class="badge badge-start">Yes (Start)</span></td></tr>
+  <tr><td>Sort Order</td><td>0</td></tr>
+  <tr><td>Visible to Applicant</td><td><span class="badge badge-no">No</span></td></tr>
+  <tr><td>Role ID</td><td class="id-mono">6f5a06dd-3de2-0a9f-08b4-e4ca584f0722</td></tr>
+</table>
+
+<h4 class="detail-title">3.1.1 Registrations Involved</h4>
+<table>
+  <tr><th>Registration</th></tr>
+  <tr><td>Business Permit</td></tr>
+  <tr><td>Company Incorporation</td></tr>
+  <tr><td>Business ID</td></tr>
+  <tr><td>Industrial Licence</td></tr>
+  <tr><td>Trading Licence</td></tr>
+</table>
+
+<h4 class="detail-title">3.1.2 Statuses</h4>
+<table>
+  <tr><th>Status</th><th>Meaning</th></tr>
+  <tr><td><span class="badge badge-yes">FILE VALIDATED</span></td><td>Bot completed successfully, proceed to next role</td></tr>
+  <tr><td><span class="badge badge-optional">FILE PENDING</span></td><td>Processing in progress</td></tr>
+  <tr><td><span class="badge badge-required">Bot failed</span></td><td>Bot execution encountered an error</td></tr>
+</table>
+
+<!-- 3.2 Validate Business Permit -->
+<h3 class="subsection-title" id="sec3-2">3.2 Validate Business Permit</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Validate Business Permit</td></tr>
+  <tr><td>Short Name</td><td>Validate Permit</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-user">UserRole</span></td></tr>
+  <tr><td>Assigned To</td><td>Processing</td></tr>
+  <tr><td>Sort Order</td><td>1</td></tr>
+  <tr><td>Visible to Applicant</td><td><span class="badge badge-yes">Yes</span></td></tr>
+  <tr><td>Role ID</td><td class="id-mono">2c92808792372fda019248428a5d00d7</td></tr>
+</table>
+
+<h4 class="detail-title">3.2.1 Registrations Involved</h4>
+<table><tr><th>Registration</th></tr><tr><td>Business Permit</td></tr></table>
+
+<h4 class="detail-title">3.2.2 Statuses</h4>
+<table>
+  <tr><th>Status</th><th>Meaning</th></tr>
+  <tr><td><span class="badge badge-yes">FILE VALIDATED</span></td><td>Permit validated, proceed</td></tr>
+  <tr><td><span class="badge badge-optional">FILE PENDING</span></td><td>Under review</td></tr>
+  <tr><td><span class="badge" style="background:#fee2e2;color:#dc2626">SEND BACK TO CORRECTIONS</span></td><td>Returned to applicant for corrections</td></tr>
+  <tr><td><span class="badge badge-required">FILE REJECT</span></td><td>Application rejected</td></tr>
+</table>
+
+<!-- 3.3 Create Business Permit -->
+<h3 class="subsection-title" id="sec3-3">3.3 Create Business Permit</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Create Business Permit</td></tr>
+  <tr><td>Short Name</td><td>Create Permit</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-bot">BotRole</span></td></tr>
+  <tr><td>Sort Order</td><td>2</td></tr>
+  <tr><td>Role ID</td><td class="id-mono">2c92808792372fda01924c60124b0350</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>Business Permit</p>
+<h4 class="detail-title">Statuses:</h4>
+<table>
+  <tr><th>Status</th></tr>
+  <tr><td>FILE VALIDATED</td></tr>
+  <tr><td>FILE PENDING</td></tr>
+  <tr><td>Bot failed</td></tr>
+</table>
+
+<!-- 3.4 Review Business ID -->
+<h3 class="subsection-title" id="sec3-4">3.4 Review Business ID</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Review Business ID</td></tr>
+  <tr><td>Short Name</td><td>Review Business ID</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-user">UserRole</span></td></tr>
+  <tr><td>Assigned To</td><td>Processing</td></tr>
+  <tr><td>Sort Order</td><td>3</td></tr>
+  <tr><td>Visible to Applicant</td><td><span class="badge badge-yes">Yes</span></td></tr>
+  <tr><td>Role ID</td><td class="id-mono">2c92808792372fda01924845d13000ef</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>Business ID</p>
+<h4 class="detail-title">Statuses:</h4>
+<table>
+  <tr><th>Status</th><th>Meaning</th></tr>
+  <tr><td>FILE VALIDATED</td><td>Review passed</td></tr>
+  <tr><td>FILE PENDING</td><td>Under review</td></tr>
+  <tr><td>SEND BACK TO CORRECTIONS</td><td>Returned to applicant</td></tr>
+  <tr><td>FILE REJECT</td><td>Rejected</td></tr>
+</table>
+
+<!-- 3.5 Validate Business ID -->
+<h3 class="subsection-title" id="sec3-5">3.5 Validate Business ID</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Validate Business ID</td></tr>
+  <tr><td>Short Name</td><td>Validate Business ID</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-user">UserRole</span></td></tr>
+  <tr><td>Assigned To</td><td>Processing</td></tr>
+  <tr><td>Sort Order</td><td>4</td></tr>
+  <tr><td>Visible to Applicant</td><td><span class="badge badge-yes">Yes</span></td></tr>
+  <tr><td>Role ID</td><td class="id-mono">2c92808792372fda01924c9e457705f2</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>Business ID</p>
+<h4 class="detail-title">Statuses:</h4>
+<table>
+  <tr><th>Status</th></tr>
+  <tr><td>FILE VALIDATED</td></tr>
+  <tr><td>FILE PENDING</td></tr>
+  <tr><td>SEND BACK TO CORRECTIONS</td></tr>
+  <tr><td>FILE REJECT</td></tr>
+</table>
+
+<!-- 3.6 Create Person -->
+<h3 class="subsection-title" id="sec3-6">3.6 Create Person</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Create Person</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-bot">BotRole</span></td></tr>
+  <tr><td>Sort Order</td><td>5</td></tr>
+  <tr><td>Role ID</td><td class="id-mono">2c92808792372fda019266f9ae140d66</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>All 5 registrations</p>
+<h4 class="detail-title">Statuses:</h4>
+<table><tr><th>Status</th></tr><tr><td>FILE VALIDATED</td></tr><tr><td>FILE PENDING</td></tr><tr><td>Bot failed</td></tr></table>
+
+<!-- 3.7 Create Business ID -->
+<h3 class="subsection-title" id="sec3-7">3.7 Create Business ID</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Create Business ID</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-bot">BotRole</span></td></tr>
+  <tr><td>Sort Order</td><td>6</td></tr>
+  <tr><td>Role ID</td><td class="id-mono">2c92808792372fda01924c9fa6fd0600</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>All 5 registrations</p>
+<h4 class="detail-title">Statuses:</h4>
+<table><tr><th>Status</th></tr><tr><td>FILE VALIDATED</td></tr><tr><td>FILE PENDING</td></tr><tr><td>Bot failed</td></tr></table>
+
+<!-- 3.8 Relations -->
+<h3 class="subsection-title" id="sec3-8">3.8 Relations</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Relations</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-bot">BotRole</span></td></tr>
+  <tr><td>Sort Order</td><td>7</td></tr>
+  <tr><td>Role ID</td><td class="id-mono">04465aba-79e4-685a-4fd9-fc0fd7c0c203</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>All 5 registrations</p>
+<h4 class="detail-title">Statuses:</h4>
+<table><tr><th>Status</th></tr><tr><td>FILE VALIDATED</td></tr><tr><td>FILE PENDING</td></tr><tr><td>Bot failed</td></tr></table>
+
+<!-- 3.9 Review Industrial -->
+<h3 class="subsection-title" id="sec3-9">3.9 Review Industrial</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Review Industrial</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-user">UserRole</span></td></tr>
+  <tr><td>Assigned To</td><td>Processing</td></tr>
+  <tr><td>Sort Order</td><td>8</td></tr>
+  <tr><td>Visible to Applicant</td><td><span class="badge badge-yes">Yes</span></td></tr>
+  <tr><td>Role ID</td><td class="id-mono">2c92808792372fda0192484ea9330121</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>Industrial Licence</p>
+<h4 class="detail-title">Statuses:</h4>
+<table><tr><th>Status</th></tr><tr><td>FILE VALIDATED</td></tr><tr><td>FILE PENDING</td></tr><tr><td>SEND BACK TO CORRECTIONS</td></tr><tr><td>FILE REJECT</td></tr></table>
+
+<!-- 3.10 Review Trading -->
+<h3 class="subsection-title" id="sec3-10">3.10 Review Trading</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Review Trading</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-user">UserRole</span></td></tr>
+  <tr><td>Assigned To</td><td>Processing</td></tr>
+  <tr><td>Sort Order</td><td>8 (parallel with Review Industrial)</td></tr>
+  <tr><td>Visible to Applicant</td><td><span class="badge badge-yes">Yes</span></td></tr>
+  <tr><td>Role ID</td><td class="id-mono">2c92808792372fda0192484e496b0114</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>Trading Licence</p>
+<h4 class="detail-title">Statuses:</h4>
+<table><tr><th>Status</th></tr><tr><td>FILE VALIDATED</td></tr><tr><td>FILE PENDING</td></tr><tr><td>SEND BACK TO CORRECTIONS</td></tr><tr><td>FILE REJECT</td></tr></table>
+
+<!-- 3.11 Validate Industrial -->
+<h3 class="subsection-title" id="sec3-11">3.11 Validate Industrial</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Validate Industrial</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-user">UserRole</span></td></tr>
+  <tr><td>Sort Order</td><td>9</td></tr>
+  <tr><td>Role ID</td><td class="id-mono">2c92808792372fda019248508a1d013b</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>Industrial Licence</p>
+<h4 class="detail-title">Statuses:</h4>
+<table><tr><th>Status</th></tr><tr><td>FILE VALIDATED</td></tr><tr><td>FILE PENDING</td></tr><tr><td>SEND BACK TO CORRECTIONS</td></tr><tr><td>FILE REJECT</td></tr></table>
+
+<!-- 3.12 Validate Trading -->
+<h3 class="subsection-title" id="sec3-12">3.12 Validate Trading</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Validate Trading</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-user">UserRole</span></td></tr>
+  <tr><td>Sort Order</td><td>9 (parallel with Validate Industrial)</td></tr>
+  <tr><td>Role ID</td><td class="id-mono">2c92808792372fda0192485063c60130</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>Trading Licence</p>
+<h4 class="detail-title">Statuses:</h4>
+<table><tr><th>Status</th></tr><tr><td>FILE VALIDATED</td></tr><tr><td>FILE PENDING</td></tr><tr><td>SEND BACK TO CORRECTIONS</td></tr><tr><td>FILE REJECT</td></tr></table>
+
+<!-- 3.13 Create Activities -->
+<h3 class="subsection-title" id="sec3-13">3.13 Create Activities</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Create Activities</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-bot">BotRole</span></td></tr>
+  <tr><td>Sort Order</td><td>10</td></tr>
+  <tr><td>Role ID</td><td class="id-mono">2c92808792372fda019252e0f00e0ac8</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>Industrial Licence, Trading Licence, Business ID, Company Incorporation</p>
+<h4 class="detail-title">Statuses:</h4>
+<table><tr><th>Status</th></tr><tr><td>FILE VALIDATED</td></tr><tr><td>FILE PENDING</td></tr><tr><td>Bot failed</td></tr></table>
+
+<!-- 3.14 Create Fees -->
+<h3 class="subsection-title" id="sec3-14">3.14 Create Fees</h3>
+<table class="desc-table">
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Name</td><td>Create Fees</td></tr>
+  <tr><td>Type</td><td><span class="badge badge-bot">BotRole</span></td></tr>
+  <tr><td>Sort Order</td><td>11</td></tr>
+  <tr><td>Role ID</td><td class="id-mono">302a733b-a94d-4312-9a09-f055fe52dcb8</td></tr>
+</table>
+<h4 class="detail-title">Registrations:</h4> <p>All 5 registrations</p>
+<h4 class="detail-title">Statuses:</h4>
+<table><tr><th>Status</th></tr><tr><td>FILE VALIDATED</td></tr><tr><td>FILE PENDING</td></tr><tr><td>Bot failed</td></tr></table>
+
+<!-- 3.15+ OTHER ROLES -->
+<h3 class="subsection-title" id="sec3-more">3.15 -- 3.50 Additional Roles</h3>
+
+<h4 class="detail-title">Primary Processing Roles (continued)</h4>
+<table>
+  <tr><th>Sort</th><th>Name</th><th>Type</th><th>Registrations</th><th>Statuses</th></tr>
+  <tr><td>12</td><td>Relations for licences</td><td><span class="badge badge-bot">Bot</span></td><td>All</td><td>VALIDATED / PENDING / Bot failed</td></tr>
+  <tr><td>13</td><td>Update activity names</td><td><span class="badge badge-bot">Bot</span></td><td>All</td><td>VALIDATED / PENDING / Bot failed</td></tr>
+  <tr><td>14</td><td>Cert Business ID</td><td><span class="badge badge-bot">Bot</span></td><td>Business ID, Industrial, Trading</td><td>VALIDATED / PENDING / Bot failed</td></tr>
+  <tr><td>130</td><td>Applicant</td><td><span class="badge badge-user">User</span></td><td>(None)</td><td>VALIDATED / PENDING</td></tr>
+</table>
+
+<h4 class="detail-title">CI (Company Incorporation) Roles</h4>
+<table>
+  <tr><th>Name</th><th>Type</th><th>Registration</th><th>Statuses</th></tr>
+  <tr><td>CI Review</td><td><span class="badge badge-user">User</span></td><td>Company Incorporation</td><td>VALIDATED / PENDING / SEND BACK / REJECT</td></tr>
+  <tr><td>CI Approval</td><td><span class="badge badge-user">User</span></td><td>Company Incorporation</td><td>VALIDATED / PENDING / SEND BACK / REJECT</td></tr>
+  <tr><td>CI Create</td><td><span class="badge badge-bot">Bot</span></td><td>Company Incorporation</td><td>VALIDATED / PENDING / Bot failed</td></tr>
+  <tr><td>CI Certificate</td><td><span class="badge badge-bot">Bot</span></td><td>Company Incorporation</td><td>VALIDATED / PENDING / Bot failed</td></tr>
+</table>
+
+<h4 class="detail-title">Cashier Role</h4>
+<table>
+  <tr><th>Name</th><th>Type</th><th>Registration</th><th>Statuses</th></tr>
+  <tr><td>Cashier</td><td><span class="badge badge-user">User</span></td><td>Business Permit, Trading Licence, Company Incorporation</td><td>VALIDATED / PENDING / SEND BACK / REJECT</td></tr>
+</table>
+
+<h4 class="detail-title">Review Activity Names</h4>
+<table>
+  <tr><th>Name</th><th>Type</th><th>Statuses</th></tr>
+  <tr><td>Review activity names</td><td><span class="badge badge-user">User</span></td><td>VALIDATED / PENDING / SEND BACK / REJECT</td></tr>
+</table>
+
+<h4 class="detail-title">Certificate Bot Roles</h4>
+<table>
+  <tr><th>Name</th><th>Type</th><th>Registration</th></tr>
+  <tr><td>Cert Business Permit</td><td><span class="badge badge-bot">Bot</span></td><td>Business Permit</td></tr>
+  <tr><td>Cert Trading</td><td><span class="badge badge-bot">Bot</span></td><td>Trading Licence</td></tr>
+  <tr><td>Cert Industrial</td><td><span class="badge badge-bot">Bot</span></td><td>Industrial Licence</td></tr>
+</table>
+
+<h4 class="detail-title">Other Bot Roles</h4>
+<table>
+  <tr><th>Name</th><th>Type</th></tr>
+  <tr><td>Create Trading</td><td><span class="badge badge-bot">Bot</span></td></tr>
+  <tr><td>NAMES create</td><td><span class="badge badge-bot">Bot</span></td></tr>
+  <tr><td>Relations Trading</td><td><span class="badge badge-bot">Bot</span></td></tr>
+  <tr><td>Permits create</td><td><span class="badge badge-bot">Bot</span></td></tr>
+  <tr><td>Review Business Permit</td><td><span class="badge badge-user">User</span></td></tr>
+</table>
+
+<h4 class="detail-title">Assistance Roles (Manual fallback for bot failures)</h4>
+<table>
+  <tr><th>Name</th><th>Type</th><th>Sort Order</th></tr>
+  <tr><td>Assistance Reserve activity names</td><td><span class="badge badge-user">User</span></td><td>130</td></tr>
+  <tr><td>Assistance BR upload</td><td><span class="badge badge-user">User</span></td><td>130</td></tr>
+  <tr><td>Assistance BR create</td><td><span class="badge badge-user">User</span></td><td>130</td></tr>
+  <tr><td>Assistance BP create</td><td><span class="badge badge-user">User</span></td><td>130</td></tr>
+  <tr><td>Assistance BP upload</td><td><span class="badge badge-user">User</span></td><td>299</td></tr>
+  <tr><td>Assistance Proprietors create</td><td><span class="badge badge-user">User</span></td><td>130</td></tr>
+  <tr><td>Assistance IL create</td><td><span class="badge badge-user">User</span></td><td>130</td></tr>
+  <tr><td>Assistance IL upload</td><td><span class="badge badge-user">User</span></td><td>299</td></tr>
+  <tr><td>Assistance TL create</td><td><span class="badge badge-user">User</span></td><td>299</td></tr>
+  <tr><td>Assistance TL upload</td><td><span class="badge badge-user">User</span></td><td>299</td></tr>
+  <tr><td>Assistance CI create</td><td><span class="badge badge-user">User</span></td><td>299</td></tr>
+  <tr><td>Assistance CI upload</td><td><span class="badge badge-user">User</span></td><td>299</td></tr>
+  <tr><td>Assistance Names create</td><td><span class="badge badge-user">User</span></td><td>299</td></tr>
+  <tr><td>Assistance relations2</td><td><span class="badge badge-user">User</span></td><td>130</td></tr>
+  <tr><td>Assistance Relations industrial</td><td><span class="badge badge-user">User</span></td><td>130</td></tr>
+  <tr><td>Assistance Relations trading</td><td><span class="badge badge-user">User</span></td><td>299</td></tr>
+  <tr><td>Assistance Update activity names</td><td><span class="badge badge-user">User</span></td><td>130</td></tr>
+</table>
+
+
+<!-- ============================================================
+     SECTION 4: BOTS
+     ============================================================ -->
+<h2 class="section-title" id="sec4">Section 4: Bots (Automation)</h2>
+
+<p>The service has <strong>78 automation bots</strong> organized by type: data integration (GDB), document generation/display, internal field manipulation, and message bots.</p>
+
+<!-- 4.1 DATA BOTS -->
+<h3 class="subsection-title" id="sec4-data">4.1 Data Bots (GDB Integration)</h3>
+<table>
+  <tr><th>#</th><th>Bot Name</th><th>GDB Service</th><th>Category</th><th>Short Name</th></tr>
+  <tr><td>1</td><td>LEGAL PERSONS create or update</td><td>GDB.GDB-LEGAL PERSONS(5.6)-update-or-create</td><td>create</td><td>Companies create</td></tr>
+  <tr><td>2</td><td>BUSINESS - check if Name exists - Review Role</td><td>GDB.GDB-BUSINESS(10.2)-exists</td><td>exist</td><td>Business name - Revi</td></tr>
+  <tr><td>3</td><td>BUSINESS check if similar names exist - part A company name</td><td>GDB.GDB-BUSINESS(10.2)-exists</td><td>exist</td><td>Business names che3</td></tr>
+  <tr><td>4</td><td>BUSINESS NAMES activities - does name exists for company - Review role</td><td>GDB.GDB-BUSINESS NAMES(3.2)-exists</td><td>exist</td><td>BUSINESS NAMES acti</td></tr>
+  <tr><td>5</td><td>BUSINESS NAMES check if there are similar names from company name part A</td><td>GDB.GDB-BUSINESS NAMES(3.2)-exists</td><td>exist</td><td>similar business name A</td></tr>
+  <tr><td>6</td><td>BUSINESS check if name exists - activities part A</td><td>GDB.GDB-BUSINESS(10.2)-exists</td><td>exist</td><td>BUSINESS - does nam</td></tr>
+  <tr><td>7</td><td>BUSINESS NAMES activities - does name exists for activity - in Validate</td><td>GDB.GDB-VIEW-Activity business names available(1.2)-exists</td><td>exist</td><td>BUSINESS NAMES activ</td></tr>
+  <tr><td>8</td><td>FILING dates list</td><td>GDB.GDB-FILING DATES(1.0)-list</td><td>list</td><td>FILING dates list</td></tr>
+  <tr><td>9</td><td>Update Signatures with status signed</td><td>GDB.GDB-SIGNATURES(1.2)-update-entries</td><td>update</td><td>Update Signatures wi</td></tr>
+  <tr><td>10</td><td>BUSINESS - does name exists - from activities in Review business</td><td>GDB.GDB-BUSINESS(10.2)-exists</td><td>exist</td><td>BUSINESS activities</td></tr>
+  <tr><td>11</td><td>BUSINESS - does name exists - from activities in Validate business</td><td>GDB.GDB-BUSINESS(10.2)-exists</td><td>exist</td><td>BUSINESS activities</td></tr>
+  <tr><td>12</td><td>LEGAL PERSONS update or create entries from Shareholders</td><td>GDB.GDB-LEGAL PERSONS(5.6)-update-or-create-entries</td><td>update</td><td>LEGAL PERSONS update</td></tr>
+  <tr><td>13</td><td>ACCOUNTS create</td><td>GDB.GDB-ACCOUNTS(1.0)-create-entries</td><td>create</td><td>ACCOUNTS create</td></tr>
+  <tr><td>14</td><td>FEES create BR</td><td>GDB.GDB-FEES(1.6)-create</td><td>create</td><td>FEES create</td></tr>
+  <tr><td>15</td><td>PERMITS update create</td><td>GDB.GDB-PERMITS(2.9)-update-or-create</td><td>create</td><td>PERMITS create</td></tr>
+  <tr><td>16</td><td>FEES create IL fees</td><td>GDB.GDB-FEES(1.6)-create-entries</td><td>create</td><td>FEES create IL fees</td></tr>
+  <tr><td>17</td><td>RELATIONS create for business (sole prop)</td><td>GDB.GDB-RELATIONS(3.3)-create</td><td>create</td><td>CREATE Ind relation</td></tr>
+  <tr><td>18</td><td>NATURAL PERSONS applicant is owner - update or create</td><td>GDB.GDB-NATURAL PERSONS(4.4)-update-or-create</td><td>create</td><td>INDIVIDUALS U or C</td></tr>
+  <tr><td>19</td><td>RELATIONS create for business sole prop applicant not owner</td><td>GDB.GDB-RELATIONS(3.3)-create</td><td>create</td><td>CREATE Ind relation</td></tr>
+  <tr><td>20</td><td>BUSINESSES list similar registered names - Review</td><td>GDB.GDB-BUSINESS(10.2)-list</td><td>list</td><td>BUSINESSES list simi</td></tr>
+  <tr><td>21</td><td>BUSINESS - check if Name exists - Verify Role</td><td>GDB.GDB-BUSINESS(10.2)-exists</td><td>exist</td><td>Business name - Veri</td></tr>
+  <tr><td>22</td><td>FEES create TL fees</td><td>GDB.GDB-FEES(1.6)-create-entries</td><td>create</td><td>FEES create TL fees</td></tr>
+  <tr><td>23</td><td>BUSINESS update or create</td><td>GDB.GDB-BUSINESS(10.2)-update-or-create</td><td>create</td><td>BUSINESSES create</td></tr>
+  <tr><td>24</td><td>ACTIVITIES PER BUSINESS create entries</td><td>GDB.GDB-APB(1.5)-create-entries</td><td>create</td><td>ACTIVITIES create ind</td></tr>
+  <tr><td>25</td><td>BUSINESS NAMES - list similar names - Validate</td><td>GDB.GDB-BUSINESS NAMES(3.2)-list</td><td>list</td><td>Business names - lis</td></tr>
+  <tr><td>26</td><td>BUSINESSES list similar registered names - Verify</td><td>GDB.GDB-BUSINESS(10.2)-list</td><td>list</td><td>BUSINESSES list simi</td></tr>
+  <tr><td>27</td><td>NATURAL PERSONS update or create entries from Shareholders</td><td>GDB.GDB-NATURAL PERSONS(4.4)-update-or-create-entries</td><td>update</td><td>NATURAL PERSONS upda</td></tr>
+  <tr><td>28</td><td>BUSINESS NAMES activities - does name exists for activity - Review role</td><td>GDB.GDB-VIEW-Activity business names available(1.2)-exists</td><td>exist</td><td>BUSINESS NAMES acti</td></tr>
+  <tr><td>29</td><td>SHAREHOLDERS update or create entries</td><td>GDB.GDB-SHAREHOLDERS(3.0)-update-or-create-entries</td><td>update</td><td>SHAREHOLDERS update</td></tr>
+  <tr><td>30</td><td>BUSINESS NAMES reserve activity names</td><td>GDB.GDB-BUSINESS NAMES(3.2)-update-or-create-entries</td><td>create</td><td>BUSINESS NAMES reser</td></tr>
+  <tr><td>31</td><td>BUSINESS NAMES - list similar names - Review</td><td>GDB.GDB-BUSINESS NAMES(3.2)-list</td><td>list</td><td>Business names - lis</td></tr>
+  <tr><td>32</td><td>BUSINESS NAMES - Update activity names after review (APPROVE)</td><td>GDB.GDB-BUSINESS NAMES(3.2)-update-entries</td><td>update</td><td>BUSINESS NAMES - Upd</td></tr>
+  <tr><td>33</td><td>BUSINESS NAMES - Update activity names after review (REJECT)</td><td>GDB.GDB-BUSINESS NAMES(3.2)-update-entries</td><td>update</td><td>BUSINESS NAMES - Upd</td></tr>
+  <tr><td>34</td><td>BUSINESS NAMES activities - does name exists - from part A activities</td><td>GDB.GDB-VIEW-Activity business names available(1.2)-exists</td><td>exist</td><td>BUSINESS NAMES acti</td></tr>
+  <tr><td>35</td><td>LICENCES create entries Industrial Licence</td><td>GDB.GDB-LICENCES(4.6)-create-entries</td><td>create</td><td>LICENCES create ind</td></tr>
+  <tr><td>36</td><td>SIGNATURE create get verif code</td><td>GDB.GDB-SIGNATURES(1.2)-create-entries</td><td>create</td><td>SIGNATURE create get</td></tr>
+  <tr><td>37</td><td>NATURAL PERSON read NP data</td><td>GDB.GDB-NATURAL PERSONS(4.4)-read</td><td>read</td><td>NATURAL PERSON read</td></tr>
+  <tr><td>38</td><td>LICENCES create entries Trading Licence</td><td>GDB.GDB-LICENCES(4.6)-create-entries</td><td>create</td><td>LICENCES create tra</td></tr>
+  <tr><td>39</td><td>LEGAL PERSONS read Legal person data</td><td>GDB.GDB-LEGAL PERSONS(5.6)-read</td><td>read</td><td>LEGAL PERSONS read L</td></tr>
+  <tr><td>40</td><td>MANAGERS update or create entries</td><td>GDB.GDB-MANAGERS(2.1)-update-or-create-entries</td><td>update</td><td>MANAGERS update or c</td></tr>
+  <tr><td>41</td><td>RELATIONS create entries for managers</td><td>GDB.GDB-RELATIONS(3.3)-update-or-create-entries</td><td>create</td><td>C.E company relation</td></tr>
+  <tr><td>42</td><td>BUSINESS check if name exists - part A company name</td><td>GDB.GDB-BUSINESS(10.2)-exists</td><td>exist</td><td>Company name check i</td></tr>
+  <tr><td>43</td><td>BUSINESS NAMES - check if name exists - company part A</td><td>GDB.GDB-BUSINESS NAMES(3.2)-exists</td><td>exist</td><td>BUSINESS NAMES check</td></tr>
+  <tr><td>44</td><td>BUSINESS NAMES activities - does name exists for company - Validate role</td><td>GDB.GDB-BUSINESS NAMES(3.2)-exists</td><td>exist</td><td>BUSINESS NAMES activ</td></tr>
+  <tr><td>45</td><td>BUSINESS NAMES (activities) - list of names in sendpage checked against GDB</td><td>GDB.GDB-VIEW-Activity business names available(1.2)-list</td><td>list</td><td>BUSINESS NAMES (acti</td></tr>
+  <tr><td>46</td><td>BUSINESS update company ID in owner</td><td>GDB.GDB-BUSINESS(10.2)-update</td><td>update</td><td>Update company ID</td></tr>
+  <tr><td>47</td><td>RELATIONS create entries for Trading</td><td>GDB.GDB-RELATIONS(3.3)-create-entries</td><td>create</td><td>Licences to relation</td></tr>
+  <tr><td>48</td><td>RELATIONS create entries for Licences</td><td>GDB.GDB-RELATIONS(3.3)-create-entries</td><td>create</td><td>IL to relations</td></tr>
+  <tr><td>49</td><td>FEES create CI</td><td>GDB.GDB-FEES(1.6)-create</td><td>create</td><td>FEES create CI</td></tr>
+</table>
+
+<!-- 4.2 DOCUMENT BOTS -->
+<h3 class="subsection-title" id="sec4-doc">4.2 Document Bots (PDF Generation &amp; Display)</h3>
+<table>
+  <tr><th>#</th><th>Bot Name</th><th>Service</th><th>Category</th></tr>
+  <tr><td>1</td><td>Trade license upload</td><td>generic-pdf-generator</td><td>document_generate_and_upload</td></tr>
+  <tr><td>2</td><td>Industrial license upload</td><td>generic-pdf-generator</td><td>document_generate_and_upload</td></tr>
+  <tr><td>3</td><td>Summary upload</td><td>generic-pdf-generator</td><td>document_generate_and_upload</td></tr>
+  <tr><td>4</td><td>Business permit upload</td><td>generic-pdf-generator</td><td>document_generate_and_upload</td></tr>
+  <tr><td>5</td><td>Company incorporation upload</td><td>generic-pdf-generator</td><td>document_generate_and_upload</td></tr>
+  <tr><td>6</td><td>BUSINESS ID upload</td><td>generic-pdf-generator</td><td>document_generate_and_upload</td></tr>
+  <tr><td>7</td><td>Memorandum display</td><td>generic-pdf-display</td><td>document_generate_and_display</td></tr>
+  <tr><td>8</td><td>Trade license display</td><td>generic-pdf-display</td><td>document_generate_and_display</td></tr>
+  <tr><td>9</td><td>TEST BUSINESS PERMIT 3</td><td>generic-pdf-display</td><td>document_generate_and_display</td></tr>
+  <tr><td>10</td><td>BUSINESS ID display</td><td>generic-pdf-display</td><td>document_generate_and_display</td></tr>
+  <tr><td>11</td><td>TEST BUSINESS PERMIT 2</td><td>generic-pdf-display</td><td>document_generate_and_display</td></tr>
+  <tr><td>12</td><td>Industrial license display</td><td>generic-pdf-display</td><td>document_generate_and_display</td></tr>
+  <tr><td>13</td><td>APPLICATION display</td><td>generic-pdf-display</td><td>document_generate_and_display</td></tr>
+</table>
+
+<!-- 4.3 INTERNAL BOTS -->
+<h3 class="subsection-title" id="sec4-int">4.3 Internal Bots (Field Manipulation)</h3>
+<table>
+  <tr><th>#</th><th>Bot Name</th><th>Description</th></tr>
+  <tr><td>1</td><td>Review business ID role - Copy Proposed name to check name</td><td>Copies proposed name field for validation</td></tr>
+  <tr><td>2</td><td>INTERNAL Send true to status signed</td><td>Sets signature status flags</td></tr>
+  <tr><td>3</td><td>Send ID to Base 64 content</td><td>Converts ID document to base64</td></tr>
+  <tr><td>4</td><td>INTERNAL Activity</td><td>Activity field processing</td></tr>
+  <tr><td>5</td><td>INTERNAL bring data to memorandum of association</td><td>Copies shareholder data to MoA template</td></tr>
+  <tr><td>6</td><td>INTERNAL to incorporation documents</td><td>Populates incorporation document fields</td></tr>
+  <tr><td>7</td><td>INTERNAL copy directors from shareholders to managers</td><td>Copies director records from shareholders list</td></tr>
+  <tr><td>8</td><td>Verify business ID role - Copy Proposed name to check name</td><td>Name verification copy for Validate role</td></tr>
+  <tr><td>9</td><td>Internal Copy business name for comparison</td><td>Business name comparison setup</td></tr>
+  <tr><td>10</td><td>Proposed activity business name to comparison</td><td>Activity name comparison setup</td></tr>
+  <tr><td>11</td><td>Data Extractor from text to catalogs</td><td>Extracts classification data from text fields</td></tr>
+  <tr><td>12</td><td>INTERNAL sent back from BR review</td><td>Handles send-back workflow from BR review</td></tr>
+  <tr><td>13</td><td>Internal Activities</td><td>Activity processing logic</td></tr>
+</table>
+
+<!-- 4.4 MESSAGE BOTS -->
+<h3 class="subsection-title" id="sec4-msg">4.4 Message Bots</h3>
+<table>
+  <tr><th>#</th><th>Bot Name</th><th>Description</th></tr>
+  <tr><td>1</td><td>MESSAGE Annual reminder</td><td>Annual renewal reminder message</td></tr>
+  <tr><td>2</td><td>MESSAGE sign the constitutional document (owner)</td><td>Notification to sign MoA</td></tr>
+</table>
+
+
+<!-- ============================================================
+     SECTION 5: DOCUMENTS & TEMPLATES
+     ============================================================ -->
+<h2 class="section-title" id="sec5">Section 5: Documents &amp; Templates</h2>
+
+<table>
+  <tr><th>#</th><th>Document Name</th><th>Short Name</th><th>Active</th><th>Sort Order</th><th>External</th><th>Document ID</th></tr>
+  <tr>
+    <td>1</td>
+    <td>Memorandum of association</td>
+    <td>Memorandum of associ</td>
+    <td><span class="badge badge-yes">Active</span></td>
+    <td>0</td>
+    <td><span class="badge badge-no">No</span></td>
+    <td class="id-mono">528dab21-1dd1-bc91-232e-25645a1e6c1d</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Payment slip</td>
+    <td>Payment slip</td>
+    <td><span class="badge badge-yes">Active</span></td>
+    <td>2</td>
+    <td><span class="badge badge-no">No</span></td>
+    <td class="id-mono">fc904464-bbbe-811c-a442-69dd7ab6127e</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Business ID</td>
+    <td>Business ID</td>
+    <td><span class="badge badge-yes">Active</span></td>
+    <td>3</td>
+    <td><span class="badge badge-no">No</span></td>
+    <td class="id-mono">2c928087926fd2a1019270d541ce0048</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Business Permit</td>
+    <td>Business Permit</td>
+    <td><span class="badge badge-yes">Active</span></td>
+    <td>4</td>
+    <td><span class="badge badge-no">No</span></td>
+    <td class="id-mono">2c928087926fd2a1019270af28ca0042</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Trading Licence</td>
+    <td>Trading Licence</td>
+    <td><span class="badge badge-yes">Active</span></td>
+    <td>5</td>
+    <td><span class="badge badge-no">No</span></td>
+    <td class="id-mono">2c92808792372fda01924858594d0164</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Industrial Licence</td>
+    <td>Industrial Licence</td>
+    <td><span class="badge badge-yes">Active</span></td>
+    <td>6</td>
+    <td><span class="badge badge-no">No</span></td>
+    <td class="id-mono">2c92808792372fda019248587d080166</td>
+  </tr>
+</table>
+
+
+<!-- ============================================================
+     SECTION 6: APPENDIX
+     ============================================================ -->
+<h2 class="section-title" id="sec6">Section 6: Appendix</h2>
+
+<!-- 6.1 NOTIFICATIONS -->
+<h3 class="subsection-title" id="sec6-1">6.1 Notifications</h3>
+<p class="not-configured">No notifications are configured for this service (0 found).</p>
+
+<!-- 6.2 REQUIREMENTS CATALOG -->
+<h3 class="subsection-title" id="sec6-2">6.2 Global Requirements Catalog</h3>
+<p>The BPA instance has <strong>43 global requirement definitions</strong>. Requirements used by this service's registrations are highlighted.</p>
+
+<table>
+  <tr><th>#</th><th>Requirement Name</th><th>Used By Registration</th><th>Requirement ID</th></tr>
+  <tr style="background:#eff6ff"><td>1</td><td><strong>Lease or Property title</strong></td><td>Business ID</td><td class="id-mono">28e23149-77da-4933-98e0-58164a5fc02a</td></tr>
+  <tr style="background:#eff6ff"><td>2</td><td><strong>Business owner's national ID</strong></td><td>Business ID</td><td class="id-mono">78854fce-ab74-4fca-a724-b52f99dc1b57</td></tr>
+  <tr style="background:#eff6ff"><td>3</td><td><strong>Applicant passport</strong></td><td>Business ID</td><td class="id-mono">18f9cd4d-c83f-4d6b-a441-6f6219615b1b</td></tr>
+  <tr style="background:#eff6ff"><td>4</td><td><strong>Local representative ID</strong></td><td>Business ID</td><td class="id-mono">0d7daa18-9d59-4ff5-be24-fc568983ea7c</td></tr>
+  <tr style="background:#eff6ff"><td>5</td><td><strong>Incorporation document</strong></td><td>Business ID</td><td class="id-mono">bf8e965a-db82-4739-a036-cfd2293ced16</td></tr>
+  <tr style="background:#eff6ff"><td>6</td><td><strong>Banking statement</strong></td><td>Business Permit</td><td class="id-mono">1d92b3ce-ef5d-473d-9db9-30db5bd99bb8</td></tr>
+  <tr style="background:#eff6ff"><td>7</td><td><strong>Insurance certificate for employees</strong></td><td>Business Permit</td><td class="id-mono">03b623b2-fcab-4522-8e87-fcc6edb5a7c1</td></tr>
+  <tr style="background:#eff6ff"><td>8</td><td><strong>Business plan</strong></td><td>Business Permit</td><td class="id-mono">a48c1ccc-e0bd-46c9-80de-38be8bfa16a9</td></tr>
+  <tr style="background:#eff6ff"><td>9</td><td><strong>Managers ID</strong></td><td>Company Incorporation</td><td class="id-mono">0c66e980-3a5b-4743-a2e5-f5a7a88c31bd</td></tr>
+  <tr style="background:#eff6ff"><td>10</td><td><strong>Shareholder ID</strong></td><td>Company Incorporation</td><td class="id-mono">adfa9dab-5310-453e-8f78-43c7845f5547</td></tr>
+  <tr style="background:#eff6ff"><td>11</td><td><strong>Consent as a director</strong></td><td>Company Incorporation</td><td class="id-mono">93fcc844-18bd-4a24-8036-b157c147e046</td></tr>
+  <tr><td>12</td><td>AMM</td><td class="not-configured">--</td><td class="id-mono">ecbddd0a-05ae-46ea-8a4e-b04bed804426</td></tr>
+  <tr><td>13</td><td>Applicant form signed</td><td class="not-configured">--</td><td class="id-mono">3d1e5ab1-7e4a-24e0-d6eb-bbc035231053</td></tr>
+  <tr><td>14</td><td>Authorisation</td><td class="not-configured">--</td><td class="id-mono">e8a37f43-c453-709d-7ede-b1624b1059f0</td></tr>
+  <tr><td>15</td><td>Business ID card</td><td class="not-configured">--</td><td class="id-mono">2c92809391a7002f0191f9e93e9f0023</td></tr>
+  <tr><td>16</td><td>Business licence certificate</td><td class="not-configured">--</td><td class="id-mono">7377fed0-1d75-4647-40f1-fa0282b6e563</td></tr>
+  <tr><td>17</td><td>Business Permit</td><td class="not-configured">--</td><td class="id-mono">a2e7e510-2c90-46a5-92d4-383f6c5b8d15</td></tr>
+  <tr><td>18</td><td>Cadastral plan</td><td class="not-configured">--</td><td class="id-mono">19b4736d-42e0-7dd9-998d-a4fd38054129</td></tr>
+  <tr><td>19</td><td>Certificate of incorporation</td><td class="not-configured">--</td><td class="id-mono">2c9280859173da1201917554b6e90ad0</td></tr>
+  <tr><td>20</td><td>Certificate of occupancy</td><td class="not-configured">--</td><td class="id-mono">2c92809391a7002f0191f9e9feb90028</td></tr>
+  <tr><td>21</td><td>Certificate of registration</td><td class="not-configured">--</td><td class="id-mono">2c9280859173da12019175556b770ad4</td></tr>
+  <tr><td>22</td><td>Coloured passport copy</td><td class="not-configured">--</td><td class="id-mono">ce1ce481-d5d7-45c2-8f2d-86a7d7fa9d1f</td></tr>
+  <tr><td>23</td><td>Confirmation of name reservation</td><td class="not-configured">--</td><td class="id-mono">2c9280859173da1201917557a3e60ad8</td></tr>
+  <tr><td>24</td><td>Financial statement</td><td class="not-configured">--</td><td class="id-mono">d0c8088c-c5ee-5eb7-c8dc-c5232dd93050</td></tr>
+  <tr><td>25</td><td>Identification document</td><td class="not-configured">--</td><td class="id-mono">2c92809391a7002f0191fa2d43b0003e</td></tr>
+  <tr><td>26</td><td>Industrial Licence</td><td class="not-configured">--</td><td class="id-mono">4b243b50-275f-46d6-9fb1-31de72a0dbb9</td></tr>
+  <tr><td>27</td><td>Name reservation</td><td class="not-configured">--</td><td class="id-mono">2c92809391a7002f0192095bc62e0d45</td></tr>
+  <tr><td>28</td><td>PIN Certificate</td><td class="not-configured">--</td><td class="id-mono">b14ce43e-bc28-4141-b097-9905f6e4729e</td></tr>
+  <tr><td>29</td><td>Trading Licence</td><td class="not-configured">--</td><td class="id-mono">f6cded05-40cc-4023-b2ae-5b02bbdb6317</td></tr>
+</table>
+
+<!-- 6.3 DETERMINANT REFERENCE TABLE -->
+<h3 class="subsection-title" id="sec6-3">6.3 Determinant Reference Table</h3>
+<p>Complete listing of all <strong>149 determinants</strong> configured for this service.</p>
+
+<table>
+  <tr><th>#</th><th>Determinant Name</th><th>Type</th><th>Operator</th><th>Target Field</th><th>Value/Condition</th></tr>
+  <tr><td>1</td><td>Accounts were not created yet</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">brApprovalAcountsWereCreated</td><td>false</td></tr>
+  <tr><td>2</td><td>Activity is selected</td><td><span class="badge badge-type">grid</span></td><td></td><td class="id-mono">applicantListOfActivities2</td><td>(grid condition)</td></tr>
+  <tr><td>3</td><td>Activity name was approved in Review business</td><td><span class="badge badge-type">grid</span></td><td></td><td class="id-mono">brReviewBusinessNamesProposedByTheApplicant</td><td>(grid condition)</td></tr>
+  <tr><td>4</td><td>Activity name was approved in Validate business</td><td><span class="badge badge-type">grid</span></td><td></td><td class="id-mono">brApprovalBusinessNamesProposedByTheApplicant</td><td>(grid condition)</td></tr>
+  <tr><td>5</td><td>Activity names NOT approved in Review Business</td><td><span class="badge badge-type">grid</span></td><td></td><td class="id-mono">brReviewBusinessNamesProposedByTheApplicant</td><td>(grid condition)</td></tr>
+  <tr><td>6</td><td>Activity names NOT approved in Verify Business</td><td><span class="badge badge-type">grid</span></td><td></td><td class="id-mono">brApprovalBusinessNamesProposedByTheApplicant</td><td>(grid condition)</td></tr>
+  <tr><td>7</td><td>All shareholders had signed</td><td><span class="badge badge-type">grid</span></td><td></td><td class="id-mono">applicantMembersToSignMoA</td><td>(grid condition)</td></tr>
+  <tr><td>8</td><td>Annual turnover &lt;= 5000000</td><td><span class="badge badge-type">numeric</span></td><td>LESS_THAN_OR_EQUAL</td><td class="id-mono">applicantTurnover</td><td>5000000</td></tr>
+  <tr><td>9</td><td>Annual turnover &gt; 5000000</td><td><span class="badge badge-type">numeric</span></td><td>GREATER_THAN</td><td class="id-mono">applicantTurnover</td><td>5000000</td></tr>
+  <tr><td>10</td><td>Any BO a government = YES</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantIsAnyBeneficialOwner...</td><td>yes</td></tr>
+  <tr><td>11</td><td>Any person owns more than 10% = YES</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantDoesAnyPersonOwnMoreThan10...</td><td>yes</td></tr>
+  <tr><td>12</td><td>Applicant will receive user rights</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">sendPageWillYouReceiveUserRights</td><td>yes</td></tr>
+  <tr><td>13</td><td>Application for myself</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">guideApplicationFor</td><td>yesIWillBeTheOwner</td></tr>
+  <tr><td>14</td><td>Application for someone else</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">guideApplicationFor</td><td>noIAmCreatingThisBusinessForAnotherPerson</td></tr>
+  <tr><td>15</td><td>Applying for at least 1 industrial license</td><td><span class="badge badge-type">numeric</span></td><td>GREATER_THAN</td><td class="id-mono">applicantNumberOfIndustrialLicenses</td><td>0</td></tr>
+  <tr><td>16</td><td>Applying for at least 1 trade license</td><td><span class="badge badge-type">numeric</span></td><td>GREATER_THAN</td><td class="id-mono">applicantNumberOfTradeLicense</td><td>0</td></tr>
+  <tr><td>17</td><td>At least 30% of shareholders are foreigners</td><td><span class="badge badge-type">numeric</span></td><td>GREATER_THAN_OR_EQUAL</td><td class="id-mono">applicantPrecentageOfSharesOwnedByForeignShareholders</td><td>30</td></tr>
+  <tr><td>18</td><td>Automated articles of association</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantWillYouUseTheAutomatedArticlesOfAssociation...</td><td>yes</td></tr>
+  <tr><td>19</td><td>Business is company</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">guideTypeOfBusiness2</td><td>company</td></tr>
+  <tr><td>20</td><td>Business is sole proprietor</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">guideTypeOfBusiness2</td><td>soleProprietor</td></tr>
+  <tr><td>21</td><td>Business owner (guide) is from Lesotho</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">guideIsTheBusinessOwnerFromLesothoOrOtherCountry</td><td>lesotho</td></tr>
+  <tr><td>22</td><td>Business owner (guide) is from other country</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">guideIsTheBusinessOwnerFromLesothoOrOtherCountry</td><td>otheCountry</td></tr>
+  <tr><td>23</td><td>Business owner gender = Female</td><td><span class="badge badge-type">classification</span></td><td>EQUAL</td><td class="id-mono">applicantGender</td><td>(classification match)</td></tr>
+  <tr><td>24</td><td>Company name doesnt exist yet</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantCompanyNameExists</td><td>false</td></tr>
+  <tr><td>25</td><td>Company name exists</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantCompanyNameExists</td><td>true</td></tr>
+  <tr><td>26</td><td>Current PartA tab is valid</td><td><span class="badge badge-type">boolean</span></td><td></td><td class="id-mono">isCurrentPartATabValid</td><td>true</td></tr>
+  <tr><td>27</td><td>Declaration filled</td><td><span class="badge badge-type">boolean</span></td><td></td><td class="id-mono">sendPage...solemn declaration</td><td>true</td></tr>
+  <tr><td>28</td><td>Electronic signature</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantElectronicOrManualSignature</td><td>electronically</td></tr>
+  <tr><td>29</td><td>Fees paid</td><td><span class="badge badge-type">boolean</span></td><td></td><td class="id-mono">cashierIDeclareThatTheFeesHaveBeenDulyPaid</td><td>true</td></tr>
+  <tr><td>30</td><td>Form is valid</td><td><span class="badge badge-type">boolean</span></td><td></td><td class="id-mono">isFormValid</td><td>true</td></tr>
+  <tr><td>31</td><td>Individual shareholder</td><td><span class="badge badge-type">grid</span></td><td></td><td class="id-mono">applicantListOfShareholders2</td><td>(grid condition)</td></tr>
+  <tr><td>32</td><td>Manual signature</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantElectronicOrManualSignature</td><td>manually</td></tr>
+  <tr><td>33</td><td>Marital status is Married</td><td><span class="badge badge-type">classification</span></td><td>EQUAL</td><td class="id-mono">applicantMaritalStatus</td><td>(classification match)</td></tr>
+  <tr><td>34</td><td>Needs a trading licence</td><td><span class="badge badge-type">grid</span></td><td></td><td class="id-mono">applicantListOfActivities2</td><td>(grid condition)</td></tr>
+  <tr><td>35</td><td>Needs an industrial licence</td><td><span class="badge badge-type">grid</span></td><td></td><td class="id-mono">applicantListOfActivities2</td><td>(grid condition)</td></tr>
+  <tr><td>36</td><td>Number of employees &lt; 50</td><td><span class="badge badge-type">numeric</span></td><td>LESS_THAN_OR_EQUAL</td><td class="id-mono">applicantNumberOfEmployees</td><td>50</td></tr>
+  <tr><td>37</td><td>Number of employees &gt; 50</td><td><span class="badge badge-type">numeric</span></td><td>GREATER_THAN</td><td class="id-mono">applicantNumberOfEmployees</td><td>50</td></tr>
+  <tr><td>38</td><td>Only ordinary shares</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantWhatTypeOfSharesWillYouHave</td><td>onlyOrdinaryShares</td></tr>
+  <tr><td>39</td><td>Operating office</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantDoYouHaveAnOperatingOffice</td><td>yes</td></tr>
+  <tr><td>40</td><td>Ordinary and prefered shares</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantWhatTypeOfSharesWillYouHave</td><td>ordinarySharesAndPreferredShares</td></tr>
+  <tr><td>41</td><td>Owners ID uploaded</td><td><span class="badge badge-type">fileupload</span></td><td></td><td class="id-mono">applicantUploadPassportCopy</td><td>(file present)</td></tr>
+  <tr><td>42</td><td>Paid digitally</td><td><span class="badge badge-type">boolean</span></td><td></td><td class="id-mono">isPayedDigitally</td><td>true</td></tr>
+  <tr><td>43</td><td>Public company</td><td><span class="badge badge-type">classification</span></td><td>EQUAL</td><td class="id-mono">applicantTypeOfCompany</td><td>(classification match)</td></tr>
+  <tr><td>44</td><td>Residential address is in Lesotho</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantIsTheResidentialAddressInLesotho</td><td>yes</td></tr>
+  <tr><td>45</td><td>Residential address is NOT in Lesotho</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">applicantIsTheResidentialAddressInLesotho</td><td>no</td></tr>
+  <tr><td>46</td><td>Sent back from BR Approval</td><td><span class="badge badge-type">text</span></td><td>EQUAL</td><td class="id-mono">applicantSentBackFromBrReview</td><td>yes</td></tr>
+  <tr><td>47</td><td>Sole proprietor is from Lesotho</td><td><span class="badge badge-type">classification</span></td><td>EQUAL</td><td class="id-mono">applicantNationality</td><td>(classification match)</td></tr>
+  <tr><td>48</td><td>Sole proprietor is NOT from Lesotho</td><td><span class="badge badge-type">classification</span></td><td>IN</td><td class="id-mono">applicantNationality</td><td>(classification match)</td></tr>
+  <tr><td>49</td><td>User is logged in</td><td><span class="badge badge-type">boolean</span></td><td></td><td class="id-mono">is_submit_allowed</td><td>true</td></tr>
+  <tr><td>50</td><td>Will pay at Cashier</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">paymentProviderSelected</td><td>frontdesk</td></tr>
+  <tr><td>51</td><td>iVeri</td><td><span class="badge badge-type">radio</span></td><td>EQUAL</td><td class="id-mono">paymentProviderSelected</td><td>iveri</td></tr>
+</table>
+<p><em>Showing 51 of 149 determinants (key business logic determinants). Remaining 98 are primarily grid-based conditions for name validation, shareholder processing, and activity classification workflows. Full list available via determinant_list API.</em></p>
+
+<!-- Determinant Logic Diagram -->
+<h4 class="detail-title">Determinant Logic Diagram</h4>
+<div class="diagram-container">
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif">
+  <text x="450" y="20" text-anchor="middle" font-weight="700" font-size="14" fill="#1e40af">Key Determinant Logic Flow</text>
+
+  <!-- Guide question: Type of Business -->
+  <rect x="330" y="40" width="240" height="35" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="450" y="62" text-anchor="middle" font-size="11" fill="#92400e" font-weight="600">guideTypeOfBusiness2</text>
+
+  <!-- Sole Proprietor branch -->
+  <line x1="390" y1="75" x2="200" y2="100" stroke="#d97706" stroke-width="1.5"/>
+  <rect x="80" y="100" width="180" height="30" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="170" y="120" text-anchor="middle" font-size="10" fill="#1e40af">= soleProprietor</text>
+
+  <!-- Company branch -->
+  <line x1="510" y1="75" x2="700" y2="100" stroke="#d97706" stroke-width="1.5"/>
+  <rect x="620" y="100" width="180" height="30" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="710" y="120" text-anchor="middle" font-size="10" fill="#1e40af">= company</text>
+
+  <!-- Sole proprietor effects -->
+  <line x1="170" y1="130" x2="170" y2="155" stroke="#2563eb" stroke-width="1"/>
+  <rect x="50" y="155" width="240" height="55" rx="4" fill="#f0fdf4" stroke="#059669"/>
+  <text x="170" y="172" text-anchor="middle" font-size="9" fill="#065f46" font-weight="600">Active Registrations:</text>
+  <text x="170" y="186" text-anchor="middle" font-size="9" fill="#065f46">Business ID + Business Permit</text>
+  <text x="170" y="199" text-anchor="middle" font-size="9" fill="#065f46">+ Trading/Industrial (if applicable)</text>
+
+  <!-- Company effects -->
+  <line x1="710" y1="130" x2="710" y2="155" stroke="#2563eb" stroke-width="1"/>
+  <rect x="590" y="155" width="240" height="55" rx="4" fill="#f0fdf4" stroke="#059669"/>
+  <text x="710" y="172" text-anchor="middle" font-size="9" fill="#065f46" font-weight="600">Active Registrations:</text>
+  <text x="710" y="186" text-anchor="middle" font-size="9" fill="#065f46">ALL 5 Registrations</text>
+  <text x="710" y="199" text-anchor="middle" font-size="9" fill="#065f46">(incl. Company Incorporation)</text>
+
+  <!-- Activity-based determinants -->
+  <rect x="300" y="240" width="300" height="35" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="450" y="262" text-anchor="middle" font-size="11" fill="#92400e" font-weight="600">applicantListOfActivities2 (Activity Grid)</text>
+
+  <line x1="350" y1="275" x2="200" y2="300" stroke="#d97706" stroke-width="1"/>
+  <rect x="80" y="300" width="180" height="25" rx="4" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="170" y="317" text-anchor="middle" font-size="9" fill="#7c3aed">Needs a trading licence</text>
+
+  <line x1="550" y1="275" x2="700" y2="300" stroke="#d97706" stroke-width="1"/>
+  <rect x="620" y="300" width="180" height="25" rx="4" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="710" y="317" text-anchor="middle" font-size="9" fill="#7c3aed">Needs an industrial licence</text>
+
+  <!-- Fee determinants -->
+  <line x1="450" y1="275" x2="450" y2="340" stroke="#d97706" stroke-width="1"/>
+  <rect x="300" y="340" width="300" height="45" rx="4" fill="#fce7f3" stroke="#db2777"/>
+  <text x="450" y="357" text-anchor="middle" font-size="9" fill="#9d174d" font-weight="600">Fee Calculation Determinants:</text>
+  <text x="450" y="372" text-anchor="middle" font-size="9" fill="#9d174d">Turnover thresholds + Special fee groups + Date proration</text>
+</svg>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="manual-version">
+  <p>Analysis v5.0 -- Generated 2026-02-19 -- Source: BPA-lesotho2/2c92808792372fda0192430feea30000</p>
+  <p>Template: EG V27.19 -- BPA Service Analysis Model</p>
+  <p>Generated by /bpa-docs prototype</p>
+</footer>
+
+</div><!-- end main-content -->
+</body>
+</html>
